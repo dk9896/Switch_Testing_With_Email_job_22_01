@@ -18,8 +18,8 @@ Begin VB.Form frmsettings
    EndProperty
    Icon            =   "frmsettings.frx":0000
    LinkTopic       =   "Form1"
-   ScaleHeight     =   10935
-   ScaleWidth      =   20250
+   ScaleHeight     =   8625
+   ScaleWidth      =   13260
    Begin VB.PictureBox Picture1 
       Height          =   8775
       Left            =   120
@@ -36,23 +36,8 @@ Begin VB.Form frmsettings
          TabIndex        =   173
          Top             =   2640
          Width           =   3135
-         Begin VB.TextBox txtSwitchName 
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   315
-            Left            =   1320
-            TabIndex        =   270
-            Top             =   1800
-            Width           =   1695
-         End
          Begin VB.TextBox txtVandorId 
+            Alignment       =   1  'Right Justify
             BeginProperty Font 
                Name            =   "Arial"
                Size            =   8.25
@@ -65,10 +50,11 @@ Begin VB.Form frmsettings
             Height          =   315
             Left            =   1320
             TabIndex        =   269
-            Top             =   1440
+            Top             =   1680
             Width           =   1695
          End
          Begin VB.TextBox txtPartNo 
+            Alignment       =   1  'Right Justify
             BeginProperty Font 
                Name            =   "Arial"
                Size            =   8.25
@@ -79,12 +65,13 @@ Begin VB.Form frmsettings
                Strikethrough   =   0   'False
             EndProperty
             Height          =   315
-            Left            =   1320
+            Left            =   720
             TabIndex        =   176
-            Top             =   360
-            Width           =   1695
+            Top             =   240
+            Width           =   2295
          End
          Begin VB.TextBox txtSerialNo 
+            Alignment       =   1  'Right Justify
             BeginProperty Font 
                Name            =   "Arial"
                Size            =   8.25
@@ -95,12 +82,13 @@ Begin VB.Form frmsettings
                Strikethrough   =   0   'False
             EndProperty
             Height          =   315
-            Left            =   2040
+            Left            =   1920
             TabIndex        =   175
             Top             =   720
-            Width           =   975
+            Width           =   1095
          End
          Begin VB.TextBox txtHardwareVersion 
+            Alignment       =   1  'Right Justify
             BeginProperty Font 
                Name            =   "Arial"
                Size            =   8.25
@@ -111,46 +99,35 @@ Begin VB.Form frmsettings
                Strikethrough   =   0   'False
             EndProperty
             Height          =   315
-            Left            =   2040
+            Left            =   1680
             TabIndex        =   174
-            Top             =   1080
-            Width           =   975
+            Top             =   1200
+            Width           =   1335
          End
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
-            Caption         =   "Switch Name"
-            ForeColor       =   &H000040C0&
-            Height          =   240
-            Index           =   103
-            Left            =   120
-            TabIndex        =   271
-            Top             =   1800
-            Width           =   1155
-         End
-         Begin VB.Label Label1 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Vendor ID"
+            Caption         =   "Vendor Code"
             ForeColor       =   &H000040C0&
             Height          =   240
             Index           =   102
             Left            =   120
             TabIndex        =   268
-            Top             =   1440
-            Width           =   855
+            Top             =   1680
+            Width           =   1125
          End
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
             Caption         =   "Cust Part No"
             ForeColor       =   &H000040C0&
-            Height          =   240
+            Height          =   480
             Index           =   79
             Left            =   120
             TabIndex        =   179
-            Top             =   360
-            Width           =   1125
+            Top             =   240
+            Width           =   765
+            WordWrap        =   -1  'True
          End
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
@@ -167,14 +144,14 @@ Begin VB.Form frmsettings
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
-            Caption         =   "Part Revision No"
+            Caption         =   "Index AR"
             ForeColor       =   &H000040C0&
             Height          =   240
             Index           =   75
             Left            =   120
             TabIndex        =   177
-            Top             =   1080
-            Width           =   1440
+            Top             =   1200
+            Width           =   795
          End
       End
       Begin VB.CheckBox ChkSRMBypass 
@@ -5364,12 +5341,12 @@ Dim O, P As String
     'Rs("ICMinRh") = Format(txtICMinRH.Text, "0.00")
     'Rs("ICMaxRh") = Format(txtICMaxRH.Text, "0.00")
     Rs("PrintPartNo") = txtPartNo.Text
-    Rs("PrintBarcodeLength") = txtBarcodeLength.Text
-    Rs("BarcodeLength") = txtBarcodeLength.Text
+    'Rs("PrintBarcodeLength") = txtBarcodeLength.Text
+    'Rs("BarcodeLength") = txtBarcodeLength.Text
     Rs("HardwareNo") = txtHardwareVersion.Text
     Rs("SerialStartingtxt") = txtSerialNo.Text
-    Rs("PrintSwitchName") = txtSwitchName.Text
-    Rs("PrintLineCode") = txtLineCode.Text
+    'Rs("PrintSwitchName") = txtSwitchName.Text
+    'Rs("PrintLineCode") = txtLineCode.Text
     Rs("VendorId") = txtVandorId.Text
     
     Rs("DebounceTime") = Format(txtDebounceTime.Text, "0.000")
@@ -5540,11 +5517,11 @@ Dim Sql As String
     'txtWireVoltageMax.Text = Rs("WVMax")
     
     txtPartNo.Text = Rs("PrintPartNo")
-    txtBarcodeLength.Text = Rs("PrintBarcodeLength")
-    txtBarcodeLength.Text = Rs("BarcodeLength")
+    'txtBarcodeLength.Text = Rs("PrintBarcodeLength")
+    'txtBarcodeLength.Text = Rs("BarcodeLength")
     txtHardwareVersion.Text = Rs("HardwareNo")
     txtSerialNo.Text = Rs("SerialStartingtxt")
-    txtSwitchName.Text = Rs("PrintSwitchName")
+    'txtSwitchName.Text = Rs("PrintSwitchName")
     txtLineCode.Text = Rs("PrintLineCode")
 
     txtDebounceTime.Text = Rs("DebounceTime")

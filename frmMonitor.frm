@@ -3,7 +3,7 @@ Object = "{648A5603-2C6E-101B-82B6-000000000014}#1.1#0"; "MSCOMM32.OCX"
 Object = "{97C0E9D8-AD04-4920-9B7A-4B99616579F9}#2.0#0"; "TextPrinter.ocx"
 Object = "{248DD890-BB45-11CF-9ABC-0080C7E7B78D}#1.0#0"; "MSWINSCK.OCX"
 Begin VB.Form frmMonitor 
-   Caption         =   "Switch_Testing_With_Email_Job2"
+   Caption         =   "22_01"
    ClientHeight    =   8625
    ClientLeft      =   60
    ClientTop       =   750
@@ -18,8 +18,8 @@ Begin VB.Form frmMonitor
       Strikethrough   =   0   'False
    EndProperty
    LinkTopic       =   "Form1"
-   ScaleHeight     =   10935
-   ScaleWidth      =   20250
+   ScaleHeight     =   8625
+   ScaleWidth      =   15630
    Begin VB.Frame Frame1 
       BeginProperty Font 
          Name            =   "Arial"
@@ -1269,27 +1269,28 @@ Begin VB.Form frmMonitor
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   390
-         Left            =   9600
+         Height          =   465
+         Left            =   9480
          TabIndex        =   118
-         Top             =   9120
+         Text            =   "0"
+         Top             =   9240
          Width           =   2490
       End
       Begin VB.TextBox txtTargetProduction 
          BeginProperty Font 
-            Name            =   "Arial"
+            Name            =   "Arial Black"
             Size            =   12
             Charset         =   0
-            Weight          =   400
+            Weight          =   900
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   390
-         Left            =   9720
+         Height          =   465
+         Left            =   9480
          TabIndex        =   117
          Top             =   8640
-         Width           =   975
+         Width           =   1215
       End
       Begin VB.CommandButton Command2 
          Caption         =   "Breakdown"
@@ -1336,10 +1337,10 @@ Begin VB.Form frmMonitor
             Strikethrough   =   0   'False
          EndProperty
          Height          =   390
-         Left            =   9720
+         Left            =   9480
          TabIndex        =   100
          Top             =   8160
-         Width           =   975
+         Width           =   1215
       End
       Begin VB.PictureBox PictureNM 
          BackColor       =   &H80000010&
@@ -3370,7 +3371,7 @@ Begin VB.Form frmMonitor
          Index           =   43
          Left            =   7680
          TabIndex        =   106
-         Top             =   9240
+         Top             =   9360
          Width           =   1665
       End
       Begin VB.Label Label4 
@@ -4502,14 +4503,14 @@ Dim Sql As String
    End If
     
     PartNo = Rs("PrintPartNo")
-    BarcodeLength = Rs("BarcodeLength")
+    'BarcodeLength = Rs("BarcodeLength")
     HardwareNo = Rs("HardwareNo")
     SerialStartingtxt = Rs("SerialStartingtxt")
     setBatchCounter = Rs("BatchCounter")
     setCouplerCounter = Rs("CouplerCounter")
     VendorId = Rs("VendorId")
-    PrintSwitchName = Rs("PrintSwitchName")
-    PrintLineCode = Rs("PrintLineCode")
+    'PrintSwitchName = Rs("PrintSwitchName")
+    'PrintLineCode = Rs("PrintLineCode")
     
     ImgPart.Picture = LoadPicture(Rs("PartImage"))
     txtproductioncounter.Text = Rs("productioncounter")

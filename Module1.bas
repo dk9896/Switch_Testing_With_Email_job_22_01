@@ -177,25 +177,39 @@ On Error GoTo err1
 Dim TempFileTextLine As String
 Dim PrnFile As String
 Dim TempDate As String
+Dim TempHardwareNo As String
+Dim TempPartNo As String
+Dim TempVendorId As String
+Dim TempBarcode As String
+Dim TempStartingString As String
+
     If CopyLabel = True Then
-        Counter = SerialStartingtxt & Format(frmPrintLabel.txtCopyNo.Text, "0000000000000000")
         CopyLabel = False
-        TempDate = Format(frmPrintLabel.txtDatePr.Text, "dd-mm-yyyy")
+        TempStartingString = frmPrintLabel.txtStartString.Text
+        Counter = TempStartingString & Format(frmPrintLabel.txtCopyNo.Text, "0000000000000000")
+        TempDate = frmPrintLabel.txtDatePr.Text
+        TempVendorId = frmPrintLabel.txtVendorCode.Text
+        TempPartNo = frmPrintLabel.txtVendorCode.Text
+        TempHarwareNo = frmPrintLabel.txtIndexAR.Text
+        TempBarcode = TempPartNo & TempStartingString & TempDate
     Else
         Counter = SerialStartingtxt & Format(Val(frmMonitor.txtproductioncounter), "0000000000000000")
-        TempDate = Format(Now(), "dd-mm-yyyy")
+        TempDate = GetCurrentDate
+        barcode = PartNo & Counter & TempDate
+        TempBarcode = barcode
+        TempVendorId = VendorId
+        TempPartNo = PartNo
+        TempHardwareNo = HardwareNo
     End If
     
     PrnFile = "switch.prn"
-    barcode = PartNo & Counter
+    barcode = PartNo & Counter & TempDate
     TempFileTextLine = ReadLabel(App.Path & "\PrnFiles\" & PrnFile)
-    TempFileTextLine = Replace(TempFileTextLine, "#034#", HardwareNo)
-    TempFileTextLine = Replace(TempFileTextLine, "#28511012044#", PartNo)
+    TempFileTextLine = Replace(TempFileTextLine, "#034#", TempHardwareNo)
+    TempFileTextLine = Replace(TempFileTextLine, "#28511012044#", TempPartNo)
     TempFileTextLine = Replace(TempFileTextLine, "#JJWW0000000000001#", Counter)
-    TempFileTextLine = Replace(TempFileTextLine, "#28511012044JJWW0000000000001034#", barcode)
-    TempFileTextLine = Replace(TempFileTextLine, "#3000557#", VendorId)
-    TempFileTextLine = Replace(TempFileTextLine, "Text1", PrintSwitchName)
-    TempFileTextLine = Replace(TempFileTextLine, "Text2", TempDate)
+    TempFileTextLine = Replace(TempFileTextLine, "#28511012044JJWW000000000000103401B2023#", TempBarcode)
+    TempFileTextLine = Replace(TempFileTextLine, "#3000557#", TempVendorId)
     
     lPrinter.PrinterName = PrinterName
     lPrinter.PrintText TempFileTextLine
@@ -206,7 +220,37 @@ Exit Function
 err1:
 MsgBox "Error found in " & Err.Source & vbNewLine & Err.Description, vbCritical, "Printer Error"
 End Function
-
+Public Function GetCurrentDate() As String
+ Dim month
+ month = Val(Format(Date, "MM"))
+ If month = 1 Then
+    GetCurrentDate = Format(Date, "DD") & "A" & Format(Date, "YYYY")
+ ElseIf month = 2 Then
+    GetCurrentDate = Format(Date, "DD") & "B" & Format(Date, "YYYY")
+ ElseIf month = 3 Then
+    GetCurrentDate = Format(Date, "DD") & "C" & Format(Date, "YYYY")
+ ElseIf month = 4 Then
+    GetCurrentDate = Format(Date, "DD") & "D" & Format(Date, "YYYY")
+ ElseIf month = 5 Then
+    GetCurrentDate = Format(Date, "DD") & "E" & Format(Date, "YYYY")
+ ElseIf month = 6 Then
+    GetCurrentDate = Format(Date, "DD") & "F" & Format(Date, "YYYY")
+ ElseIf month = 7 Then
+    GetCurrentDate = Format(Date, "DD") & "G" & Format(Date, "YYYY")
+ ElseIf month = 8 Then
+    GetCurrentDate = Format(Date, "DD") & "H" & Format(Date, "YYYY")
+ ElseIf month = 9 Then
+    GetCurrentDate = Format(Date, "DD") & "J" & Format(Date, "YYYY")
+ ElseIf month = 10 Then
+    GetCurrentDate = Format(Date, "DD") & "K" & Format(Date, "YYYY")
+ ElseIf month = 11 Then
+    GetCurrentDate = Format(Date, "DD") & "L" & Format(Date, "YYYY")
+ ElseIf month = 12 Then
+    GetCurrentDate = Format(Date, "DD") & "M" & Format(Date, "YYYY")
+ End If
+ 
+ 
+End Function
 Private Function ReadLabel(FileName As String) As String
     Open FileName For Binary As #1
     ReadLabel = Input(LOF(1), 1)

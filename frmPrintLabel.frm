@@ -7,8 +7,8 @@ Begin VB.Form frmPrintLabel
    ClientTop       =   450
    ClientWidth     =   12150
    LinkTopic       =   "Form1"
-   ScaleHeight     =   10935
-   ScaleWidth      =   20250
+   ScaleHeight     =   8955
+   ScaleWidth      =   12150
    StartUpPosition =   3  'Windows Default
    Begin TextPrinter.JustPrinter JustPrinter1 
       Height          =   615
@@ -23,13 +23,13 @@ Begin VB.Form frmPrintLabel
    Begin VB.PictureBox Picture1 
       BackColor       =   &H00FFFFC0&
       Height          =   7095
-      Left            =   2280
+      Left            =   4080
       ScaleHeight     =   7035
       ScaleWidth      =   8475
       TabIndex        =   0
-      Top             =   -240
+      Top             =   840
       Width           =   8535
-      Begin VB.TextBox Text6 
+      Begin VB.TextBox txtStartString 
          Alignment       =   2  'Center
          Appearance      =   0  'Flat
          BeginProperty Font 
@@ -41,7 +41,7 @@ Begin VB.Form frmPrintLabel
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H8000000E&
+         ForeColor       =   &H80000009&
          Height          =   480
          Left            =   2400
          TabIndex        =   20
@@ -60,11 +60,11 @@ Begin VB.Form frmPrintLabel
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H8000000E&
          Height          =   480
          Left            =   2400
          TabIndex        =   14
          Top             =   6120
+         Visible         =   0   'False
          Width           =   3495
       End
       Begin VB.TextBox txtLineCode 
@@ -79,11 +79,11 @@ Begin VB.Form frmPrintLabel
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H8000000E&
          Height          =   480
          Left            =   2400
          TabIndex        =   13
          Top             =   5400
+         Visible         =   0   'False
          Width           =   3495
       End
       Begin VB.TextBox txtVendorCode 
@@ -98,7 +98,6 @@ Begin VB.Form frmPrintLabel
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H8000000E&
          Height          =   480
          Left            =   2400
          TabIndex        =   12
@@ -117,11 +116,11 @@ Begin VB.Form frmPrintLabel
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H8000000E&
          Height          =   480
          Left            =   2400
          TabIndex        =   11
          Top             =   3960
+         Visible         =   0   'False
          Width           =   3495
       End
       Begin VB.TextBox txtPartNumber 
@@ -136,7 +135,6 @@ Begin VB.Form frmPrintLabel
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H8000000E&
          Height          =   480
          Left            =   2400
          TabIndex        =   10
@@ -172,7 +170,6 @@ Begin VB.Form frmPrintLabel
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H8000000E&
          Height          =   480
          Left            =   2400
          TabIndex        =   5
@@ -191,7 +188,6 @@ Begin VB.Form frmPrintLabel
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H8000000E&
          Height          =   480
          Left            =   3600
          TabIndex        =   4
@@ -234,6 +230,7 @@ Begin VB.Form frmPrintLabel
          Left            =   360
          TabIndex        =   21
          Top             =   6240
+         Visible         =   0   'False
          Width           =   1605
       End
       Begin VB.Label Label9 
@@ -252,6 +249,7 @@ Begin VB.Form frmPrintLabel
          Left            =   360
          TabIndex        =   19
          Top             =   5520
+         Visible         =   0   'False
          Width           =   1485
       End
       Begin VB.Label Label8 
@@ -288,6 +286,7 @@ Begin VB.Form frmPrintLabel
          Left            =   360
          TabIndex        =   17
          Top             =   4080
+         Visible         =   0   'False
          Width           =   1485
       End
       Begin VB.Label Label6 
@@ -419,17 +418,17 @@ End Sub
 Private Sub Form_Load()
     frmPrintLabel.WindowState = 2
     Picture1.BackColor = RGB(142, 167, 190)
-    txtDatePr.Text = Date
+    txtDatePr.Text = GetCurrentDate
     'txtDatePr.Locked = True
-    LoadModelCombo CboModelName
+    LoadModelCombo cbomodelname
     PrintModelName = GetSetting(App.Title, "PrintLastModel", "PrintLastModel")
-    LastModel PrintModelNameModelName, CboModelName
+    LastModel PrintModelNameModelName, cbomodelname
     LoadSettingsData
 
 End Sub
 Private Sub CboModelName_Click()
 
-PrintModelName = CboModelName.Text
+PrintModelName = cbomodelname.Text
 SaveSetting App.Title, "PrintLastModel", "PrintLastModel", PrintModelName
 'ModelPicture Image1, ModelName
 End Sub
@@ -476,15 +475,15 @@ Dim Sql As String
     Set Rs = New ADODB.Recordset
     Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
         
-    txtModelDesc = Rs("ModelDesc")
-    PartNo = Rs("PrintPartNo")
-    BarcodeLength = Rs("BarcodeLength")
-    HardwareNo = Rs("HardwareNo")
-    SerialStartingtxt = Rs("SerialStartingtxt")
-    VendorId = Rs("VendorId")
+    'txtModelDesc = Rs("ModelDesc")
+    txtPartNumber.Text = Rs("PrintPartNo")
+    'BarcodeLength = Rs("BarcodeLength")
+    txtIndexAR.Text = Rs("HardwareNo")
+    txtIndexAR.Text = Rs("SerialStartingtxt")
+    txtVendorCode.Text = Rs("VendorId")
 
-    PrintSwitchName = Rs("PrintSwitchName")
-    PrintLineCode = Rs("PrintLineCode")
+    'PrintSwitchName = Rs("PrintSwitchName")
+    'PrintLineCode = Rs("PrintLineCode")
     
     Sql = "Select * from Common_Set where SetType ='CommonSet'" 'SetType = Settings Type
     Set Rs = New ADODB.Recordset
@@ -510,6 +509,3 @@ Private Function ValidEntry(Min, Max As Double, Text As TextBox) As Boolean
 
 End Function
 
-Private Sub Label3_Click()
-
-End Sub
