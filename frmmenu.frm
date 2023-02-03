@@ -412,6 +412,7 @@ End Sub
 
 Private Sub CmdPrintLabel_Click()
     frmPrintLabel.Show
+    Unload Me
 End Sub
 
 Private Sub cmdReports_Click()

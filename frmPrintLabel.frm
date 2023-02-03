@@ -29,6 +29,34 @@ Begin VB.Form frmPrintLabel
       TabIndex        =   0
       Top             =   840
       Width           =   8535
+      Begin VB.CheckBox Check1 
+         BackColor       =   &H00FFFFC0&
+         Caption         =   "Check to print multiple in serial"
+         Height          =   375
+         Left            =   6840
+         TabIndex        =   23
+         Top             =   2280
+         Width           =   1575
+      End
+      Begin VB.TextBox Text1 
+         Alignment       =   2  'Center
+         Appearance      =   0  'Flat
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H80000009&
+         Height          =   360
+         Left            =   7440
+         TabIndex        =   22
+         Top             =   2760
+         Width           =   855
+      End
       Begin VB.TextBox txtStartString 
          Alignment       =   2  'Center
          Appearance      =   0  'Flat
@@ -120,7 +148,6 @@ Begin VB.Form frmPrintLabel
          Left            =   2400
          TabIndex        =   11
          Top             =   3960
-         Visible         =   0   'False
          Width           =   3495
       End
       Begin VB.TextBox txtPartNumber 
@@ -214,6 +241,15 @@ Begin VB.Form frmPrintLabel
          Top             =   5520
          Width           =   1485
       End
+      Begin VB.Label Label2 
+         BackStyle       =   0  'Transparent
+         Caption         =   "Inc ++"
+         Height          =   255
+         Left            =   6840
+         TabIndex        =   24
+         Top             =   2880
+         Width           =   495
+      End
       Begin VB.Label Label10 
          BackStyle       =   0  'Transparent
          Caption         =   "Switch Name"
@@ -286,7 +322,6 @@ Begin VB.Form frmPrintLabel
          Left            =   360
          TabIndex        =   17
          Top             =   4080
-         Visible         =   0   'False
          Width           =   1485
       End
       Begin VB.Label Label6 
@@ -410,9 +445,17 @@ End Sub
 
 Private Sub CmdPrint_Click()
 If ValidEntry(1, 9999999, txtCopyNo) = False Then Exit Sub
-    
+If Check1.Value = 1 Then
+    For i = 0 To Val(Text1.Text)
+        CopyLabel = True
+        PrintLabel JustPrinter1
+        txtCopyNo.Text = Val(txtCopyNo.Text) + 1
+    Next
+Else
     CopyLabel = True
     PrintLabel JustPrinter1
+    txtCopyNo.Text = Val(txtCopyNo.Text) + 1
+End If
 End Sub
 
 Private Sub Form_Load()
@@ -479,7 +522,7 @@ Dim Sql As String
     txtPartNumber.Text = Rs("PrintPartNo")
     'BarcodeLength = Rs("BarcodeLength")
     txtIndexAR.Text = Rs("HardwareNo")
-    txtIndexAR.Text = Rs("SerialStartingtxt")
+    txtStartString.Text = Rs("SerialStartingtxt")
     txtVendorCode.Text = Rs("VendorId")
 
     'PrintSwitchName = Rs("PrintSwitchName")

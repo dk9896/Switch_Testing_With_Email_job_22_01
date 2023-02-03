@@ -18,8 +18,8 @@ Begin VB.Form frmMonitor
       Strikethrough   =   0   'False
    EndProperty
    LinkTopic       =   "Form1"
-   ScaleHeight     =   8625
-   ScaleWidth      =   15630
+   ScaleHeight     =   10935
+   ScaleWidth      =   20250
    Begin VB.Frame Frame1 
       BeginProperty Font 
          Name            =   "Arial"
@@ -30,7 +30,7 @@ Begin VB.Form frmMonitor
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   10695
+      Height          =   10575
       Left            =   120
       TabIndex        =   0
       Top             =   120
@@ -1259,7 +1259,6 @@ Begin VB.Form frmMonitor
          Width           =   975
       End
       Begin VB.TextBox txtproductioncounter 
-         Enabled         =   0   'False
          BeginProperty Font 
             Name            =   "Arial Black"
             Size            =   12
@@ -1271,6 +1270,7 @@ Begin VB.Form frmMonitor
          EndProperty
          Height          =   465
          Left            =   9480
+         Locked          =   -1  'True
          TabIndex        =   118
          Text            =   "0"
          Top             =   9240
@@ -1331,7 +1331,7 @@ Begin VB.Form frmMonitor
             Name            =   "Arial"
             Size            =   12
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -2594,18 +2594,19 @@ Begin VB.Form frmMonitor
       Begin VB.TextBox txtBarcode 
          BeginProperty Font 
             Name            =   "Arial"
-            Size            =   12
+            Size            =   9.75
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   390
-         Left            =   8760
+         Height          =   435
+         Left            =   8520
+         Locked          =   -1  'True
          TabIndex        =   34
          Top             =   7560
-         Width           =   5175
+         Width           =   6135
       End
       Begin VB.Frame Frame6 
          BorderStyle     =   0  'None
@@ -2621,7 +2622,7 @@ Begin VB.Form frmMonitor
          Height          =   855
          Left            =   18360
          TabIndex        =   26
-         Top             =   9720
+         Top             =   9600
          Width           =   1335
          Begin VB.CommandButton CmdClose 
             Caption         =   "Close"
@@ -2724,7 +2725,6 @@ Begin VB.Form frmMonitor
          Begin VB.TextBox txtNGCounter 
             Alignment       =   2  'Center
             BackColor       =   &H00FFFFFF&
-            Enabled         =   0   'False
             BeginProperty Font 
                Name            =   "Arial Black"
                Size            =   9.75
@@ -2747,7 +2747,6 @@ Begin VB.Form frmMonitor
          Begin VB.TextBox txtOKCounter 
             Alignment       =   2  'Center
             BackColor       =   &H00FFFFFF&
-            Enabled         =   0   'False
             BeginProperty Font 
                Name            =   "Arial Black"
                Size            =   9.75
@@ -2770,7 +2769,6 @@ Begin VB.Form frmMonitor
          Begin VB.TextBox txtBatchCounter 
             Alignment       =   2  'Center
             BackColor       =   &H00FFFFFF&
-            Enabled         =   0   'False
             BeginProperty Font 
                Name            =   "Arial Black"
                Size            =   9.75
@@ -2793,7 +2791,6 @@ Begin VB.Form frmMonitor
          Begin VB.TextBox txtCouplerCounter 
             Alignment       =   2  'Center
             BackColor       =   &H00FFFFFF&
-            Enabled         =   0   'False
             BeginProperty Font 
                Name            =   "Arial Black"
                Size            =   9.75
@@ -3026,12 +3023,12 @@ Begin VB.Form frmMonitor
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   630
+         Height          =   510
          Left            =   120
          MultiLine       =   -1  'True
          TabIndex        =   14
          Text            =   "frmMonitor.frx":440A
-         Top             =   9960
+         Top             =   9840
          Width           =   18015
       End
       Begin VB.Frame Frame13 
@@ -3155,6 +3152,7 @@ Begin VB.Form frmMonitor
          ForeColor       =   &H00FFFFFF&
          Height          =   1140
          Left            =   2400
+         Locked          =   -1  'True
          TabIndex        =   10
          Text            =   "MODEL DESC"
          Top             =   240
@@ -3349,10 +3347,10 @@ Begin VB.Form frmMonitor
       End
       Begin VB.Image ImgPart 
          Height          =   1695
-         Left            =   14040
+         Left            =   14760
          Stretch         =   -1  'True
          Top             =   7800
-         Width           =   3135
+         Width           =   2535
       End
       Begin VB.Label Label4 
          AutoSize        =   -1  'True
@@ -3402,7 +3400,7 @@ Begin VB.Form frmMonitor
             Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
-            Weight          =   400
+            Weight          =   700
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
@@ -3630,7 +3628,8 @@ End Sub
 
 Private Sub Command3_Click()
 'PLcdata(109) = Val(Text3.Text)
-AssignPLCdata
+txtproductioncounter.Text = 1
+'AssignPLCdata
 End Sub
 
 Private Sub Command7_Click()
@@ -3681,7 +3680,7 @@ Private Sub Form_Load()
 ''On Error GoTo Error
 Me.WindowState = 2
 UserAccess
-Frame1.Top = ((Screen.Height - Frame1.Height) / 2)
+Frame1.Top = ((Screen.Height - Frame1.Height) / 2) - 500
 Frame1.Left = ((Screen.Width - Frame1.Width) / 2)
 LoadSettingsData
 Call Load_Message_File
@@ -3856,7 +3855,7 @@ On Error GoTo Error
    ElseIf PLcdata(165) = 2 And pulseBreakdown = False Then
       pulseBreakdown = True
       PictureBreakdown.Visible = True
-       cmdrunningbreakdown.Enabled = False
+      cmdrunningbreakdown.Enabled = False
       cmdfullbreakdown.Enabled = False
       cmdgolive.Enabled = True
       'cmdclosebreakdownscreen.Enabled = False
@@ -3866,6 +3865,7 @@ On Error GoTo Error
       PulseScan = True
       txtBarcode.Locked = False
       txtBarcode.BackColor = vbWhite
+      txtBarcode.Text = ""
       txtBarcode.Locked = True
       PLcdata(350) = 0
    ElseIf PLcdata(170) = 1 And PulseScan = True Then
@@ -3889,7 +3889,7 @@ On Error GoTo Error
       txtTargetProduction.Text = Val(txtTargetProduction.Text) - 1
       txtCouplerCounter.Text = Val(txtCouplerCounter.Text) + 1
       If pulsePrinterBypass = False Then
-      PrintLabel JustPrinter1
+        PrintLabel JustPrinter1
       End If
       SaveProductioncounter
       SaveReport 1

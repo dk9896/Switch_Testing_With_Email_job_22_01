@@ -186,29 +186,29 @@ Dim TempStartingString As String
     If CopyLabel = True Then
         CopyLabel = False
         TempStartingString = frmPrintLabel.txtStartString.Text
-        Counter = TempStartingString & Format(frmPrintLabel.txtCopyNo.Text, "0000000000000000")
+        Counter = TempStartingString & Format(frmPrintLabel.txtCopyNo.Text, "0000000000000")
         TempDate = frmPrintLabel.txtDatePr.Text
         TempVendorId = frmPrintLabel.txtVendorCode.Text
-        TempPartNo = frmPrintLabel.txtVendorCode.Text
-        TempHarwareNo = frmPrintLabel.txtIndexAR.Text
-        TempBarcode = TempPartNo & TempStartingString & TempDate
+        TempPartNo = frmPrintLabel.txtPartNumber.Text
+        TempHardwareNo = frmPrintLabel.txtIndexAR.Text
+        TempBarcode = TempPartNo & Counter & TempDate & TempHardwareNo & TempVendorId
     Else
-        Counter = SerialStartingtxt & Format(Val(frmMonitor.txtproductioncounter), "0000000000000000")
+        Counter = SerialStartingtxt & Format(Val(frmMonitor.txtproductioncounter), "0000000000000")
         TempDate = GetCurrentDate
-        barcode = PartNo & Counter & TempDate
-        TempBarcode = barcode
         TempVendorId = VendorId
         TempPartNo = PartNo
         TempHardwareNo = HardwareNo
+        barcode = PartNo & Counter & TempDate & HardwareNo & VendorId
+        TempBarcode = barcode
     End If
     
     PrnFile = "switch.prn"
-    barcode = PartNo & Counter & TempDate
+    'barcode = PartNo & Counter & TempDate
     TempFileTextLine = ReadLabel(App.Path & "\PrnFiles\" & PrnFile)
-    TempFileTextLine = Replace(TempFileTextLine, "#034#", TempHardwareNo)
-    TempFileTextLine = Replace(TempFileTextLine, "#28511012044#", TempPartNo)
+    TempFileTextLine = Replace(TempFileTextLine, "#HW: 003#", TempHardwareNo)
+    TempFileTextLine = Replace(TempFileTextLine, "#963.11.070.000#", TempPartNo)
     TempFileTextLine = Replace(TempFileTextLine, "#JJWW0000000000001#", Counter)
-    TempFileTextLine = Replace(TempFileTextLine, "#28511012044JJWW000000000000103401B2023#", TempBarcode)
+    TempFileTextLine = Replace(TempFileTextLine, "#963.11.070.000JJWW0000000000000001ddMYYYY#", TempBarcode)
     TempFileTextLine = Replace(TempFileTextLine, "#3000557#", TempVendorId)
     
     lPrinter.PrinterName = PrinterName

@@ -28,6 +28,59 @@ Begin VB.Form frmSettings2
       TabIndex        =   0
       Top             =   360
       Width           =   12855
+      Begin VB.TextBox txtProduction 
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Left            =   4440
+         TabIndex        =   38
+         Text            =   "000000"
+         Top             =   480
+         Width           =   855
+      End
+      Begin VB.CommandButton Command2 
+         Caption         =   "SET"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   9
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Left            =   5400
+         TabIndex        =   37
+         Top             =   480
+         Width           =   735
+      End
+      Begin VB.CommandButton Command1 
+         Caption         =   "RESET"
+         Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   9
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Left            =   6240
+         TabIndex        =   36
+         Top             =   480
+         Width           =   975
+      End
       Begin VB.TextBox txtlinespeed 
          BeginProperty Font 
             Name            =   "Arial"
@@ -575,6 +628,23 @@ Begin VB.Form frmSettings2
             WordWrap        =   -1  'True
          End
       End
+      Begin VB.Label Label9 
+         Caption         =   "Production Counter"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Left            =   240
+         TabIndex        =   39
+         Top             =   480
+         Width           =   2415
+      End
       Begin VB.Label Label8 
          Caption         =   "Qty per hour"
          BeginProperty Font 
@@ -606,7 +676,7 @@ Begin VB.Form frmSettings2
          Height          =   375
          Left            =   240
          TabIndex        =   32
-         Top             =   6120
+         Top             =   6240
          Width           =   1815
       End
       Begin VB.Label Label6 
@@ -704,7 +774,7 @@ Attribute VB_Exposed = False
 Dim Row As Long
 Dim Col As Long
 
-Private Sub cmdClose_Click()
+Private Sub CmdClose_Click()
     Unload Me
 End Sub
 
@@ -912,6 +982,30 @@ SaveSetting App.Title, ModelName, "OkCounter", Val(txtokcount.Text)
 End If
 End Sub
 
+Private Sub Command1_Click()
+Dim Rs As ADODB.Recordset
+Dim Sql As String
+If MsgBox("Do you want to ReSet  Production counter to 0 ?", vbYesNo) = vbYes Then
+    Sql = "Select * from Model_Set where ModelName ='" & Trim(txtModelName.Text) & "'"
+    Set Rs = New ADODB.Recordset
+    Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
+    Rs("productioncounter") = 0
+    Rs.Update
+End If
+End Sub
+
+Private Sub Command2_Click()
+Dim Rs As ADODB.Recordset
+Dim Sql As String
+If MsgBox("Do you want to Set New Production counter ?", vbYesNo) = vbYes Then
+    Sql = "Select * from Model_Set where ModelName ='" & Trim(txtModelName.Text) & "'"
+    Set Rs = New ADODB.Recordset
+    Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
+    Rs("productioncounter") = Val(txtProduction.Text)
+    Rs.Update
+End If
+End Sub
+
 '''Private Sub Command4_Click()
 ''''Dim X, Y As Integer
 '''
@@ -1103,17 +1197,21 @@ Dim Sql As String
     'txtModelDesc.Text = Trim(Rs("ModelDesc"))
     txtsaveBatch.Text = Rs("batchcounter")
     txtSaveCoupler.Text = Rs("CouplerCounter")
+    txtProduction.Text = Rs("productioncounter")
     txtokcount.Text = Val(GetSetting(App.Title, ModelName, "OkCounter", 0))
     txtngcount.Text = Val(GetSetting(App.Title, ModelName, "NgCounter", 0))
     txtSetCoupler.Text = Val(GetSetting(App.Title, ModelName, "CouplerCounter", 0))
     txtSetbatch.Text = Val(GetSetting(App.Title, ModelName, "BatchCounter", 0))
     cmdenable
+    
 Exit Sub
 Error:
 ErrorLog Err.Number, Err.Description, Erl, Me.Name, "LoadData"
 Resume Next
 End Sub
 Private Sub cmdenable()
+Command1.Enabled = True
+Command2.Enabled = True
 cmdsaveBatch.Enabled = True
 cmdsaveCoupler.Enabled = True
 cmdsetBatch.Enabled = True

@@ -5522,7 +5522,7 @@ Dim Sql As String
     txtHardwareVersion.Text = Rs("HardwareNo")
     txtSerialNo.Text = Rs("SerialStartingtxt")
     'txtSwitchName.Text = Rs("PrintSwitchName")
-    txtLineCode.Text = Rs("PrintLineCode")
+    'txtLineCode.Text = Rs("PrintLineCode")
 
     txtDebounceTime.Text = Rs("DebounceTime")
     txtHoldTime.Text = Rs("HoldTime")
