@@ -424,6 +424,7 @@ Begin VB.Form frmSettings2
          Begin VB.TextBox txtModelName 
             Alignment       =   2  'Center
             Appearance      =   0  'Flat
+            Enabled         =   0   'False
             Height          =   360
             Left            =   1320
             TabIndex        =   8

@@ -18,8 +18,8 @@ Begin VB.Form frmMonitor
       Strikethrough   =   0   'False
    EndProperty
    LinkTopic       =   "Form1"
-   ScaleHeight     =   10935
-   ScaleWidth      =   20250
+   ScaleHeight     =   8625
+   ScaleWidth      =   15630
    Begin VB.Frame Frame1 
       BeginProperty Font 
          Name            =   "Arial"
@@ -3048,6 +3048,11 @@ Begin VB.Form frmMonitor
          Top             =   360
          Visible         =   0   'False
          Width           =   3375
+         Begin VB.Timer Timer8 
+            Interval        =   60000
+            Left            =   840
+            Top             =   240
+         End
          Begin VB.Timer Timer7 
             Left            =   360
             Top             =   1320
@@ -3628,8 +3633,10 @@ End Sub
 
 Private Sub Command3_Click()
 'PLcdata(109) = Val(Text3.Text)
-txtproductioncounter.Text = 1
-'AssignPLCdata
+'txtproductioncounter.Text = 1
+'SaveCounter
+PLcdata(109) = 1
+AssignPLCdata
 End Sub
 
 Private Sub Command7_Click()
@@ -3972,7 +3979,7 @@ Private Sub Timer2_Timer()
        
     If InternetGetConnectedState(0, 0) = 1 Then
         shapeInternet.BackColor = vbGreen
-        sendEmail
+        'sendEmail
     Else
         shapeInternet.BackColor = vbRed
     End If
@@ -4051,8 +4058,8 @@ Dim Sql As String
 Sql = "Select * from Common_Set where SetType ='CommonSet'"
 Set rs1 = New ADODB.Recordset
 rs1.Open Sql, Con, adOpenDynamic, adLockOptimistic
-If rs1("SenderEmail") <> "" And rs1("ToEmail1") <> "" Then
-    Sql = "select Top 1 * from model_report_counter where MailSent = false and (DateTime < #" & Format(Now, "dd-mm-yyyy") & "# or shifttime <> '" & getShift & "')order by id desc"
+If rs1("SenderEmail") <> "" And rs1("ToEmail1") <> "" And rs1("EmailBypass") = 0 Then
+    Sql = "select Top 1 * from model_report_counter where MailSent = false and (DateTime < #" & Format(Now, "mm-dd-yyyy") & "# or shifttime <> '" & getShift & "')order by id desc"
     Set rs2 = New ADODB.Recordset
     rs2.Open Sql, Con, adOpenDynamic, adLockOptimistic
     Do While rs2.EOF = False
@@ -4109,7 +4116,7 @@ Dim ToEmail As String
      .WaitForResponse
      response = .ResponseText
      ErrorLog 100, "API Response Recieved - " & response, "", "callsendEmailApi", ""
-     If response = "SENT" Then
+     If Trim(response) = "SENT" Then
      callSendEmailApi = True
      Else
      callSendEmailApi = False
@@ -4608,7 +4615,8 @@ End Sub
 Private Sub SaveCounter()
 Dim Sql As String
 Dim Rs As ADODB.Recordset
-    Sql = "Select * from Model_Report_Counter where datetime = #" & runningreportdate & "# and shifttime = '" & runningreportshift & "'"
+    A = Format(runningreportdate, "MM-dd-yyyy")
+    Sql = "Select * from Model_Report_Counter  where Datetime = #" & Format(runningreportdate, "MM-dd-yyyy") & "# and shifttime = '" & Val(runningreportshift) & "'"
     Set Rs = New ADODB.Recordset
     Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
     If Rs.EOF = True Then
@@ -4665,7 +4673,7 @@ End Sub
 Private Sub SaveProductioncounter()
 Dim Rs As ADODB.Recordset
 Dim Sql As String
-    Sql = "Select * from Model_Set where ModelName ='" & Trim(txtModelName.Text) & "'"
+    Sql = "Select * from Model_Set where ModelName ='" & ModelName & "'"
     Set Rs = New ADODB.Recordset
     Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
     Rs("productioncounter") = Val(txtproductioncounter.Text)
@@ -4786,6 +4794,12 @@ Timer1.Enabled = True
 Timer1.Interval = 80
 Timer5.Interval = 500
 Timer5.Enabled = True
+End Sub
+
+Private Sub Timer8_Timer()
+ If shapeInternet.BackColor = vbGreen Then
+  sendEmail
+ End If
 End Sub
 
 Private Sub txtBarcode_KeyPress(KeyAscii As Integer)

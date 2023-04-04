@@ -19,8 +19,8 @@ Begin VB.Form frmmanual
       Strikethrough   =   0   'False
    EndProperty
    LinkTopic       =   "Form1"
-   ScaleHeight     =   9210
-   ScaleWidth      =   14400
+   ScaleHeight     =   10935
+   ScaleWidth      =   20250
    StartUpPosition =   3  'Windows Default
    Begin MSWinsockLib.Winsock Winsock1 
       Left            =   18720
@@ -702,8 +702,8 @@ Dim Rs As ADODB.Recordset
 ''      ComPortBP(2) = Rs("ComPortBP2")
    PrinterName = Rs("PrinterName1")
    Initialise
-   Winsock1.Protocol = sckTCPProtocol
-   txtIP.Text = Winsock1.LocalIP
+   WinSock1.Protocol = sckTCPProtocol
+   txtIP.Text = WinSock1.LocalIP
    txtIP_Host = Rs("PLC_IP") '"192.168.1.30"
    txtPort = Rs("PLC_Port")
 Exit Sub
@@ -910,17 +910,17 @@ Private Sub Timer2_Timer()
         .FontSize = 16
     End With
         
-    Text1.Text = WinsockStstus(Winsock1.State)
+    Text1.Text = WinsockStstus(WinSock1.State)
 
 
-    If Winsock1.State = 7 Then
+    If WinSock1.State = 7 Then
         ShapePLCState.BackColor = vbGreen
     Else
         ShapePLCState.BackColor = vbRed
     End If
     Dim Description As String
     
-    Select Case Winsock1.State
+    Select Case WinSock1.State
         Case 0
             Description = "Connection Closed"
         Case 1
@@ -1026,10 +1026,10 @@ Private Sub VSFOutput_CellChanged(ByVal Row As Long, ByVal Col As Long)
 End Sub
 
 Private Function cmdCon()
-   Winsock1.Close
-   Winsock1.RemoteHost = txtIP_Host.Text
-   Winsock1.RemotePort = txtPort.Text
-   Winsock1.Connect
+   WinSock1.Close
+   WinSock1.RemoteHost = txtIP_Host.Text
+   WinSock1.RemotePort = txtPort.Text
+   WinSock1.Connect
 End Function
 
 Private Function WinsockStstus(ByVal Value As Integer)
@@ -1063,25 +1063,25 @@ Dim Description As String
 End Function
 
 Private Sub Timer1_Timer()
-   If (Winsock1.State = 7) And (CommandOn = False) Then
+   If (WinSock1.State = 7) And (CommandOn = False) Then
       Timer1.Enabled = False
       Select Case CommandType
          Case 1
             Call GetReadArray(StdReadStartAddress, StdReadCount, ReadArray)
-            Winsock1.SendData ReadArray
+            WinSock1.SendData ReadArray
             CVRead = CVRead + 1
             CommandOn = True
             Timer5.Interval = 800
             Timer5.Enabled = True
          Case 2
             Call GetWriteArray(StdWriteStartAddress, StdWriteCount, WriteArray)
-            Winsock1.SendData WriteArray
+            WinSock1.SendData WriteArray
             CommandOn = True
             Timer5.Interval = 800
             Timer5.Enabled = True
          Case 3
             Call GetReadArray((ExtendedReadStartAddress + (ExtendedReadCount * CVExtPktNo)), ExtendedReadCount, ReadArray)
-            Winsock1.SendData ReadArray
+            WinSock1.SendData ReadArray
             CommandOn = True
             Timer5.Interval = 800
             Timer5.Enabled = True
@@ -1094,7 +1094,7 @@ Private Sub Timer1_Timer()
       Timer1.Interval = 100
    End If
 
-   If (Winsock1.State <> 7) Then 'And (WinSock1.State <> 6) Then
+   If (WinSock1.State <> 7) Then 'And (WinSock1.State <> 6) Then
       Timer1.Interval = 1000
       Call cmdCon
    Else
@@ -1127,7 +1127,7 @@ Dim Idata1 As Long
 
    Timer5.Enabled = False
    PLC_Communication_Error = False
-   Winsock1.GetData SocketData
+   WinSock1.GetData SocketData
    CommandOn = False
    PlcCommCheck = False
    Select Case CommandType

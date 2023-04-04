@@ -18,8 +18,8 @@ Begin VB.Form frmsettings
    EndProperty
    Icon            =   "frmsettings.frx":0000
    LinkTopic       =   "Form1"
-   ScaleHeight     =   8625
-   ScaleWidth      =   13260
+   ScaleHeight     =   10935
+   ScaleWidth      =   20250
    Begin VB.PictureBox Picture1 
       Height          =   8775
       Left            =   120

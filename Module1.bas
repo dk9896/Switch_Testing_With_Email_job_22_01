@@ -369,7 +369,7 @@ Dim NowTime As String
     sTime4 = Rs("Shift4")
 
     If sTime4 = "1" Then
-        getShift = "04"
+        getShift = "4"
         Exit Function
     End If
 
@@ -377,7 +377,7 @@ Dim NowTime As String
     sTime2 = Format(TimeValue(sTime2), "hh:mm AM/PM")
     sTime3 = Format(TimeValue(sTime3), "hh:mm AM/PM")
     NowTime = Format(Time, "hh:mm AM/PM")
-    TempReportDate = Format(Now(), "mm/dd/yyyy")
+    TempReportDate = Format(Now(), "dd/mm/yyyy")
     'Time 1 and Time 2 Should Be < 24 hrs
     If (TimeValue(NowTime) >= TimeValue(sTime1)) And (TimeValue(NowTime) < TimeValue(sTime2)) Then
         getShift = "1"

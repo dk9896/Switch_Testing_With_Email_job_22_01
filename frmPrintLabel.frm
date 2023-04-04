@@ -7,8 +7,8 @@ Begin VB.Form frmPrintLabel
    ClientTop       =   450
    ClientWidth     =   12150
    LinkTopic       =   "Form1"
-   ScaleHeight     =   8955
-   ScaleWidth      =   12150
+   ScaleHeight     =   10935
+   ScaleWidth      =   20250
    StartUpPosition =   3  'Windows Default
    Begin TextPrinter.JustPrinter JustPrinter1 
       Height          =   615
