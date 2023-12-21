@@ -18,59 +18,25 @@ Begin VB.Form frmsettings
    EndProperty
    Icon            =   "frmsettings.frx":0000
    LinkTopic       =   "Form1"
-   ScaleHeight     =   10935
-   ScaleWidth      =   20250
+   ScaleHeight     =   8625
+   ScaleWidth      =   13260
    Begin VB.PictureBox Picture1 
-      Height          =   8775
+      Height          =   9615
       Left            =   120
-      ScaleHeight     =   8715
+      ScaleHeight     =   9555
       ScaleWidth      =   19755
       TabIndex        =   0
       Top             =   120
       Width           =   19815
-      Begin VB.Frame Frame14 
+      Begin VB.Frame FramePrint2 
          Caption         =   "Printer Detail"
          ForeColor       =   &H000040C0&
-         Height          =   2175
-         Left            =   11040
-         TabIndex        =   173
-         Top             =   2640
-         Width           =   3135
-         Begin VB.TextBox txtVandorId 
-            Alignment       =   1  'Right Justify
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   315
-            Left            =   1320
-            TabIndex        =   269
-            Top             =   1680
-            Width           =   1695
-         End
-         Begin VB.TextBox txtPartNo 
-            Alignment       =   1  'Right Justify
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   315
-            Left            =   720
-            TabIndex        =   176
-            Top             =   240
-            Width           =   2295
-         End
-         Begin VB.TextBox txtSerialNo 
+         Height          =   4815
+         Left            =   11160
+         TabIndex        =   309
+         Top             =   2760
+         Width           =   3495
+         Begin VB.TextBox txtCOO 
             Alignment       =   1  'Right Justify
             BeginProperty Font 
                Name            =   "Arial"
@@ -83,9 +49,1116 @@ Begin VB.Form frmsettings
             EndProperty
             Height          =   315
             Left            =   1920
-            TabIndex        =   175
+            TabIndex        =   333
+            Top             =   4320
+            Width           =   1455
+         End
+         Begin VB.TextBox txtSwitchName 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Left            =   1560
+            TabIndex        =   331
+            Top             =   840
+            Width           =   1815
+         End
+         Begin VB.TextBox txtOtherInfo 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Left            =   1560
+            TabIndex        =   329
+            Top             =   3840
+            Width           =   1815
+         End
+         Begin VB.TextBox txtBatchNo 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Left            =   1560
+            TabIndex        =   327
+            Top             =   3360
+            Width           =   1815
+         End
+         Begin VB.TextBox txtFinalApproval 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Left            =   1560
+            TabIndex        =   325
+            Top             =   2880
+            Width           =   1815
+         End
+         Begin VB.TextBox txtSupplierPartNo 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Left            =   1560
+            TabIndex        =   323
+            Top             =   2400
+            Width           =   1815
+         End
+         Begin VB.TextBox txtRevisionNo 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   0
+            Left            =   1560
+            TabIndex        =   314
+            Top             =   1440
+            Width           =   615
+         End
+         Begin VB.TextBox txtSupplierCode 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   0
+            Left            =   1560
+            TabIndex        =   312
+            Top             =   1920
+            Width           =   1815
+         End
+         Begin VB.TextBox txtPiaggioPartNo 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Left            =   1560
+            TabIndex        =   310
+            Top             =   360
+            Width           =   1815
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Country Of Origin"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   121
+            Left            =   120
+            TabIndex        =   334
+            Top             =   4320
+            Width           =   1605
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Switch Name"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   122
+            Left            =   120
+            TabIndex        =   332
+            Top             =   840
+            Width           =   1845
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Line Line1 
+            X1              =   0
+            X2              =   3480
+            Y1              =   1200
+            Y2              =   1200
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Other Info"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   120
+            Left            =   120
+            TabIndex        =   330
+            Top             =   3840
+            Width           =   1365
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Batch No"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   81
+            Left            =   120
+            TabIndex        =   328
+            Top             =   3360
+            Width           =   1365
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Date Of Final Approval"
+            ForeColor       =   &H000040C0&
+            Height          =   480
+            Index           =   119
+            Left            =   120
+            TabIndex        =   326
+            Top             =   2760
+            Width           =   1365
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Supplier PartNo / Rev"
+            ForeColor       =   &H000040C0&
+            Height          =   480
+            Index           =   115
+            Left            =   120
+            TabIndex        =   324
+            Top             =   2280
+            Width           =   1365
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Rev P/N"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   114
+            Left            =   120
+            TabIndex        =   315
+            Top             =   1560
+            Width           =   1845
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Supplier Code"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   113
+            Left            =   120
+            TabIndex        =   313
+            Top             =   1920
+            Width           =   1845
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Piaggio Part No"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   77
+            Left            =   120
+            TabIndex        =   311
+            Top             =   360
+            Width           =   1845
+            WordWrap        =   -1  'True
+         End
+      End
+      Begin VB.Frame FramePrint3 
+         Caption         =   "Printer Detail"
+         Height          =   2175
+         Left            =   11160
+         TabIndex        =   316
+         Top             =   2760
+         Width           =   3495
+         Begin VB.TextBox txtBalPartNo 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   1
+            Left            =   1560
+            TabIndex        =   319
+            Top             =   480
+            Width           =   1815
+         End
+         Begin VB.TextBox txtRevisionNo 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   1
+            Left            =   1560
+            TabIndex        =   318
+            Top             =   1080
+            Width           =   1815
+         End
+         Begin VB.TextBox txtSupplierCode 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   1
+            Left            =   1560
+            TabIndex        =   317
+            Top             =   1680
+            Width           =   1815
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "BAL Part No"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   118
+            Left            =   120
+            TabIndex        =   322
+            Top             =   480
+            Width           =   1845
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Index Rev. No"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   117
+            Left            =   120
+            TabIndex        =   321
+            Top             =   1080
+            Width           =   1845
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Supplier Code"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   116
+            Left            =   120
+            TabIndex        =   320
+            Top             =   1680
+            Width           =   1845
+            WordWrap        =   -1  'True
+         End
+      End
+      Begin VB.TextBox txtModule 
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Index           =   9
+         Left            =   8640
+         TabIndex        =   296
+         Text            =   "Accelaration Module"
+         Top             =   5880
+         Width           =   1575
+      End
+      Begin VB.CheckBox chkAMBypass 
+         Caption         =   "                          Bypass"
+         ForeColor       =   &H000040C0&
+         Height          =   255
+         Left            =   8400
+         TabIndex        =   295
+         Top             =   5880
+         Width           =   2655
+      End
+      Begin VB.TextBox txtModule 
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Index           =   8
+         Left            =   6000
+         TabIndex        =   294
+         Text            =   "Set/Reset Module"
+         Top             =   5880
+         Width           =   1575
+      End
+      Begin VB.TextBox txtModule 
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Index           =   7
+         Left            =   3120
+         TabIndex        =   293
+         Text            =   "Custom Module"
+         Top             =   5880
+         Width           =   1575
+      End
+      Begin VB.TextBox txtModule 
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Index           =   6
+         Left            =   360
+         TabIndex        =   292
+         Text            =   "Cruise Module"
+         Top             =   5880
+         Width           =   1575
+      End
+      Begin VB.TextBox txtModule 
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Index           =   5
+         Left            =   9120
+         TabIndex        =   291
+         Text            =   "Horn Module"
+         Top             =   120
+         Width           =   1335
+      End
+      Begin VB.TextBox txtModule 
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Index           =   4
+         Left            =   6480
+         TabIndex        =   290
+         Text            =   "Blinker Module"
+         Top             =   3000
+         Width           =   1335
+      End
+      Begin VB.TextBox txtModule 
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Index           =   3
+         Left            =   360
+         TabIndex        =   289
+         Text            =   "Navigation Module"
+         Top             =   3000
+         Width           =   1455
+      End
+      Begin VB.TextBox txtModule 
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Index           =   2
+         Left            =   6480
+         TabIndex        =   288
+         Text            =   "Hazard Module"
+         Top             =   120
+         Width           =   1455
+      End
+      Begin VB.TextBox txtModule 
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Index           =   1
+         Left            =   3840
+         TabIndex        =   287
+         Text            =   "Pass Module"
+         Top             =   120
+         Width           =   1455
+      End
+      Begin VB.TextBox txtModule 
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Index           =   0
+         Left            =   360
+         TabIndex        =   286
+         Text            =   "Dipper Module"
+         Top             =   120
+         Width           =   1455
+      End
+      Begin VB.Frame FrameAM 
+         Height          =   2415
+         Left            =   8400
+         TabIndex        =   271
+         Top             =   6120
+         Width           =   2655
+         Begin VB.TextBox txtMVDMax 
+            Alignment       =   2  'Center
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   17
+            Left            =   1560
+            TabIndex        =   298
+            Text            =   "0.000"
+            Top             =   1200
+            Width           =   495
+         End
+         Begin VB.TextBox txtMVDMin 
+            Alignment       =   2  'Center
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   17
+            Left            =   840
+            TabIndex        =   297
+            Text            =   "0.000"
+            Top             =   1200
+            Width           =   495
+         End
+         Begin VB.TextBox txtVoltageOffset 
+            Alignment       =   2  'Center
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   9
+            Left            =   1920
+            TabIndex        =   277
+            Text            =   "0.000"
+            Top             =   1920
+            Width           =   615
+         End
+         Begin VB.TextBox txtTestCycle 
+            Alignment       =   2  'Center
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   9
+            Left            =   240
+            TabIndex        =   276
+            Text            =   "00"
+            Top             =   1920
+            Width           =   495
+         End
+         Begin VB.TextBox txtMVDMax 
+            Alignment       =   2  'Center
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   16
+            Left            =   1560
+            TabIndex        =   275
+            Text            =   "0.000"
+            Top             =   840
+            Width           =   495
+         End
+         Begin VB.TextBox txtMVDMin 
+            Alignment       =   2  'Center
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   16
+            Left            =   840
+            TabIndex        =   274
+            Text            =   "0.000"
+            Top             =   840
+            Width           =   495
+         End
+         Begin VB.TextBox txtMVDMax 
+            Alignment       =   2  'Center
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   15
+            Left            =   1560
+            TabIndex        =   273
+            Text            =   "0.000"
+            Top             =   480
+            Width           =   495
+         End
+         Begin VB.TextBox txtMVDMin 
+            Alignment       =   2  'Center
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   15
+            Left            =   840
+            TabIndex        =   272
+            Text            =   "0.000"
+            Top             =   480
+            Width           =   495
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Reverse"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000040C0&
+            Height          =   210
+            Index           =   112
+            Left            =   120
+            TabIndex        =   300
+            Top             =   1320
+            Width           =   615
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "V"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000040C0&
+            Height          =   210
+            Index           =   108
+            Left            =   2160
+            TabIndex        =   299
+            Top             =   1320
+            Width           =   120
+         End
+         Begin VB.Label lblvoltageoffset 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Voltage Offset"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000040C0&
+            Height          =   210
+            Index           =   9
+            Left            =   840
+            TabIndex        =   285
+            Top             =   1920
+            Width           =   1065
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Test Cycle"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000040C0&
+            Height          =   210
+            Index           =   111
+            Left            =   120
+            TabIndex        =   284
+            Top             =   1680
+            Width           =   765
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Max"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000040C0&
+            Height          =   210
+            Index           =   110
+            Left            =   1680
+            TabIndex        =   283
+            Top             =   240
+            Width           =   300
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Min"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000040C0&
+            Height          =   210
+            Index           =   109
+            Left            =   960
+            TabIndex        =   282
+            Top             =   240
+            Width           =   240
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Final"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000040C0&
+            Height          =   210
+            Index           =   107
+            Left            =   120
+            TabIndex        =   281
+            Top             =   960
+            Width           =   330
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Initial"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000040C0&
+            Height          =   210
+            Index           =   106
+            Left            =   120
+            TabIndex        =   280
+            Top             =   600
+            Width           =   345
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "V"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000040C0&
+            Height          =   210
+            Index           =   105
+            Left            =   2160
+            TabIndex        =   279
+            Top             =   960
+            Width           =   120
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "V"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000040C0&
+            Height          =   210
+            Index           =   104
+            Left            =   2160
+            TabIndex        =   278
+            Top             =   600
+            Width           =   120
+         End
+      End
+      Begin VB.Frame Frame3 
+         Height          =   2730
+         Left            =   14280
+         TabIndex        =   11
+         Top             =   0
+         Width           =   5415
+         Begin VB.ComboBox Combo1 
+            Height          =   360
+            ItemData        =   "frmsettings.frx":116A
+            Left            =   1440
+            List            =   "frmsettings.frx":1177
+            TabIndex        =   308
+            Top             =   2280
+            Width           =   2535
+         End
+         Begin VB.CommandButton cmdImage 
+            Caption         =   "...."
+            Height          =   240
+            Left            =   4800
+            TabIndex        =   179
+            Top             =   1800
+            Width           =   375
+         End
+         Begin VB.TextBox txtImagePath 
+            Alignment       =   2  'Center
+            Appearance      =   0  'Flat
+            Height          =   360
+            Left            =   1440
+            TabIndex        =   177
+            Top             =   1680
+            Width           =   3225
+         End
+         Begin VB.TextBox txtModelNo 
+            Alignment       =   2  'Center
+            Appearance      =   0  'Flat
+            Height          =   360
+            Left            =   3840
+            TabIndex        =   16
+            Top             =   1200
+            Width           =   1305
+         End
+         Begin VB.TextBox txtModelDesc 
+            Alignment       =   2  'Center
+            Appearance      =   0  'Flat
+            Height          =   360
+            Left            =   1440
+            TabIndex        =   13
             Top             =   720
-            Width           =   1095
+            Width           =   3705
+         End
+         Begin VB.TextBox txtModelName 
+            Alignment       =   2  'Center
+            Appearance      =   0  'Flat
+            Height          =   360
+            Left            =   1440
+            TabIndex        =   12
+            Top             =   240
+            Width           =   3705
+         End
+         Begin VB.Label Label2 
+            Caption         =   "Barcode Type"
+            Height          =   255
+            Left            =   120
+            TabIndex        =   307
+            Top             =   2280
+            Width           =   1455
+         End
+         Begin VB.Label Label4 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Image Path"
+            ForeColor       =   &H00000000&
+            Height          =   240
+            Index           =   1
+            Left            =   120
+            TabIndex        =   178
+            Top             =   1680
+            Width           =   1875
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Label Label4 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Model No"
+            ForeColor       =   &H00000000&
+            Height          =   240
+            Index           =   0
+            Left            =   120
+            TabIndex        =   17
+            Top             =   1200
+            Width           =   1875
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Label Label4 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Model Desc"
+            ForeColor       =   &H00000000&
+            Height          =   240
+            Index           =   8
+            Left            =   120
+            TabIndex        =   15
+            Top             =   720
+            Width           =   1875
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Label Label4 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Model Name"
+            ForeColor       =   &H00000000&
+            Height          =   240
+            Index           =   7
+            Left            =   120
+            TabIndex        =   14
+            Top             =   240
+            Width           =   1335
+            WordWrap        =   -1  'True
+         End
+      End
+      Begin VB.Frame FramePrint1 
+         Caption         =   "Printer Detail"
+         ForeColor       =   &H000040C0&
+         Height          =   2175
+         Left            =   11160
+         TabIndex        =   171
+         Top             =   2760
+         Width           =   3495
+         Begin VB.TextBox txtBalPartNo 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   0
+            Left            =   1800
+            TabIndex        =   305
+            Top             =   1680
+            Width           =   1575
+         End
+         Begin VB.TextBox txtVandorId 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Left            =   1800
+            TabIndex        =   265
+            Top             =   1320
+            Width           =   1575
+         End
+         Begin VB.TextBox txtPartNo1 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Left            =   1800
+            TabIndex        =   174
+            Top             =   240
+            Width           =   1575
+         End
+         Begin VB.TextBox txtPartNo2 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Left            =   1800
+            TabIndex        =   173
+            Text            =   "963.110.70.000"
+            Top             =   600
+            Width           =   1575
          End
          Begin VB.TextBox txtHardwareVersion 
             Alignment       =   1  'Right Justify
@@ -99,75 +1172,86 @@ Begin VB.Form frmsettings
                Strikethrough   =   0   'False
             EndProperty
             Height          =   315
-            Left            =   1680
-            TabIndex        =   174
-            Top             =   1200
-            Width           =   1335
+            Left            =   2520
+            TabIndex        =   172
+            Top             =   960
+            Width           =   855
          End
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
-            Caption         =   "Vendor Code"
+            Caption         =   "Bal Part No"
             ForeColor       =   &H000040C0&
             Height          =   240
-            Index           =   102
+            Index           =   26
             Left            =   120
-            TabIndex        =   268
+            TabIndex        =   306
             Top             =   1680
-            Width           =   1125
+            Width           =   1005
          End
          Begin VB.Label Label1 
-            AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
-            Caption         =   "Cust Part No"
+            Caption         =   "Out Cust Part No"
             ForeColor       =   &H000040C0&
-            Height          =   480
-            Index           =   79
+            Height          =   240
+            Index           =   21
             Left            =   120
-            TabIndex        =   179
-            Top             =   240
-            Width           =   765
+            TabIndex        =   304
+            Top             =   600
+            Width           =   1605
             WordWrap        =   -1  'True
          End
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
-            Caption         =   "Serial Starting Text"
+            Caption         =   "Supplier Code"
             ForeColor       =   &H000040C0&
             Height          =   240
-            Index           =   77
+            Index           =   102
             Left            =   120
-            TabIndex        =   178
-            Top             =   720
-            Width           =   1665
+            TabIndex        =   264
+            Top             =   1320
+            Width           =   1215
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "QR Cust. Part No"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   79
+            Left            =   120
+            TabIndex        =   176
+            Top             =   240
+            Width           =   1845
+            WordWrap        =   -1  'True
          End
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
-            Caption         =   "Index AR"
+            Caption         =   "Index Rev. No."
             ForeColor       =   &H000040C0&
             Height          =   240
             Index           =   75
             Left            =   120
-            TabIndex        =   177
-            Top             =   1200
-            Width           =   795
+            TabIndex        =   175
+            Top             =   960
+            Width           =   1260
          End
       End
       Begin VB.CheckBox ChkSRMBypass 
-         Caption         =   "Set/Reset Module Bypass"
+         Caption         =   "                          Bypass"
          ForeColor       =   &H000040C0&
          Height          =   255
-         Left            =   8280
-         TabIndex        =   266
-         Top             =   6000
+         Left            =   5760
+         TabIndex        =   262
+         Top             =   5880
          Width           =   2655
       End
       Begin VB.Frame FrameSRM 
          Height          =   2415
-         Left            =   8280
-         TabIndex        =   248
-         Top             =   6240
+         Left            =   5760
+         TabIndex        =   244
+         Top             =   6120
          Width           =   2655
          Begin VB.TextBox txtMVDMin 
             Alignment       =   2  'Center
@@ -183,7 +1267,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   14
             Left            =   840
-            TabIndex        =   255
+            TabIndex        =   251
             Text            =   "0.000"
             Top             =   720
             Width           =   495
@@ -202,7 +1286,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   14
             Left            =   1440
-            TabIndex        =   254
+            TabIndex        =   250
             Text            =   "0.000"
             Top             =   720
             Width           =   495
@@ -221,7 +1305,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   14
             Left            =   840
-            TabIndex        =   253
+            TabIndex        =   249
             Text            =   "0.000"
             Top             =   1080
             Width           =   495
@@ -240,7 +1324,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   14
             Left            =   1440
-            TabIndex        =   252
+            TabIndex        =   248
             Text            =   "0.000"
             Top             =   1080
             Width           =   495
@@ -259,7 +1343,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   8
             Left            =   240
-            TabIndex        =   251
+            TabIndex        =   247
             Text            =   "00"
             Top             =   1920
             Width           =   495
@@ -278,7 +1362,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   8
             Left            =   1920
-            TabIndex        =   250
+            TabIndex        =   246
             Text            =   "0.000"
             Top             =   1920
             Width           =   615
@@ -297,7 +1381,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   8
             Left            =   1920
-            TabIndex        =   249
+            TabIndex        =   245
             Text            =   "0.000"
             Top             =   1560
             Width           =   615
@@ -319,7 +1403,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   100
             Left            =   2040
-            TabIndex        =   265
+            TabIndex        =   261
             Top             =   840
             Width           =   120
          End
@@ -340,7 +1424,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   99
             Left            =   2040
-            TabIndex        =   264
+            TabIndex        =   260
             Top             =   1200
             Width           =   120
          End
@@ -361,7 +1445,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   98
             Left            =   120
-            TabIndex        =   263
+            TabIndex        =   259
             Top             =   720
             Width           =   345
          End
@@ -382,7 +1466,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   97
             Left            =   120
-            TabIndex        =   262
+            TabIndex        =   258
             Top             =   1080
             Width           =   540
          End
@@ -403,7 +1487,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   96
             Left            =   1200
-            TabIndex        =   261
+            TabIndex        =   257
             Top             =   240
             Width           =   225
          End
@@ -424,7 +1508,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   95
             Left            =   960
-            TabIndex        =   260
+            TabIndex        =   256
             Top             =   480
             Width           =   240
          End
@@ -445,7 +1529,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   91
             Left            =   1560
-            TabIndex        =   259
+            TabIndex        =   255
             Top             =   480
             Width           =   300
          End
@@ -466,7 +1550,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   87
             Left            =   120
-            TabIndex        =   258
+            TabIndex        =   254
             Top             =   1680
             Width           =   765
          End
@@ -487,7 +1571,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   8
             Left            =   840
-            TabIndex        =   257
+            TabIndex        =   253
             Top             =   1560
             Width           =   1050
          End
@@ -508,34 +1592,34 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   8
             Left            =   840
-            TabIndex        =   256
+            TabIndex        =   252
             Top             =   1920
             Width           =   1065
          End
       End
       Begin VB.CheckBox ChkCUMBypass 
-         Caption         =   "Custom Module Bypass"
+         Caption         =   "                          Bypass"
          ForeColor       =   &H000040C0&
          Height          =   255
-         Left            =   5520
-         TabIndex        =   247
-         Top             =   6000
+         Left            =   2880
+         TabIndex        =   243
+         Top             =   5880
          Width           =   2655
       End
       Begin VB.CheckBox chkHOMBypass 
-         Caption         =   "Horn Module Bypass"
+         Caption         =   "                      Bypass"
          ForeColor       =   &H000040C0&
          Height          =   255
-         Left            =   120
-         TabIndex        =   246
-         Top             =   6000
-         Width           =   2655
+         Left            =   8880
+         TabIndex        =   242
+         Top             =   120
+         Width           =   2295
       End
       Begin VB.Frame FrameCRM 
          Height          =   2415
-         Left            =   2760
-         TabIndex        =   207
-         Top             =   6240
+         Left            =   120
+         TabIndex        =   204
+         Top             =   6120
          Width           =   2655
          Begin VB.TextBox txtCurrentOffset 
             Alignment       =   2  'Center
@@ -551,7 +1635,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   6
             Left            =   1920
-            TabIndex        =   214
+            TabIndex        =   211
             Text            =   "0.000"
             Top             =   1560
             Width           =   615
@@ -570,7 +1654,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   6
             Left            =   1920
-            TabIndex        =   213
+            TabIndex        =   210
             Text            =   "0.000"
             Top             =   1920
             Width           =   615
@@ -589,7 +1673,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   6
             Left            =   240
-            TabIndex        =   212
+            TabIndex        =   209
             Text            =   "00"
             Top             =   1920
             Width           =   495
@@ -608,7 +1692,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   12
             Left            =   1440
-            TabIndex        =   211
+            TabIndex        =   208
             Text            =   "0.000"
             Top             =   1080
             Width           =   495
@@ -627,7 +1711,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   12
             Left            =   840
-            TabIndex        =   210
+            TabIndex        =   207
             Text            =   "0.000"
             Top             =   1080
             Width           =   495
@@ -646,7 +1730,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   12
             Left            =   1440
-            TabIndex        =   209
+            TabIndex        =   206
             Text            =   "0.000"
             Top             =   720
             Width           =   495
@@ -665,7 +1749,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   12
             Left            =   840
-            TabIndex        =   208
+            TabIndex        =   205
             Text            =   "0.000"
             Top             =   720
             Width           =   495
@@ -687,7 +1771,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   7
             Left            =   840
-            TabIndex        =   224
+            TabIndex        =   221
             Top             =   1920
             Width           =   1065
          End
@@ -708,7 +1792,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   7
             Left            =   840
-            TabIndex        =   223
+            TabIndex        =   220
             Top             =   1560
             Width           =   1050
          End
@@ -729,7 +1813,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   84
             Left            =   120
-            TabIndex        =   222
+            TabIndex        =   219
             Top             =   1680
             Width           =   765
          End
@@ -750,7 +1834,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   83
             Left            =   1560
-            TabIndex        =   221
+            TabIndex        =   218
             Top             =   480
             Width           =   300
          End
@@ -771,7 +1855,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   82
             Left            =   960
-            TabIndex        =   220
+            TabIndex        =   217
             Top             =   480
             Width           =   240
          End
@@ -792,7 +1876,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   80
             Left            =   1200
-            TabIndex        =   219
+            TabIndex        =   216
             Top             =   240
             Width           =   225
          End
@@ -813,7 +1897,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   73
             Left            =   120
-            TabIndex        =   218
+            TabIndex        =   215
             Top             =   1080
             Width           =   540
          End
@@ -834,7 +1918,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   65
             Left            =   120
-            TabIndex        =   217
+            TabIndex        =   214
             Top             =   720
             Width           =   345
          End
@@ -855,7 +1939,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   64
             Left            =   2040
-            TabIndex        =   216
+            TabIndex        =   213
             Top             =   1200
             Width           =   120
          End
@@ -876,16 +1960,16 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   44
             Left            =   2040
-            TabIndex        =   215
+            TabIndex        =   212
             Top             =   840
             Width           =   120
          End
       End
       Begin VB.Frame FrameCUM 
          Height          =   2415
-         Left            =   5520
-         TabIndex        =   189
-         Top             =   6240
+         Left            =   2880
+         TabIndex        =   186
+         Top             =   6120
          Width           =   2655
          Begin VB.TextBox txtCurrentOffset 
             Alignment       =   2  'Center
@@ -901,7 +1985,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   7
             Left            =   1920
-            TabIndex        =   196
+            TabIndex        =   193
             Text            =   "0.000"
             Top             =   1560
             Width           =   615
@@ -920,7 +2004,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   7
             Left            =   1920
-            TabIndex        =   195
+            TabIndex        =   192
             Text            =   "0.000"
             Top             =   1920
             Width           =   615
@@ -939,7 +2023,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   7
             Left            =   240
-            TabIndex        =   194
+            TabIndex        =   191
             Text            =   "00"
             Top             =   1920
             Width           =   495
@@ -958,7 +2042,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   13
             Left            =   1440
-            TabIndex        =   193
+            TabIndex        =   190
             Text            =   "0.000"
             Top             =   1080
             Width           =   495
@@ -977,7 +2061,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   13
             Left            =   840
-            TabIndex        =   192
+            TabIndex        =   189
             Text            =   "0.000"
             Top             =   1080
             Width           =   495
@@ -996,7 +2080,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   13
             Left            =   1440
-            TabIndex        =   191
+            TabIndex        =   188
             Text            =   "0.000"
             Top             =   720
             Width           =   495
@@ -1015,7 +2099,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   13
             Left            =   840
-            TabIndex        =   190
+            TabIndex        =   187
             Text            =   "0.000"
             Top             =   720
             Width           =   495
@@ -1037,7 +2121,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   5
             Left            =   840
-            TabIndex        =   206
+            TabIndex        =   203
             Top             =   1920
             Width           =   1065
          End
@@ -1058,7 +2142,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   5
             Left            =   840
-            TabIndex        =   205
+            TabIndex        =   202
             Top             =   1560
             Width           =   1050
          End
@@ -1079,7 +2163,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   43
             Left            =   120
-            TabIndex        =   204
+            TabIndex        =   201
             Top             =   1680
             Width           =   765
          End
@@ -1100,7 +2184,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   42
             Left            =   1560
-            TabIndex        =   203
+            TabIndex        =   200
             Top             =   480
             Width           =   300
          End
@@ -1121,7 +2205,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   41
             Left            =   960
-            TabIndex        =   202
+            TabIndex        =   199
             Top             =   480
             Width           =   240
          End
@@ -1142,7 +2226,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   40
             Left            =   1200
-            TabIndex        =   201
+            TabIndex        =   198
             Top             =   240
             Width           =   225
          End
@@ -1163,7 +2247,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   39
             Left            =   120
-            TabIndex        =   200
+            TabIndex        =   197
             Top             =   1080
             Width           =   540
          End
@@ -1184,7 +2268,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   20
             Left            =   120
-            TabIndex        =   199
+            TabIndex        =   196
             Top             =   720
             Width           =   345
          End
@@ -1205,7 +2289,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   14
             Left            =   2040
-            TabIndex        =   198
+            TabIndex        =   195
             Top             =   1200
             Width           =   120
          End
@@ -1226,53 +2310,53 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   11
             Left            =   2040
-            TabIndex        =   197
+            TabIndex        =   194
             Top             =   840
             Width           =   120
          End
       End
       Begin VB.CheckBox chkNMBypass 
-         Caption         =   "Navigation Module Bypass"
+         Caption         =   "                        Bypass"
          ForeColor       =   &H000040C0&
          Height          =   255
          Left            =   120
-         TabIndex        =   187
+         TabIndex        =   184
          Top             =   3000
          Width           =   3135
       End
       Begin VB.CheckBox chkBMBypass 
-         Caption         =   "Blinker Module Bypass"
+         Caption         =   "                      Bypass"
          ForeColor       =   &H000040C0&
          Height          =   255
          Left            =   6240
-         TabIndex        =   186
+         TabIndex        =   183
          Top             =   3000
          Width           =   2535
       End
       Begin VB.CheckBox ChkHAMBypass 
-         Caption         =   "Hazard Module Bypass"
+         Caption         =   "                        Bypass"
          ForeColor       =   &H000040C0&
          Height          =   255
-         Left            =   7320
-         TabIndex        =   185
+         Left            =   6240
+         TabIndex        =   182
          Top             =   120
          Width           =   2535
       End
       Begin VB.CheckBox chkCRMBypass 
-         Caption         =   "Cruise Module Bypass"
+         Caption         =   "                          Bypass"
          ForeColor       =   &H000040C0&
          Height          =   255
-         Left            =   2760
-         TabIndex        =   184
-         Top             =   6000
+         Left            =   120
+         TabIndex        =   181
+         Top             =   5880
          Width           =   2655
       End
       Begin VB.CheckBox chkPMBypass 
-         Caption         =   "Pass Module Bypass"
+         Caption         =   "                        Bypass"
          ForeColor       =   &H000040C0&
          Height          =   255
-         Left            =   4080
-         TabIndex        =   183
+         Left            =   3600
+         TabIndex        =   180
          Top             =   120
          Width           =   2535
       End
@@ -1283,239 +2367,10 @@ Begin VB.Form frmsettings
          _ExtentY        =   847
          _Version        =   393216
       End
-      Begin VB.Frame Frame12 
-         ForeColor       =   &H000040C0&
-         Height          =   975
-         Left            =   11040
-         TabIndex        =   158
-         Top             =   0
-         Width           =   3135
-         Begin VB.TextBox txtICMin 
-            Alignment       =   2  'Center
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   315
-            Left            =   1440
-            TabIndex        =   160
-            Text            =   "0.000"
-            Top             =   480
-            Width           =   615
-         End
-         Begin VB.TextBox txtICMax 
-            Alignment       =   2  'Center
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   315
-            Left            =   2160
-            TabIndex        =   159
-            Text            =   "0.000"
-            Top             =   480
-            Width           =   615
-         End
-         Begin VB.Label Label1 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "ILLumination Curr."
-            ForeColor       =   &H000040C0&
-            Height          =   480
-            Index           =   101
-            Left            =   120
-            TabIndex        =   267
-            Top             =   360
-            Width           =   1155
-            WordWrap        =   -1  'True
-         End
-         Begin VB.Label Label1 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Min"
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H000040C0&
-            Height          =   210
-            Index           =   72
-            Left            =   1560
-            TabIndex        =   163
-            Top             =   240
-            Width           =   240
-         End
-         Begin VB.Label Label1 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Max"
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H000040C0&
-            Height          =   210
-            Index           =   71
-            Left            =   2280
-            TabIndex        =   162
-            Top             =   240
-            Width           =   300
-         End
-         Begin VB.Label Label1 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "A"
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H000040C0&
-            Height          =   210
-            Index           =   69
-            Left            =   2880
-            TabIndex        =   161
-            Top             =   600
-            Width           =   120
-         End
-      End
-      Begin VB.Frame Frame11 
-         Caption         =   "Bypasses"
-         ForeColor       =   &H000040C0&
-         Height          =   3855
-         Left            =   11040
-         TabIndex        =   136
-         Top             =   4800
-         Width           =   3135
-         Begin VB.CheckBox chkbypass 
-            Caption         =   "Upper Cover Case ByPass"
-            ForeColor       =   &H000040C0&
-            Height          =   240
-            Index           =   9
-            Left            =   120
-            TabIndex        =   188
-            Top             =   3480
-            Width           =   2895
-         End
-         Begin VB.CheckBox chkbypass 
-            Caption         =   "Pressure Guage ByPass"
-            ForeColor       =   &H000040C0&
-            Height          =   240
-            Index           =   8
-            Left            =   120
-            TabIndex        =   157
-            Top             =   3120
-            Width           =   2895
-         End
-         Begin VB.CheckBox chkbypass 
-            Caption         =   "Scanner ByPass"
-            ForeColor       =   &H000040C0&
-            Height          =   240
-            Index           =   6
-            Left            =   120
-            TabIndex        =   156
-            Top             =   2400
-            Width           =   2175
-         End
-         Begin VB.CheckBox chkbypass 
-            Caption         =   "PID ByPass"
-            ForeColor       =   &H000040C0&
-            Height          =   240
-            Index           =   7
-            Left            =   120
-            TabIndex        =   155
-            Top             =   2760
-            Width           =   2655
-         End
-         Begin VB.CheckBox chkbypass 
-            Caption         =   "ILLumination Current ByPass"
-            ForeColor       =   &H000040C0&
-            Height          =   240
-            Index           =   5
-            Left            =   120
-            TabIndex        =   142
-            Top             =   2040
-            Width           =   2895
-         End
-         Begin VB.CheckBox chkbypass 
-            Caption         =   "Printer ByPass"
-            ForeColor       =   &H000040C0&
-            Height          =   240
-            Index           =   4
-            Left            =   120
-            TabIndex        =   141
-            Top             =   1680
-            Width           =   2655
-         End
-         Begin VB.CheckBox chkbypass 
-            Caption         =   "Body Short ByPass"
-            ForeColor       =   &H000040C0&
-            Height          =   240
-            Index           =   3
-            Left            =   120
-            TabIndex        =   140
-            Top             =   1320
-            Width           =   2175
-         End
-         Begin VB.CheckBox chkbypass 
-            Caption         =   "Wire Length Check ByPass"
-            ForeColor       =   &H000040C0&
-            Height          =   240
-            Index           =   2
-            Left            =   120
-            TabIndex        =   139
-            Top             =   960
-            Width           =   2775
-         End
-         Begin VB.CheckBox chkbypass 
-            Caption         =   "Blinker Limit Switch Bypass"
-            ForeColor       =   &H000040C0&
-            Height          =   240
-            Index           =   1
-            Left            =   120
-            TabIndex        =   138
-            Top             =   600
-            Width           =   2775
-         End
-         Begin VB.CheckBox chkbypass 
-            Caption         =   "Camera Bypass"
-            ForeColor       =   &H000040C0&
-            Height          =   240
-            Index           =   0
-            Left            =   120
-            TabIndex        =   137
-            Top             =   240
-            Width           =   2175
-         End
-      End
       Begin VB.Frame FrameNM 
          Height          =   2415
          Left            =   120
-         TabIndex        =   113
+         TabIndex        =   111
          Top             =   3240
          Width           =   6135
          Begin VB.TextBox txtCurrMax 
@@ -1532,7 +2387,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   7
             Left            =   5280
-            TabIndex        =   242
+            TabIndex        =   238
             Text            =   "0.000"
             Top             =   1080
             Width           =   495
@@ -1551,7 +2406,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   7
             Left            =   4680
-            TabIndex        =   241
+            TabIndex        =   237
             Text            =   "0.000"
             Top             =   1080
             Width           =   495
@@ -1570,7 +2425,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   7
             Left            =   5280
-            TabIndex        =   240
+            TabIndex        =   236
             Text            =   "0.000"
             Top             =   720
             Width           =   495
@@ -1589,7 +2444,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   7
             Left            =   4680
-            TabIndex        =   239
+            TabIndex        =   235
             Text            =   "0.000"
             Top             =   720
             Width           =   495
@@ -1608,7 +2463,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   6
             Left            =   3960
-            TabIndex        =   235
+            TabIndex        =   231
             Text            =   "0.000"
             Top             =   1080
             Width           =   495
@@ -1627,7 +2482,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   6
             Left            =   3360
-            TabIndex        =   234
+            TabIndex        =   230
             Text            =   "0.000"
             Top             =   1080
             Width           =   495
@@ -1646,7 +2501,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   6
             Left            =   3960
-            TabIndex        =   233
+            TabIndex        =   229
             Text            =   "0.000"
             Top             =   720
             Width           =   495
@@ -1665,7 +2520,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   6
             Left            =   3360
-            TabIndex        =   232
+            TabIndex        =   228
             Text            =   "0.000"
             Top             =   720
             Width           =   495
@@ -1684,44 +2539,6 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   4
             Left            =   720
-            TabIndex        =   124
-            Text            =   "0.000"
-            Top             =   720
-            Width           =   495
-         End
-         Begin VB.TextBox txtMVDMax 
-            Alignment       =   2  'Center
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   315
-            Index           =   4
-            Left            =   1320
-            TabIndex        =   123
-            Text            =   "0.000"
-            Top             =   720
-            Width           =   495
-         End
-         Begin VB.TextBox txtMVDMin 
-            Alignment       =   2  'Center
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   315
-            Index           =   5
-            Left            =   2040
             TabIndex        =   122
             Text            =   "0.000"
             Top             =   720
@@ -1739,9 +2556,47 @@ Begin VB.Form frmsettings
                Strikethrough   =   0   'False
             EndProperty
             Height          =   315
+            Index           =   4
+            Left            =   1320
+            TabIndex        =   121
+            Text            =   "0.000"
+            Top             =   720
+            Width           =   495
+         End
+         Begin VB.TextBox txtMVDMin 
+            Alignment       =   2  'Center
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   5
+            Left            =   2040
+            TabIndex        =   120
+            Text            =   "0.000"
+            Top             =   720
+            Width           =   495
+         End
+         Begin VB.TextBox txtMVDMax 
+            Alignment       =   2  'Center
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
             Index           =   5
             Left            =   2640
-            TabIndex        =   121
+            TabIndex        =   119
             Text            =   "0.000"
             Top             =   720
             Width           =   495
@@ -1760,7 +2615,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   4
             Left            =   720
-            TabIndex        =   120
+            TabIndex        =   118
             Text            =   "0.000"
             Top             =   1080
             Width           =   495
@@ -1779,7 +2634,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   4
             Left            =   1320
-            TabIndex        =   119
+            TabIndex        =   117
             Text            =   "0.000"
             Top             =   1080
             Width           =   495
@@ -1798,7 +2653,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   5
             Left            =   2040
-            TabIndex        =   118
+            TabIndex        =   116
             Text            =   "0.000"
             Top             =   1080
             Width           =   495
@@ -1817,7 +2672,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   5
             Left            =   2640
-            TabIndex        =   117
+            TabIndex        =   115
             Text            =   "0.000"
             Top             =   1080
             Width           =   495
@@ -1836,7 +2691,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   3
             Left            =   1080
-            TabIndex        =   116
+            TabIndex        =   114
             Text            =   "00"
             Top             =   1560
             Width           =   495
@@ -1855,7 +2710,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   3
             Left            =   3240
-            TabIndex        =   115
+            TabIndex        =   113
             Text            =   "0.000"
             Top             =   1680
             Width           =   615
@@ -1874,7 +2729,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   3
             Left            =   5280
-            TabIndex        =   114
+            TabIndex        =   112
             Text            =   "0.000"
             Top             =   1680
             Width           =   615
@@ -1896,7 +2751,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   94
             Left            =   5400
-            TabIndex        =   245
+            TabIndex        =   241
             Top             =   480
             Width           =   300
          End
@@ -1917,7 +2772,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   93
             Left            =   4800
-            TabIndex        =   244
+            TabIndex        =   240
             Top             =   480
             Width           =   240
          End
@@ -1938,7 +2793,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   92
             Left            =   5040
-            TabIndex        =   243
+            TabIndex        =   239
             Top             =   240
             Width           =   435
          End
@@ -1959,7 +2814,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   90
             Left            =   4080
-            TabIndex        =   238
+            TabIndex        =   234
             Top             =   480
             Width           =   300
          End
@@ -1980,7 +2835,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   89
             Left            =   3480
-            TabIndex        =   237
+            TabIndex        =   233
             Top             =   480
             Width           =   240
          End
@@ -2001,7 +2856,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   88
             Left            =   3720
-            TabIndex        =   236
+            TabIndex        =   232
             Top             =   240
             Width           =   480
          End
@@ -2022,7 +2877,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   67
             Left            =   5880
-            TabIndex        =   154
+            TabIndex        =   152
             Top             =   840
             Width           =   120
          End
@@ -2043,7 +2898,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   66
             Left            =   5880
-            TabIndex        =   153
+            TabIndex        =   151
             Top             =   1200
             Width           =   120
          End
@@ -2064,7 +2919,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   53
             Left            =   120
-            TabIndex        =   135
+            TabIndex        =   133
             Top             =   720
             Width           =   345
          End
@@ -2085,7 +2940,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   52
             Left            =   120
-            TabIndex        =   134
+            TabIndex        =   132
             Top             =   1080
             Width           =   540
          End
@@ -2106,7 +2961,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   51
             Left            =   1080
-            TabIndex        =   133
+            TabIndex        =   131
             Top             =   240
             Width           =   195
          End
@@ -2127,7 +2982,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   50
             Left            =   2400
-            TabIndex        =   132
+            TabIndex        =   130
             Top             =   240
             Width           =   480
          End
@@ -2148,7 +3003,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   49
             Left            =   840
-            TabIndex        =   131
+            TabIndex        =   129
             Top             =   480
             Width           =   240
          End
@@ -2169,7 +3024,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   48
             Left            =   1440
-            TabIndex        =   130
+            TabIndex        =   128
             Top             =   480
             Width           =   300
          End
@@ -2190,7 +3045,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   47
             Left            =   2160
-            TabIndex        =   129
+            TabIndex        =   127
             Top             =   480
             Width           =   240
          End
@@ -2211,7 +3066,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   46
             Left            =   2760
-            TabIndex        =   128
+            TabIndex        =   126
             Top             =   480
             Width           =   300
          End
@@ -2232,7 +3087,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   45
             Left            =   120
-            TabIndex        =   127
+            TabIndex        =   125
             Top             =   1560
             Width           =   765
          End
@@ -2253,7 +3108,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   6
             Left            =   4080
-            TabIndex        =   126
+            TabIndex        =   124
             Top             =   1680
             Width           =   1050
          End
@@ -2274,17 +3129,17 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   6
             Left            =   2040
-            TabIndex        =   125
+            TabIndex        =   123
             Top             =   1680
             Width           =   1065
          End
       End
       Begin VB.Frame FrameHAM 
          Height          =   2415
-         Left            =   7320
-         TabIndex        =   97
+         Left            =   6240
+         TabIndex        =   95
          Top             =   360
-         Width           =   2895
+         Width           =   2655
          Begin VB.TextBox txtCurrentOffset 
             Alignment       =   2  'Center
             BeginProperty Font 
@@ -2298,8 +3153,8 @@ Begin VB.Form frmsettings
             EndProperty
             Height          =   315
             Index           =   2
-            Left            =   2160
-            TabIndex        =   104
+            Left            =   1920
+            TabIndex        =   102
             Text            =   "0.000"
             Top             =   1560
             Width           =   615
@@ -2317,8 +3172,8 @@ Begin VB.Form frmsettings
             EndProperty
             Height          =   315
             Index           =   2
-            Left            =   2160
-            TabIndex        =   103
+            Left            =   1920
+            TabIndex        =   101
             Text            =   "0.000"
             Top             =   1920
             Width           =   615
@@ -2337,7 +3192,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   2
             Left            =   240
-            TabIndex        =   102
+            TabIndex        =   100
             Text            =   "00"
             Top             =   1920
             Width           =   495
@@ -2356,7 +3211,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   3
             Left            =   1440
-            TabIndex        =   101
+            TabIndex        =   99
             Text            =   "0.000"
             Top             =   1080
             Width           =   495
@@ -2375,7 +3230,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   3
             Left            =   840
-            TabIndex        =   100
+            TabIndex        =   98
             Text            =   "0.000"
             Top             =   1080
             Width           =   495
@@ -2394,7 +3249,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   3
             Left            =   1440
-            TabIndex        =   99
+            TabIndex        =   97
             Text            =   "0.000"
             Top             =   720
             Width           =   495
@@ -2413,7 +3268,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   3
             Left            =   840
-            TabIndex        =   98
+            TabIndex        =   96
             Text            =   "0.000"
             Top             =   720
             Width           =   495
@@ -2435,7 +3290,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   63
             Left            =   2040
-            TabIndex        =   152
+            TabIndex        =   150
             Top             =   840
             Width           =   120
          End
@@ -2456,14 +3311,14 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   62
             Left            =   2040
-            TabIndex        =   151
+            TabIndex        =   149
             Top             =   1200
             Width           =   120
          End
          Begin VB.Label lblvoltageoffset 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
-            Caption         =   "Voltage Offset"
+            Caption         =   "Volt Offset"
             BeginProperty Font 
                Name            =   "Arial"
                Size            =   8.25
@@ -2477,14 +3332,14 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   4
             Left            =   960
-            TabIndex        =   112
+            TabIndex        =   110
             Top             =   1920
-            Width           =   1065
+            Width           =   795
          End
          Begin VB.Label lblcurentoffset 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
-            Caption         =   "Current Offset"
+            Caption         =   "Curr Offset"
             BeginProperty Font 
                Name            =   "Arial"
                Size            =   8.25
@@ -2498,9 +3353,9 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   4
             Left            =   960
-            TabIndex        =   111
+            TabIndex        =   109
             Top             =   1560
-            Width           =   1050
+            Width           =   825
          End
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
@@ -2519,7 +3374,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   38
             Left            =   120
-            TabIndex        =   110
+            TabIndex        =   108
             Top             =   1560
             Width           =   765
          End
@@ -2540,7 +3395,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   37
             Left            =   1560
-            TabIndex        =   109
+            TabIndex        =   107
             Top             =   480
             Width           =   300
          End
@@ -2561,7 +3416,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   36
             Left            =   960
-            TabIndex        =   108
+            TabIndex        =   106
             Top             =   480
             Width           =   240
          End
@@ -2582,7 +3437,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   35
             Left            =   1200
-            TabIndex        =   107
+            TabIndex        =   105
             Top             =   240
             Width           =   225
          End
@@ -2603,7 +3458,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   34
             Left            =   120
-            TabIndex        =   106
+            TabIndex        =   104
             Top             =   1080
             Width           =   540
          End
@@ -2624,17 +3479,17 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   33
             Left            =   120
-            TabIndex        =   105
+            TabIndex        =   103
             Top             =   720
             Width           =   345
          End
       End
       Begin VB.Frame FrameHoM 
          Height          =   2415
-         Left            =   120
-         TabIndex        =   81
-         Top             =   6240
-         Width           =   2655
+         Left            =   8880
+         TabIndex        =   79
+         Top             =   360
+         Width           =   2415
          Begin VB.TextBox txtCurrentOffset 
             Alignment       =   2  'Center
             BeginProperty Font 
@@ -2648,8 +3503,8 @@ Begin VB.Form frmsettings
             EndProperty
             Height          =   315
             Index           =   5
-            Left            =   1920
-            TabIndex        =   88
+            Left            =   1680
+            TabIndex        =   86
             Text            =   "0.000"
             Top             =   1560
             Width           =   615
@@ -2667,8 +3522,8 @@ Begin VB.Form frmsettings
             EndProperty
             Height          =   315
             Index           =   5
-            Left            =   1920
-            TabIndex        =   87
+            Left            =   1680
+            TabIndex        =   85
             Text            =   "0.000"
             Top             =   1920
             Width           =   615
@@ -2687,7 +3542,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   5
             Left            =   240
-            TabIndex        =   86
+            TabIndex        =   84
             Text            =   "00"
             Top             =   1920
             Width           =   495
@@ -2706,7 +3561,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   11
             Left            =   1440
-            TabIndex        =   85
+            TabIndex        =   83
             Text            =   "0.000"
             Top             =   1080
             Width           =   495
@@ -2725,7 +3580,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   11
             Left            =   840
-            TabIndex        =   84
+            TabIndex        =   82
             Text            =   "0.000"
             Top             =   1080
             Width           =   495
@@ -2744,7 +3599,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   11
             Left            =   1440
-            TabIndex        =   83
+            TabIndex        =   81
             Text            =   "0.000"
             Top             =   720
             Width           =   495
@@ -2763,7 +3618,7 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   11
             Left            =   840
-            TabIndex        =   82
+            TabIndex        =   80
             Text            =   "0.000"
             Top             =   720
             Width           =   495
@@ -2785,7 +3640,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   61
             Left            =   2040
-            TabIndex        =   150
+            TabIndex        =   148
             Top             =   840
             Width           =   120
          End
@@ -2806,14 +3661,14 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   60
             Left            =   2040
-            TabIndex        =   149
+            TabIndex        =   147
             Top             =   1200
             Width           =   120
          End
          Begin VB.Label lblvoltageoffset 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
-            Caption         =   "Voltage Offset"
+            Caption         =   "Volt Offset"
             BeginProperty Font 
                Name            =   "Arial"
                Size            =   8.25
@@ -2827,14 +3682,14 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   3
             Left            =   840
-            TabIndex        =   96
+            TabIndex        =   94
             Top             =   1920
-            Width           =   1065
+            Width           =   795
          End
          Begin VB.Label lblcurentoffset 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
-            Caption         =   "Current Offset"
+            Caption         =   "Curr Offset"
             BeginProperty Font 
                Name            =   "Arial"
                Size            =   8.25
@@ -2848,9 +3703,9 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   3
             Left            =   840
-            TabIndex        =   95
+            TabIndex        =   93
             Top             =   1560
-            Width           =   1050
+            Width           =   825
          End
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
@@ -2869,7 +3724,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   32
             Left            =   120
-            TabIndex        =   94
+            TabIndex        =   92
             Top             =   1680
             Width           =   765
          End
@@ -2890,7 +3745,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   31
             Left            =   1560
-            TabIndex        =   93
+            TabIndex        =   91
             Top             =   480
             Width           =   300
          End
@@ -2911,7 +3766,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   30
             Left            =   960
-            TabIndex        =   92
+            TabIndex        =   90
             Top             =   480
             Width           =   240
          End
@@ -2932,7 +3787,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   29
             Left            =   1200
-            TabIndex        =   91
+            TabIndex        =   89
             Top             =   240
             Width           =   225
          End
@@ -2953,7 +3808,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   28
             Left            =   120
-            TabIndex        =   90
+            TabIndex        =   88
             Top             =   1080
             Width           =   540
          End
@@ -2974,7 +3829,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   27
             Left            =   120
-            TabIndex        =   89
+            TabIndex        =   87
             Top             =   720
             Width           =   345
          End
@@ -2985,6 +3840,60 @@ Begin VB.Form frmsettings
          TabIndex        =   58
          Top             =   3240
          Width           =   4815
+         Begin VB.TextBox txtTestBlinker 
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   2
+            Left            =   3600
+            TabIndex        =   303
+            Text            =   "RIGHT"
+            Top             =   240
+            Width           =   735
+         End
+         Begin VB.TextBox txtTestBlinker 
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   1
+            Left            =   2280
+            TabIndex        =   302
+            Text            =   "OFF"
+            Top             =   240
+            Width           =   735
+         End
+         Begin VB.TextBox txtTestBlinker 
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   0
+            Left            =   960
+            TabIndex        =   301
+            Text            =   "LEFT"
+            Top             =   240
+            Width           =   735
+         End
          Begin VB.TextBox txtCurrMax 
             Alignment       =   2  'Center
             BeginProperty Font 
@@ -2999,66 +3908,66 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   10
             Left            =   3960
-            TabIndex        =   228
-            Text            =   "0.000"
-            Top             =   1080
-            Width           =   495
-         End
-         Begin VB.TextBox txtCurrMin 
-            Alignment       =   2  'Center
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   315
-            Index           =   10
-            Left            =   3360
-            TabIndex        =   227
-            Text            =   "0.000"
-            Top             =   1080
-            Width           =   495
-         End
-         Begin VB.TextBox txtMVDMax 
-            Alignment       =   2  'Center
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   315
-            Index           =   10
-            Left            =   3960
-            TabIndex        =   226
-            Text            =   "0.000"
-            Top             =   720
-            Width           =   495
-         End
-         Begin VB.TextBox txtMVDMin 
-            Alignment       =   2  'Center
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   315
-            Index           =   10
-            Left            =   3360
             TabIndex        =   225
             Text            =   "0.000"
-            Top             =   720
+            Top             =   1200
+            Width           =   495
+         End
+         Begin VB.TextBox txtCurrMin 
+            Alignment       =   2  'Center
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   10
+            Left            =   3360
+            TabIndex        =   224
+            Text            =   "0.000"
+            Top             =   1200
+            Width           =   495
+         End
+         Begin VB.TextBox txtMVDMax 
+            Alignment       =   2  'Center
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   10
+            Left            =   3960
+            TabIndex        =   223
+            Text            =   "0.000"
+            Top             =   840
+            Width           =   495
+         End
+         Begin VB.TextBox txtMVDMin 
+            Alignment       =   2  'Center
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   10
+            Left            =   3360
+            TabIndex        =   222
+            Text            =   "0.000"
+            Top             =   840
             Width           =   495
          End
          Begin VB.TextBox txtMVDMin 
@@ -3075,9 +3984,9 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   9
             Left            =   2040
-            TabIndex        =   77
+            TabIndex        =   76
             Text            =   "0.000"
-            Top             =   720
+            Top             =   840
             Width           =   495
          End
          Begin VB.TextBox txtMVDMax 
@@ -3094,9 +4003,9 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   9
             Left            =   2640
-            TabIndex        =   76
+            TabIndex        =   75
             Text            =   "0.000"
-            Top             =   720
+            Top             =   840
             Width           =   495
          End
          Begin VB.TextBox txtCurrMin 
@@ -3113,9 +4022,9 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   9
             Left            =   2040
-            TabIndex        =   75
+            TabIndex        =   74
             Text            =   "0.000"
-            Top             =   1080
+            Top             =   1200
             Width           =   495
          End
          Begin VB.TextBox txtCurrMax 
@@ -3132,9 +4041,9 @@ Begin VB.Form frmsettings
             Height          =   315
             Index           =   9
             Left            =   2640
-            TabIndex        =   74
+            TabIndex        =   73
             Text            =   "0.000"
-            Top             =   1080
+            Top             =   1200
             Width           =   495
          End
          Begin VB.TextBox txtMVDMin 
@@ -3153,7 +4062,7 @@ Begin VB.Form frmsettings
             Left            =   720
             TabIndex        =   65
             Text            =   "0.000"
-            Top             =   720
+            Top             =   840
             Width           =   495
          End
          Begin VB.TextBox txtMVDMax 
@@ -3172,7 +4081,7 @@ Begin VB.Form frmsettings
             Left            =   1320
             TabIndex        =   64
             Text            =   "0.000"
-            Top             =   720
+            Top             =   840
             Width           =   495
          End
          Begin VB.TextBox txtCurrMin 
@@ -3191,7 +4100,7 @@ Begin VB.Form frmsettings
             Left            =   720
             TabIndex        =   63
             Text            =   "0.000"
-            Top             =   1080
+            Top             =   1200
             Width           =   495
          End
          Begin VB.TextBox txtCurrMax 
@@ -3210,7 +4119,7 @@ Begin VB.Form frmsettings
             Left            =   1320
             TabIndex        =   62
             Text            =   "0.000"
-            Top             =   1080
+            Top             =   1200
             Width           =   495
          End
          Begin VB.TextBox txtTestCycle 
@@ -3287,8 +4196,8 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   86
             Left            =   4080
-            TabIndex        =   231
-            Top             =   480
+            TabIndex        =   227
+            Top             =   600
             Width           =   300
          End
          Begin VB.Label Label1 
@@ -3308,30 +4217,9 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   85
             Left            =   3480
-            TabIndex        =   230
-            Top             =   480
+            TabIndex        =   226
+            Top             =   600
             Width           =   240
-         End
-         Begin VB.Label Label1 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "RIGHT"
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H000040C0&
-            Height          =   210
-            Index           =   81
-            Left            =   3720
-            TabIndex        =   229
-            Top             =   240
-            Width           =   450
          End
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
@@ -3350,7 +4238,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   59
             Left            =   4560
-            TabIndex        =   148
+            TabIndex        =   146
             Top             =   840
             Width           =   120
          End
@@ -3371,30 +4259,9 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   58
             Left            =   4560
-            TabIndex        =   147
+            TabIndex        =   145
             Top             =   1200
             Width           =   120
-         End
-         Begin VB.Label Label1 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "OFF"
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H000040C0&
-            Height          =   210
-            Index           =   26
-            Left            =   2400
-            TabIndex        =   80
-            Top             =   240
-            Width           =   300
          End
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
@@ -3413,8 +4280,8 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   25
             Left            =   2160
-            TabIndex        =   79
-            Top             =   480
+            TabIndex        =   78
+            Top             =   600
             Width           =   240
          End
          Begin VB.Label Label1 
@@ -3434,8 +4301,8 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   24
             Left            =   2760
-            TabIndex        =   78
-            Top             =   480
+            TabIndex        =   77
+            Top             =   600
             Width           =   300
          End
          Begin VB.Label Label1 
@@ -3455,8 +4322,8 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   23
             Left            =   120
-            TabIndex        =   73
-            Top             =   720
+            TabIndex        =   72
+            Top             =   840
             Width           =   345
          End
          Begin VB.Label Label1 
@@ -3476,30 +4343,9 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   22
             Left            =   120
-            TabIndex        =   72
-            Top             =   1080
-            Width           =   540
-         End
-         Begin VB.Label Label1 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "LEFT"
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H000040C0&
-            Height          =   210
-            Index           =   21
-            Left            =   1080
             TabIndex        =   71
-            Top             =   240
-            Width           =   360
+            Top             =   1200
+            Width           =   540
          End
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
@@ -3519,7 +4365,7 @@ Begin VB.Form frmsettings
             Index           =   19
             Left            =   840
             TabIndex        =   70
-            Top             =   480
+            Top             =   600
             Width           =   240
          End
          Begin VB.Label Label1 
@@ -3540,7 +4386,7 @@ Begin VB.Form frmsettings
             Index           =   18
             Left            =   1440
             TabIndex        =   69
-            Top             =   480
+            Top             =   600
             Width           =   300
          End
          Begin VB.Label Label1 
@@ -3609,10 +4455,10 @@ Begin VB.Form frmsettings
       End
       Begin VB.Frame FramePM 
          Height          =   2415
-         Left            =   4080
+         Left            =   3600
          TabIndex        =   42
          Top             =   360
-         Width           =   2895
+         Width           =   2655
          Begin VB.TextBox txtMVDMin 
             Alignment       =   2  'Center
             BeginProperty Font 
@@ -3721,7 +4567,7 @@ Begin VB.Form frmsettings
             EndProperty
             Height          =   315
             Index           =   1
-            Left            =   2160
+            Left            =   1920
             TabIndex        =   44
             Text            =   "0.000"
             Top             =   1920
@@ -3740,7 +4586,7 @@ Begin VB.Form frmsettings
             EndProperty
             Height          =   315
             Index           =   1
-            Left            =   2160
+            Left            =   1920
             TabIndex        =   43
             Text            =   "0.000"
             Top             =   1560
@@ -3763,7 +4609,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   57
             Left            =   2040
-            TabIndex        =   146
+            TabIndex        =   144
             Top             =   840
             Width           =   120
          End
@@ -3784,7 +4630,7 @@ Begin VB.Form frmsettings
             Height          =   210
             Index           =   56
             Left            =   2040
-            TabIndex        =   145
+            TabIndex        =   143
             Top             =   1200
             Width           =   120
          End
@@ -3917,7 +4763,7 @@ Begin VB.Form frmsettings
          Begin VB.Label lblcurentoffset 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
-            Caption         =   "Current Offset"
+            Caption         =   "Curr. Offset"
             BeginProperty Font 
                Name            =   "Arial"
                Size            =   8.25
@@ -3933,12 +4779,12 @@ Begin VB.Form frmsettings
             Left            =   960
             TabIndex        =   51
             Top             =   1560
-            Width           =   1050
+            Width           =   870
          End
          Begin VB.Label lblvoltageoffset 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
-            Caption         =   "Voltage Offset"
+            Caption         =   "Volt Offset"
             BeginProperty Font 
                Name            =   "Arial"
                Size            =   8.25
@@ -3954,11 +4800,11 @@ Begin VB.Form frmsettings
             Left            =   960
             TabIndex        =   50
             Top             =   1920
-            Width           =   1065
+            Width           =   795
          End
       End
       Begin VB.CheckBox chkDMBypass 
-         Caption         =   "Dipper Module Bypass"
+         Caption         =   "                        Bypass"
          ForeColor       =   &H000040C0&
          Height          =   255
          Left            =   120
@@ -3971,7 +4817,7 @@ Begin VB.Form frmsettings
          Left            =   120
          TabIndex        =   18
          Top             =   360
-         Width           =   3615
+         Width           =   3495
          Begin VB.TextBox txtCurrentOffset 
             Alignment       =   2  'Center
             BeginProperty Font 
@@ -3985,7 +4831,7 @@ Begin VB.Form frmsettings
             EndProperty
             Height          =   315
             Index           =   0
-            Left            =   2760
+            Left            =   2640
             TabIndex        =   41
             Text            =   "0.000"
             Top             =   1560
@@ -4004,7 +4850,7 @@ Begin VB.Form frmsettings
             EndProperty
             Height          =   315
             Index           =   0
-            Left            =   2760
+            Left            =   2640
             TabIndex        =   39
             Text            =   "0.000"
             Top             =   1920
@@ -4042,7 +4888,7 @@ Begin VB.Form frmsettings
             EndProperty
             Height          =   315
             Index           =   1
-            Left            =   2760
+            Left            =   2640
             TabIndex        =   35
             Text            =   "0.000"
             Top             =   1080
@@ -4061,7 +4907,7 @@ Begin VB.Form frmsettings
             EndProperty
             Height          =   315
             Index           =   1
-            Left            =   2160
+            Left            =   2040
             TabIndex        =   34
             Text            =   "0.000"
             Top             =   1080
@@ -4080,7 +4926,7 @@ Begin VB.Form frmsettings
             EndProperty
             Height          =   315
             Index           =   0
-            Left            =   1440
+            Left            =   1320
             TabIndex        =   33
             Text            =   "0.000"
             Top             =   1080
@@ -4099,7 +4945,7 @@ Begin VB.Form frmsettings
             EndProperty
             Height          =   315
             Index           =   0
-            Left            =   840
+            Left            =   720
             TabIndex        =   32
             Text            =   "0.000"
             Top             =   1080
@@ -4118,7 +4964,7 @@ Begin VB.Form frmsettings
             EndProperty
             Height          =   315
             Index           =   1
-            Left            =   2760
+            Left            =   2640
             TabIndex        =   31
             Text            =   "0.000"
             Top             =   720
@@ -4137,7 +4983,7 @@ Begin VB.Form frmsettings
             EndProperty
             Height          =   315
             Index           =   1
-            Left            =   2160
+            Left            =   2040
             TabIndex        =   30
             Text            =   "0.000"
             Top             =   720
@@ -4156,7 +5002,7 @@ Begin VB.Form frmsettings
             EndProperty
             Height          =   315
             Index           =   0
-            Left            =   1440
+            Left            =   1320
             TabIndex        =   29
             Text            =   "0.000"
             Top             =   720
@@ -4175,7 +5021,7 @@ Begin VB.Form frmsettings
             EndProperty
             Height          =   315
             Index           =   0
-            Left            =   840
+            Left            =   720
             TabIndex        =   28
             Text            =   "0.000"
             Top             =   720
@@ -4197,8 +5043,8 @@ Begin VB.Form frmsettings
             ForeColor       =   &H000040C0&
             Height          =   210
             Index           =   55
-            Left            =   3360
-            TabIndex        =   144
+            Left            =   3240
+            TabIndex        =   142
             Top             =   840
             Width           =   120
          End
@@ -4218,8 +5064,8 @@ Begin VB.Form frmsettings
             ForeColor       =   &H000040C0&
             Height          =   210
             Index           =   54
-            Left            =   3360
-            TabIndex        =   143
+            Left            =   3240
+            TabIndex        =   141
             Top             =   1200
             Width           =   120
          End
@@ -4239,7 +5085,7 @@ Begin VB.Form frmsettings
             ForeColor       =   &H000040C0&
             Height          =   210
             Index           =   0
-            Left            =   1560
+            Left            =   1440
             TabIndex        =   40
             Top             =   1920
             Width           =   1065
@@ -4260,7 +5106,7 @@ Begin VB.Form frmsettings
             ForeColor       =   &H000040C0&
             Height          =   210
             Index           =   0
-            Left            =   1560
+            Left            =   1440
             TabIndex        =   38
             Top             =   1560
             Width           =   1050
@@ -4302,7 +5148,7 @@ Begin VB.Form frmsettings
             ForeColor       =   &H000040C0&
             Height          =   210
             Index           =   7
-            Left            =   2880
+            Left            =   2760
             TabIndex        =   27
             Top             =   480
             Width           =   300
@@ -4323,7 +5169,7 @@ Begin VB.Form frmsettings
             ForeColor       =   &H000040C0&
             Height          =   210
             Index           =   6
-            Left            =   2280
+            Left            =   2160
             TabIndex        =   26
             Top             =   480
             Width           =   240
@@ -4344,7 +5190,7 @@ Begin VB.Form frmsettings
             ForeColor       =   &H000040C0&
             Height          =   210
             Index           =   5
-            Left            =   1560
+            Left            =   1440
             TabIndex        =   25
             Top             =   480
             Width           =   300
@@ -4365,7 +5211,7 @@ Begin VB.Form frmsettings
             ForeColor       =   &H000040C0&
             Height          =   210
             Index           =   4
-            Left            =   960
+            Left            =   840
             TabIndex        =   24
             Top             =   480
             Width           =   240
@@ -4386,7 +5232,7 @@ Begin VB.Form frmsettings
             ForeColor       =   &H000040C0&
             Height          =   210
             Index           =   3
-            Left            =   2520
+            Left            =   2400
             TabIndex        =   23
             Top             =   240
             Width           =   360
@@ -4407,7 +5253,7 @@ Begin VB.Form frmsettings
             ForeColor       =   &H000040C0&
             Height          =   210
             Index           =   2
-            Left            =   1200
+            Left            =   1080
             TabIndex        =   22
             Top             =   240
             Width           =   360
@@ -4455,109 +5301,6 @@ Begin VB.Form frmsettings
             Width           =   345
          End
       End
-      Begin VB.Frame Frame3 
-         Height          =   2250
-         Left            =   14280
-         TabIndex        =   11
-         Top             =   0
-         Width           =   5415
-         Begin VB.CommandButton cmdImage 
-            Caption         =   "...."
-            Height          =   240
-            Left            =   4800
-            TabIndex        =   182
-            Top             =   1800
-            Width           =   375
-         End
-         Begin VB.TextBox txtImagePath 
-            Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            Height          =   360
-            Left            =   1440
-            TabIndex        =   180
-            Top             =   1680
-            Width           =   3225
-         End
-         Begin VB.TextBox txtModelNo 
-            Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            Height          =   360
-            Left            =   3840
-            TabIndex        =   16
-            Top             =   1200
-            Width           =   1305
-         End
-         Begin VB.TextBox txtModelDesc 
-            Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            Height          =   360
-            Left            =   1440
-            TabIndex        =   13
-            Top             =   720
-            Width           =   3705
-         End
-         Begin VB.TextBox txtModelName 
-            Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            Height          =   360
-            Left            =   1440
-            TabIndex        =   12
-            Top             =   240
-            Width           =   3705
-         End
-         Begin VB.Label Label4 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Image Path"
-            ForeColor       =   &H00000000&
-            Height          =   240
-            Index           =   1
-            Left            =   120
-            TabIndex        =   181
-            Top             =   1680
-            Width           =   1875
-            WordWrap        =   -1  'True
-         End
-         Begin VB.Label Label4 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Model No"
-            ForeColor       =   &H00000000&
-            Height          =   240
-            Index           =   0
-            Left            =   120
-            TabIndex        =   17
-            Top             =   1200
-            Width           =   1875
-            WordWrap        =   -1  'True
-         End
-         Begin VB.Label Label4 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Model Desc"
-            ForeColor       =   &H00000000&
-            Height          =   240
-            Index           =   8
-            Left            =   120
-            TabIndex        =   15
-            Top             =   720
-            Width           =   1875
-            WordWrap        =   -1  'True
-         End
-         Begin VB.Label Label4 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Model Name"
-            ForeColor       =   &H00000000&
-            Height          =   240
-            Index           =   7
-            Left            =   120
-            TabIndex        =   14
-            Top             =   240
-            Width           =   1335
-            WordWrap        =   -1  'True
-         End
-      End
       Begin VB.Frame Frame1 
          Caption         =   "Existing Models"
          BeginProperty Font 
@@ -4570,19 +5313,19 @@ Begin VB.Form frmsettings
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H00000000&
-         Height          =   5175
-         Left            =   14280
+         Height          =   5775
+         Left            =   14760
          TabIndex        =   7
-         Top             =   2280
-         Width           =   5385
+         Top             =   2760
+         Width           =   4905
          Begin VSFlex7Ctl.VSFlexGrid VSFModel 
-            Height          =   4365
+            Height          =   4965
             Left            =   120
             TabIndex        =   8
             Top             =   360
-            Width           =   5115
-            _cx             =   9022
-            _cy             =   7699
+            Width           =   4635
+            _cx             =   8176
+            _cy             =   8758
             _ConvInfo       =   1
             Appearance      =   1
             BorderStyle     =   1
@@ -4628,7 +5371,7 @@ Begin VB.Form frmsettings
             ColWidthMin     =   0
             ColWidthMax     =   0
             ExtendLastCol   =   -1  'True
-            FormatString    =   $"frmsettings.frx":116A
+            FormatString    =   $"frmsettings.frx":119D
             ScrollTrack     =   0   'False
             ScrollBars      =   3
             ScrollTips      =   0   'False
@@ -4708,7 +5451,7 @@ Begin VB.Form frmsettings
             Index           =   9
             Left            =   600
             TabIndex        =   9
-            Top             =   4800
+            Top             =   5400
             Width           =   3915
             WordWrap        =   -1  'True
          End
@@ -4724,67 +5467,67 @@ Begin VB.Form frmsettings
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1215
-         Left            =   14280
+         Left            =   14760
          TabIndex        =   1
-         Top             =   7440
-         Width           =   5415
+         Top             =   8400
+         Width           =   4935
          Begin VB.CommandButton CmdClose 
             Caption         =   "&Close"
             Height          =   810
-            Left            =   4080
+            Left            =   3720
             MaskColor       =   &H00FFFFFF&
-            Picture         =   "frmsettings.frx":11D9
+            Picture         =   "frmsettings.frx":120C
             Style           =   1  'Graphical
             TabIndex        =   6
             ToolTipText     =   "Close Screen"
             Top             =   240
             UseMaskColor    =   -1  'True
-            Width           =   1215
+            Width           =   1095
          End
          Begin VB.CommandButton cmdReset 
             Caption         =   "&Reset"
             Height          =   810
             Left            =   120
             MaskColor       =   &H00404040&
-            Picture         =   "frmsettings.frx":1E1B
+            Picture         =   "frmsettings.frx":1E4E
             Style           =   1  'Graphical
             TabIndex        =   5
             ToolTipText     =   "Reset All"
             Top             =   240
             UseMaskColor    =   -1  'True
-            Width           =   1095
+            Width           =   975
          End
          Begin VB.CommandButton cmdSave 
             Caption         =   "&Save"
             Height          =   810
-            Left            =   1440
+            Left            =   1200
             MaskColor       =   &H00FFFFFF&
-            Picture         =   "frmsettings.frx":317D
+            Picture         =   "frmsettings.frx":31B0
             Style           =   1  'Graphical
             TabIndex        =   4
             Top             =   240
             UseMaskColor    =   -1  'True
-            Width           =   975
+            Width           =   1095
          End
          Begin VB.CommandButton cmdAddRow 
             Caption         =   "&Add Row"
             Height          =   810
             Left            =   120
             MaskColor       =   &H00FFFFFF&
-            Picture         =   "frmsettings.frx":3DBF
+            Picture         =   "frmsettings.frx":3DF2
             Style           =   1  'Graphical
             TabIndex        =   3
             ToolTipText     =   "Add new Line"
             Top             =   240
             UseMaskColor    =   -1  'True
-            Width           =   1095
+            Width           =   975
          End
          Begin VB.CommandButton cmdDeleteRow 
             Caption         =   "&Delete Row"
             Height          =   810
-            Left            =   2640
+            Left            =   2400
             MaskColor       =   &H00FFFFFF&
-            Picture         =   "frmsettings.frx":4A01
+            Picture         =   "frmsettings.frx":4A34
             Style           =   1  'Graphical
             TabIndex        =   2
             ToolTipText     =   "Delete Record"
@@ -4794,11 +5537,48 @@ Begin VB.Form frmsettings
          End
       End
       Begin VB.Frame Frame13 
-         Height          =   1695
-         Left            =   11040
-         TabIndex        =   164
-         Top             =   960
-         Width           =   3135
+         Height          =   2535
+         Left            =   11280
+         TabIndex        =   162
+         Top             =   720
+         Width           =   3015
+         Begin VB.OptionButton OptionCurrent2 
+            Caption         =   "High"
+            ForeColor       =   &H000040C0&
+            Height          =   255
+            Left            =   2040
+            TabIndex        =   269
+            Top             =   2160
+            Width           =   735
+         End
+         Begin VB.OptionButton OptionCurrent1 
+            Caption         =   "Low"
+            ForeColor       =   &H000040C0&
+            Height          =   255
+            Left            =   1200
+            TabIndex        =   268
+            Top             =   2160
+            Value           =   -1  'True
+            Width           =   975
+         End
+         Begin VB.TextBox txttestvoltage 
+            Alignment       =   2  'Center
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Left            =   2160
+            TabIndex        =   266
+            Text            =   "0.000"
+            Top             =   1680
+            Width           =   615
+         End
          Begin VB.TextBox txtMarkTime 
             Alignment       =   2  'Center
             BeginProperty Font 
@@ -4811,8 +5591,8 @@ Begin VB.Form frmsettings
                Strikethrough   =   0   'False
             EndProperty
             Height          =   315
-            Left            =   2280
-            TabIndex        =   171
+            Left            =   2160
+            TabIndex        =   169
             Text            =   "0.000"
             Top             =   1320
             Width           =   615
@@ -4829,8 +5609,8 @@ Begin VB.Form frmsettings
                Strikethrough   =   0   'False
             EndProperty
             Height          =   315
-            Left            =   2280
-            TabIndex        =   169
+            Left            =   2160
+            TabIndex        =   167
             Text            =   "0.000"
             Top             =   960
             Width           =   615
@@ -4847,8 +5627,8 @@ Begin VB.Form frmsettings
                Strikethrough   =   0   'False
             EndProperty
             Height          =   315
-            Left            =   2280
-            TabIndex        =   166
+            Left            =   2160
+            TabIndex        =   164
             Text            =   "0.000"
             Top             =   600
             Width           =   615
@@ -4865,11 +5645,35 @@ Begin VB.Form frmsettings
                Strikethrough   =   0   'False
             EndProperty
             Height          =   315
-            Left            =   2280
-            TabIndex        =   165
+            Left            =   2160
+            TabIndex        =   163
             Text            =   "0.000"
             Top             =   240
             Width           =   615
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Current"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   103
+            Left            =   120
+            TabIndex        =   270
+            Top             =   2160
+            Width           =   630
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Test Voltage (V)"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   78
+            Left            =   120
+            TabIndex        =   267
+            Top             =   1680
+            Width           =   1410
          End
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
@@ -4879,7 +5683,7 @@ Begin VB.Form frmsettings
             Height          =   240
             Index           =   74
             Left            =   120
-            TabIndex        =   172
+            TabIndex        =   170
             Top             =   1320
             Width           =   1275
          End
@@ -4890,7 +5694,7 @@ Begin VB.Form frmsettings
             Height          =   240
             Index           =   70
             Left            =   120
-            TabIndex        =   170
+            TabIndex        =   168
             Top             =   960
             Width           =   2070
             WordWrap        =   -1  'True
@@ -4903,7 +5707,7 @@ Begin VB.Form frmsettings
             Height          =   240
             Index           =   76
             Left            =   120
-            TabIndex        =   168
+            TabIndex        =   166
             Top             =   600
             Width           =   870
          End
@@ -4915,9 +5719,238 @@ Begin VB.Form frmsettings
             Height          =   240
             Index           =   68
             Left            =   120
-            TabIndex        =   167
+            TabIndex        =   165
             Top             =   240
             Width           =   1350
+         End
+      End
+      Begin VB.Frame Frame12 
+         Caption         =   "ILLumination Curr."
+         ForeColor       =   &H000040C0&
+         Height          =   855
+         Left            =   11280
+         TabIndex        =   156
+         Top             =   0
+         Width           =   3015
+         Begin VB.TextBox txtICMin 
+            Alignment       =   2  'Center
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Left            =   600
+            TabIndex        =   158
+            Text            =   "0.000"
+            Top             =   360
+            Width           =   615
+         End
+         Begin VB.TextBox txtICMax 
+            Alignment       =   2  'Center
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Left            =   1920
+            TabIndex        =   157
+            Text            =   "0.000"
+            Top             =   360
+            Width           =   615
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   101
+            Left            =   120
+            TabIndex        =   263
+            Top             =   240
+            Width           =   1155
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Min"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000040C0&
+            Height          =   210
+            Index           =   72
+            Left            =   120
+            TabIndex        =   161
+            Top             =   360
+            Width           =   240
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Max"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000040C0&
+            Height          =   210
+            Index           =   71
+            Left            =   1440
+            TabIndex        =   160
+            Top             =   360
+            Width           =   300
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "A"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000040C0&
+            Height          =   210
+            Index           =   69
+            Left            =   2640
+            TabIndex        =   159
+            Top             =   360
+            Width           =   120
+         End
+      End
+      Begin VB.Frame Frame11 
+         Caption         =   "Bypasses"
+         ForeColor       =   &H000040C0&
+         Height          =   975
+         Left            =   120
+         TabIndex        =   134
+         Top             =   8520
+         Width           =   14655
+         Begin VB.CheckBox chkbypass 
+            Caption         =   "Upper Cover Case ByPass"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   9
+            Left            =   11880
+            TabIndex        =   185
+            Top             =   600
+            Width           =   2655
+         End
+         Begin VB.CheckBox chkbypass 
+            Caption         =   "Pressure Guage ByPass"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   8
+            Left            =   9120
+            TabIndex        =   155
+            Top             =   600
+            Width           =   2895
+         End
+         Begin VB.CheckBox chkbypass 
+            Caption         =   "Scanner ByPass"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   6
+            Left            =   3120
+            TabIndex        =   154
+            Top             =   600
+            Width           =   1935
+         End
+         Begin VB.CheckBox chkbypass 
+            Caption         =   "PID ByPass"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   7
+            Left            =   6240
+            TabIndex        =   153
+            Top             =   600
+            Width           =   2655
+         End
+         Begin VB.CheckBox chkbypass 
+            Caption         =   "ILLumination Current ByPass"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   5
+            Left            =   120
+            TabIndex        =   140
+            Top             =   600
+            Width           =   2895
+         End
+         Begin VB.CheckBox chkbypass 
+            Caption         =   "Printer ByPass"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   4
+            Left            =   11880
+            TabIndex        =   139
+            Top             =   240
+            Width           =   2535
+         End
+         Begin VB.CheckBox chkbypass 
+            Caption         =   "Body Short ByPass"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   3
+            Left            =   9120
+            TabIndex        =   138
+            Top             =   240
+            Width           =   2175
+         End
+         Begin VB.CheckBox chkbypass 
+            Caption         =   "Wire Length Check ByPass"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   2
+            Left            =   6240
+            TabIndex        =   137
+            Top             =   240
+            Width           =   2775
+         End
+         Begin VB.CheckBox chkbypass 
+            Caption         =   "Blinker Limit Switch Bypass"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   1
+            Left            =   3120
+            TabIndex        =   136
+            Top             =   240
+            Width           =   2775
+         End
+         Begin VB.CheckBox chkbypass 
+            Caption         =   "Camera Bypass"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   0
+            Left            =   120
+            TabIndex        =   135
+            Top             =   240
+            Width           =   2175
          End
       End
    End
@@ -4947,6 +5980,14 @@ End Sub
 
 Private Sub Check1_Click()
 
+End Sub
+
+Private Sub chkAMBypass_Click()
+If chkAMBypass.Value = 1 Then
+FrameAM.Visible = False
+Else
+FrameAM.Visible = True
+End If
 End Sub
 
 Private Sub chkDMBypass_Click()
@@ -5094,12 +6135,19 @@ End Sub
 
 Private Sub Combo1_Click()
 If Combo1.ListIndex = 0 Then
- Combo2.Visible = True
- Combo3.Visible = False
- Else
-   Combo2.Visible = False
-   Combo3.Visible = True
+    FramePrint1.Visible = True
+    FramePrint2.Visible = False
+    FramePrint3.Visible = False
+ElseIf Combo1.ListIndex = 1 Then
+    FramePrint1.Visible = False
+    FramePrint2.Visible = True
+    FramePrint3.Visible = False
+Else
+    FramePrint1.Visible = False
+    FramePrint2.Visible = False
+    FramePrint3.Visible = True
 End If
+
 End Sub
 
 Private Sub Combo9_Click()
@@ -5124,6 +6172,10 @@ End With
 End Sub
 
 
+
+Private Sub txtMindaPartNo_Change()
+
+End Sub
 
 '''Private Sub Command4_Click()
 ''''Dim X, Y As Integer
@@ -5244,6 +6296,10 @@ Dim O, P As String
     End If
     Rs("ModelName") = Trim(txtModelName.Text)
     Rs("ModelDesc") = Trim(txtModelDesc.Text)
+    
+    Rs("BlinkerTest1") = txtTestBlinker(0).Text
+    Rs("BlinkerTest2") = txtTestBlinker(1).Text
+    Rs("BlinkerTest3") = txtTestBlinker(2).Text
     Rs("DMBypass") = chkDMBypass.Value
     Rs("PMBypass") = chkPMBypass.Value
     Rs("HAMBypass") = ChkHAMBypass.Value
@@ -5253,6 +6309,7 @@ Dim O, P As String
     Rs("CUMBypass") = ChkCUMBypass.Value
     Rs("SRMBypass") = ChkSRMBypass.Value
     Rs("CRMBypass") = chkCRMBypass.Value
+    Rs("BarcodeType") = Combo1.ListIndex
     
     Rs("DM1CurMin") = Format(txtCurrMin(0), "0.000")
     Rs("DM2CurMin") = Format(txtCurrMin(1), "0.000")
@@ -5327,6 +6384,26 @@ Dim O, P As String
     Rs("CRMTestCycle") = Format(txtTestCycle(6), "0")
     Rs("CUMTestCycle") = Format(txtTestCycle(7), "0")
     Rs("SRMTestCycle") = Format(txtTestCycle(8), "0")
+    Rs("AMBypass") = chkAMBypass.Value
+    Rs("InitialVoltMin") = Format(Val(txtMVDMin(15)), "0.000")
+    Rs("InitialVoltMax") = Format(Val(txtMVDMax(15)), "0.000")
+    Rs("FinalVoltMin") = Format(Val(txtMVDMin(16)), "0.000")
+    Rs("FinalVoltMax") = Format(Val(txtMVDMax(16)), "0.000")
+    Rs("ReverseVoltMin") = Format(Val(txtMVDMin(17)), "0.000")
+    Rs("ReverseVoltMax") = Format(Val(txtMVDMax(17)), "0.000")
+    Rs("AMTestCycle") = Format(Val(txtTestCycle(9)), "0")
+    Rs("TestVoltage") = Format(Val(txttestvoltage.Text), "0.000")
+    If OptionCurrent1.Value = True Then
+        Rs("TestCurrentOption") = 1
+    ElseIf OptionCurrent2.Value = True Then
+        Rs("TestCurrentOption") = 2
+    End If
+    
+    Rs("VoltageOffset10") = Format(Val(txtVoltageOffset(9).Text), "0.000")
+    
+    For i = 0 To 9
+     Rs("ModuleName" & i + 1) = txtModule(i).Text
+    Next
     
     For i = 0 To 8
       Rs("CurrentOffset" & i + 1) = Format(txtCurrentOffset(i).Text, "0.000")
@@ -5338,40 +6415,44 @@ Dim O, P As String
     
     Rs("ICMin") = Format(txtICMin.Text, "0.000")
     Rs("ICMax") = Format(txtICMax.Text, "0.000")
-    'Rs("ICMinRh") = Format(txtICMinRH.Text, "0.00")
-    'Rs("ICMaxRh") = Format(txtICMaxRH.Text, "0.00")
-    Rs("PrintPartNo") = txtPartNo.Text
-    'Rs("PrintBarcodeLength") = txtBarcodeLength.Text
-    'Rs("BarcodeLength") = txtBarcodeLength.Text
-    Rs("HardwareNo") = txtHardwareVersion.Text
-    Rs("SerialStartingtxt") = txtSerialNo.Text
-    'Rs("PrintSwitchName") = txtSwitchName.Text
-    'Rs("PrintLineCode") = txtLineCode.Text
-    Rs("VendorId") = txtVandorId.Text
+    If Combo1.ListIndex = 0 Then
+     Rs("PrintPartNo") = txtPartNo2.Text
+     Rs("VendorId") = txtVandorId.Text
+     Rs("QRPartNo") = txtPartNo1.Text
+     Rs("HardwareNo") = txtHardwareVersion.Text
+     Rs("SerialStartingtxt") = txtBalPartNo(0).Text
+    ElseIf Combo1.ListIndex = 1 Then
+     Rs("PrintPartNo") = txtPiaggioPart.Text
+     Rs("VendorId") = txtMindaPartNo.Text
+     Rs("SupplierCode") = txtSupplierCode(0).Text
+     Rs("HardwareNo") = txtRevisionNo(0).Text
+    Else
+     Rs("SerialStartingtxt") = txtBalPartNo(1).Text
+     Rs("SupplierCode") = txtSupplierCode(1).Text
+     Rs("HardwareNo") = txtRevisionNo(1).Text
+    End If
     
     Rs("DebounceTime") = Format(txtDebounceTime.Text, "0.000")
     Rs("HoldTime") = Format(txtHoldTime.Text, "0.000")
     Rs("CheckTime") = Format(txtCheckTime.Text, "0.000")
     Rs("DotMarkingTime") = Format(txtMarkTime.Text, "0.0")
     Rs("ModelNo") = txtModelNo.Text
-    'Rs("BatchCounter").Text
-    'Rs("CouplerCounter") = .Text
     Rs("PartImage") = txtImagePath.Text
-    'Rs("productioncounter") =
-    'Rs("CameraBypass") = Val(chkbypass(0).Value)
-    'Rs("LSBypass") = Val(chkbypass(1).Value)
-    'Rs("WLCBypass") = Val(chkbypass(2).Value)
-    'Rs("BSBypass") = Val(chkbypass(3).Value)
     Rs("PrinterBypass") = Val(chkbypass(4).Value)
-    'Rs("ICBypass") = Val(chkbypass(5).Value)
-    'Rs("ScannerBypass") = Val(chkbypass(6).Value)
-    'Rs("PIDByPass") = Val(chkbypass(7).Value)
-    'Rs("PressureGuageByPass") = Val(chkbypass(8).Value)
-    'Rs("UpperCoverByPass") = Val(chkbypass(9).Value)
     For i = 0 To 9
      Rs("Bypass" & i + 1) = Val(chkbypass(i).Value)
     Next
-    
+    If Combo1.ListIndex = 1 Then
+    Rs("SupplierCode") = Trim(txtSupplierCode(0).Text)
+    Rs("PiagioPartNo") = Trim(txtPiaggioPartNo.Text)
+    Rs("VendorId") = Trim(txtSwitchName.Text)
+    Rs("PiagioRevPN") = Trim(txtRevisionNo(0).Text)
+    Rs("PiagioSupplierPartNo") = Trim(txtSupplierPartNo.Text)
+    Rs("PiagioDFA") = Trim(txtFinalApproval.Text)
+    Rs("PiagioBatchNo") = Trim(txtBatchNo.Text)
+    Rs("PiagioOtherInfo") = Trim(txtOtherInfo.Text)
+    Rs("PiagioCoo") = Trim(txtCOO.Text)
+    End If
     Rs.Update
 '    WriteCSV VSFData1, Trim$(txtModelName)
     MsgBox UCase("Saved Successfully")
@@ -5382,6 +6463,25 @@ Error:
 'MsgBox Error, vbInformation
 ErrorLog Err.Number, Err.Description, Erl, Me.Name, "Save Model Setting"
 Resume Next
+End Sub
+
+Private Sub initialisemodulename()
+    insertCaption txtModule(0), "Dipper Module"
+    insertCaption txtModule(1), "Pass Module"
+    insertCaption txtModule(2), "Hazard Module"
+    insertCaption txtModule(3), "Navigation Module"
+    insertCaption txtModule(4), "Blinker Module"
+    insertCaption txtModule(5), "Horn Module"
+    insertCaption txtModule(6), "Cruise Module"
+    insertCaption txtModule(7), "Custom Module"
+    insertCaption txtModule(8), "Set/Reset Module"
+    insertCaption txtModule(9), "Accelaration Module"
+End Sub
+
+Private Sub insertCaption(Text1 As TextBox, cap As String)
+    If Text1.Text = "0" Or Text1.Text = "" Then
+        Text1.Text = cap
+    End If
 End Sub
 
 Private Sub Form_Load()
@@ -5419,6 +6519,9 @@ Dim Sql As String
     'txtModelName.Text = Trim(Rs("ModelName"))
     txtModelDesc.Text = Trim(Rs("ModelDesc"))
     chkDMBypass.Value = Val(Rs("DMBypass"))
+    txtTestBlinker(0).Text = Rs("BlinkerTest1")
+    txtTestBlinker(1).Text = Rs("BlinkerTest2")
+    txtTestBlinker(2).Text = Rs("BlinkerTest3")
     txtCurrMin(0) = Rs("DM1CurMin")
     txtCurrMax(0) = Rs("DM1CurMax")
     txtMVDMin(0) = Rs("DM1VoltMin")
@@ -5505,10 +6608,30 @@ Dim Sql As String
     txtMVDMax(14) = Rs("SRM1VoltMax")
     txtTestCycle(8) = Rs("SRMTestCycle")
     
+    chkAMBypass.Value = Val(Rs("AMBypass"))
+    txtMVDMin(15) = Format(Val(Rs("InitialVoltMin")), "0.000")
+    txtMVDMax(15) = Format(Val(Rs("InitialVoltMax")), "0.000")
+    txtMVDMin(16) = Format(Val(Rs("FinalVoltMin")), "0.000")
+    txtMVDMax(16) = Format(Val(Rs("FinalVoltMax")), "0.000")
+    txtMVDMin(17) = Format(Val(Rs("ReverseVoltMin")), "0.000")
+    txtMVDMax(17) = Format(Val(Rs("ReverseVoltMax")), "0.000")
+    txtTestCycle(9) = Format(Val(Rs("AMTestCycle")), "0.000")
+    txttestvoltage.Text = Format(Val(Rs("TestVoltage")), "0.000")
+    If Val(Rs("TestCurrentOption")) = 1 Then
+        OptionCurrent1.Value = True
+    ElseIf Val(Rs("TestCurrentOption")) = 2 Then
+        OptionCurrent2.Value = True
+    End If
     For i = 0 To 8
       txtCurrentOffset(i).Text = Rs("CurrentOffset" & i + 1)
       txtVoltageOffset(i).Text = Rs("VoltageOffset" & i + 1)
     Next
+        
+    For i = 0 To 9
+      txtModule(i).Text = Rs("ModuleName" & i + 1)
+    Next
+    txtVoltageOffset(9).Text = Rs("VoltageOffset10")
+    
     txtICMin.Text = Rs("ICMin")
     txtICMax.Text = Rs("ICMax")
     'txtICMinRH.Text = Rs("ICMinRH")
@@ -5516,37 +6639,42 @@ Dim Sql As String
     'txtWirevoltageMin.Text = Rs("WVMin")
     'txtWireVoltageMax.Text = Rs("WVMax")
     
-    txtPartNo.Text = Rs("PrintPartNo")
-    'txtBarcodeLength.Text = Rs("PrintBarcodeLength")
-    'txtBarcodeLength.Text = Rs("BarcodeLength")
+    txtPartNo2.Text = Rs("PrintPartNo")
+    txtPartNo1.Text = Rs("QRPartNo")
     txtHardwareVersion.Text = Rs("HardwareNo")
-    txtSerialNo.Text = Rs("SerialStartingtxt")
-    'txtSwitchName.Text = Rs("PrintSwitchName")
-    'txtLineCode.Text = Rs("PrintLineCode")
+    txtBalPartNo(0).Text = Rs("SerialStartingtxt")
+    txtBalPartNo(1).Text = Rs("SerialStartingtxt")
+    txtVandorId.Text = Rs("VendorId")
+    txtSupplierCode(0).Text = Rs("SupplierCode")
+    txtSupplierCode(1).Text = Rs("SupplierCode")
+    'txtRevisionNo(0).Text = Rs("HardwareNo")
+    txtRevisionNo(1).Text = Rs("HardwareNo")
+    'txtPiaggioPartNo.Text = Rs("PrintPartNo")
+    'txtM.Text = Rs("VendorId")
 
+    
     txtDebounceTime.Text = Rs("DebounceTime")
     txtHoldTime.Text = Rs("HoldTime")
     txtCheckTime.Text = Rs("CheckTime")
     txtMarkTime.Text = Rs("DotMarkingTime")
     txtModelNo.Text = Rs("ModelNo")
-    txtVandorId.Text = Rs("VendorId")
-    'Rs("BatchCounter").Text
-    'Rs("CouplerCounter") = .Text
     txtImagePath.Text = Rs("PartImage")
-    'Rs("productioncounter") =
     For i = 0 To 9
       chkbypass(i).Value = Val(Rs("Bypass" & i + 1))
     Next
-    'chkbypass(1).Value = Val(Rs("LSBypass"))
-    'chkbypass(2).Value = Val(Rs("WLCBypass"))
-    'chkbypass(3).Value = Val(Rs("BSBypass"))
-    'chkbypass(4).Value = Val(Rs("PrinterBypass"))
-    'chkbypass(5).Value = Val(Rs("ICBypass"))
-    'chkbypass(6).Value = Val(Rs("ScannerBypass"))
-    'chkbypass(7).Value = Val(Rs("PIDByPass"))
-    'chkbypass(8).Value = Val(Rs("PressureGuageByPass"))
-    'chkbypass(9).Value = Val(Rs("UpperCoverByPass"))
-       
+    Combo1.ListIndex = Val(Rs("BarcodeType"))
+    
+    txtSupplierCode(0).Text = Rs("SupplierCode")
+    txtPiaggioPartNo.Text = Rs("PiagioPartNo")
+    txtSwitchName.Text = Rs("VendorId")
+    txtRevisionNo(0).Text = Rs("PiagioRevPN")
+    txtSupplierPartNo.Text = Rs("PiagioSupplierPartNo")
+    txtFinalApproval.Text = Rs("PiagioDFA")
+    txtBatchNo.Text = Rs("PiagioBatchNo")
+    txtOtherInfo.Text = Rs("PiagioOtherInfo")
+    txtCOO.Text = Rs("PiagioCoo")
+    
+    initialisemodulename
     Exit Sub
 Error:
 ErrorLog Err.Number, Err.Description, Erl, Me.Name, "LoadData"
@@ -5562,7 +6690,7 @@ Private Function CheckValidEntry() As Boolean
     'If ValidLen(11, 11, txtPartNo) = False Then Exit Function
     'If ValidLen(5, 5, txtLastPartno) = False Then Exit Function
     
-'    If ValidEntry(0, 320, txtDataMin3) = False Then Exit Function
+    If ValidEntry(8, 16, txttestvoltage) = False Then Exit Function
 '    If ValidEntry(0, 320, txtDataMax3) = False Then Exit Function
 '
 '    If ValidLen(10, 10, txtDataMin4) = False Then Exit Function

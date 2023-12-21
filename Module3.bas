@@ -53,18 +53,10 @@ Dim TableName As String
 Dim ColName As String
 Dim Row As Long
 Dim Col As Long
-Dim ColArrey(100) As String
+Dim ColArrey(140) As String
 
 '----------------Table - Model_Set
 TableName = "Model_Set"
-'  "Printtype"
-'    Rs ("IDNo")
-'    Rs("LastPartNo") = txtLastPartno.Text
-'    Rs("PartNo") = txtPartNo.Text
-'    Rs("Darkness") = cboDarkness.ListIndex
-'    Rs("RejectionBypass") = Check1.Value
-'    Rs("Vendorcode") = txtvendorCode.Text
-'    Rs("linecode") = txtlinecode.Text
 ColArrey(1) = "DMBypass"
 ColArrey(2) = "DM1CurMin"
 ColArrey(3) = "DM1CurMax"
@@ -159,11 +151,47 @@ ColArrey(88) = "Bypass8"
 ColArrey(89) = "Bypass9"
 ColArrey(90) = "Bypass10"
 ColArrey(91) = "Bypass11"
+
 ColArrey(92) = "VendorId"
 
 ColArrey(93) = "PrintSwitchName"
 ColArrey(94) = "PrintLineCode"
-For Row = 1 To 94
+ColArrey(95) = "PrintPartNo"
+ColArrey(96) = "QRPartNo"
+ColArrey(97) = "HardwareNo"
+ColArrey(98) = "SerialStartingtxt"
+    
+ColArrey(99) = "TestVoltage"
+ColArrey(100) = "TestCurrentOption"
+ColArrey(101) = "InitialVoltMin"
+ColArrey(102) = "InitialVoltMax"
+ColArrey(103) = "FinalVoltMin"
+ColArrey(104) = "FinalVoltMax"
+ColArrey(105) = "ReverseVoltMin"
+ColArrey(106) = "ReverseVoltMax"
+ColArrey(107) = "VoltageOffset10"
+ColArrey(108) = "AMBypass"
+ColArrey(109) = "AMTestCycle"
+ColArrey(110) = "BlinkerTest1"
+ColArrey(111) = "BlinkerTest2"
+ColArrey(112) = "BlinkerTest3"
+ColArrey(113) = "BarcodeType"
+ColArrey(114) = "SupplierCode"
+ColArrey(115) = "PiagioPartNo"
+ColArrey(116) = "PiagioRevPN"
+ColArrey(117) = "PiagioSupplierPartNo"
+ColArrey(118) = "PiagioDFA"
+ColArrey(119) = "PiagioBatchNo"
+ColArrey(120) = "PiagioOtherInfo"
+ColArrey(121) = "PiagioCOO"
+
+
+For i = 0 To 9
+ColArrey(122 + i) = "ModuleName" & i + 1
+Next
+
+
+For Row = 1 To 131
     ColName = ColArrey(Row)
     If FieldExists(Con, TableName, ColName) = False Then
         X = CreateField(Con, TableName, ColName, "varchar(255) DEFAULT 0")
@@ -214,8 +242,12 @@ ColArrey(38) = "HOMResult"
 ColArrey(39) = "CUMResult"
 ColArrey(40) = "CRMResult"
 ColArrey(41) = "SRMResult"
+ColArrey(42) = "AMResult"
 
-For Row = 1 To 41
+ColArrey(43) = "AM1Volt"
+ColArrey(44) = "AM2Volt"
+ColArrey(45) = "AM3Volt"
+For Row = 1 To 45
     ColName = ColArrey(Row)
     If FieldExists(Con, TableName, ColName) = False Then
         X = CreateField(Con, TableName, ColName, "varchar(255) DEFAULT 0")

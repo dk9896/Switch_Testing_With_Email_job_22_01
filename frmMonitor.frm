@@ -38,11 +38,11 @@ Begin VB.Form frmMonitor
       Begin VB.PictureBox PictureBreakdown 
          BackColor       =   &H80000010&
          Height          =   6015
-         Left            =   6480
+         Left            =   7080
          ScaleHeight     =   5955
          ScaleWidth      =   8595
          TabIndex        =   109
-         Top             =   1560
+         Top             =   1320
          Visible         =   0   'False
          Width           =   8655
          Begin VB.CommandButton cmdclosebreakdownscreen 
@@ -159,6 +159,195 @@ Begin VB.Form frmMonitor
             Width           =   2295
          End
       End
+      Begin VB.PictureBox PictureAM 
+         BackColor       =   &H8000000A&
+         Height          =   375
+         Index           =   0
+         Left            =   7440
+         ScaleHeight     =   315
+         ScaleWidth      =   2715
+         TabIndex        =   185
+         Top             =   7680
+         Width           =   2775
+         Begin VB.Label lblModule 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Accelaration Testing"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   12
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   285
+            Index           =   9
+            Left            =   240
+            TabIndex        =   186
+            Top             =   0
+            Width           =   2340
+         End
+      End
+      Begin VB.PictureBox PictureAM 
+         BackColor       =   &H8000000A&
+         Height          =   1815
+         Index           =   1
+         Left            =   7440
+         ScaleHeight     =   1755
+         ScaleWidth      =   2715
+         TabIndex        =   184
+         Top             =   8040
+         Width           =   2775
+         Begin VB.TextBox txtVAM 
+            Alignment       =   2  'Center
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   2
+            Left            =   1680
+            Locked          =   -1  'True
+            TabIndex        =   191
+            Text            =   "0.000"
+            Top             =   1320
+            Width           =   855
+         End
+         Begin VB.TextBox txtVAM 
+            Alignment       =   2  'Center
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   1
+            Left            =   1680
+            Locked          =   -1  'True
+            TabIndex        =   189
+            Text            =   "0.000"
+            Top             =   720
+            Width           =   855
+         End
+         Begin VB.TextBox txtVAM 
+            Alignment       =   2  'Center
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   0
+            Left            =   1680
+            Locked          =   -1  'True
+            TabIndex        =   187
+            Text            =   "0.000"
+            Top             =   120
+            Width           =   855
+         End
+         Begin VB.Shape ShpAMOuter 
+            BackStyle       =   1  'Opaque
+            Height          =   495
+            Index           =   2
+            Left            =   1560
+            Top             =   1200
+            Width           =   1095
+         End
+         Begin VB.Shape ShpAMOuter 
+            BackStyle       =   1  'Opaque
+            Height          =   495
+            Index           =   1
+            Left            =   1560
+            Top             =   600
+            Width           =   1095
+         End
+         Begin VB.Shape ShpAMOuter 
+            BackStyle       =   1  'Opaque
+            Height          =   495
+            Index           =   0
+            Left            =   1560
+            Top             =   0
+            Width           =   1095
+         End
+         Begin VB.Label Label4 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Reverse Voltage"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000000C0&
+            Height          =   210
+            Index           =   59
+            Left            =   120
+            TabIndex        =   192
+            Top             =   1320
+            Width           =   1365
+         End
+         Begin VB.Label Label4 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Final Voltage"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000000C0&
+            Height          =   210
+            Index           =   58
+            Left            =   120
+            TabIndex        =   190
+            Top             =   720
+            Width           =   1050
+         End
+         Begin VB.Label Label4 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Initial Voltage"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000000C0&
+            Height          =   210
+            Index           =   57
+            Left            =   120
+            TabIndex        =   188
+            Top             =   120
+            Width           =   1110
+         End
+      End
       Begin VB.PictureBox PictureSRM 
          BackColor       =   &H80000010&
          Height          =   375
@@ -169,7 +358,7 @@ Begin VB.Form frmMonitor
          TabIndex        =   166
          Top             =   6120
          Width           =   2415
-         Begin VB.Label Label4 
+         Begin VB.Label lblModule 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
             Caption         =   "Set/Reset Module"
@@ -183,7 +372,7 @@ Begin VB.Form frmMonitor
                Strikethrough   =   0   'False
             EndProperty
             Height          =   285
-            Index           =   49
+            Index           =   8
             Left            =   240
             TabIndex        =   167
             Top             =   0
@@ -200,7 +389,7 @@ Begin VB.Form frmMonitor
          TabIndex        =   164
          Top             =   6120
          Width           =   2415
-         Begin VB.Label Label4 
+         Begin VB.Label lblModule 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
             Caption         =   "Custom Module"
@@ -214,7 +403,7 @@ Begin VB.Form frmMonitor
                Strikethrough   =   0   'False
             EndProperty
             Height          =   285
-            Index           =   48
+            Index           =   7
             Left            =   360
             TabIndex        =   165
             Top             =   0
@@ -231,7 +420,7 @@ Begin VB.Form frmMonitor
          TabIndex        =   162
          Top             =   6120
          Width           =   2415
-         Begin VB.Label Label4 
+         Begin VB.Label lblModule 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
             Caption         =   "Cruise Module"
@@ -245,7 +434,7 @@ Begin VB.Form frmMonitor
                Strikethrough   =   0   'False
             EndProperty
             Height          =   285
-            Index           =   47
+            Index           =   6
             Left            =   360
             TabIndex        =   163
             Top             =   0
@@ -710,10 +899,10 @@ Begin VB.Form frmMonitor
       End
       Begin VB.PictureBox PictureNM 
          BackColor       =   &H80000010&
-         Height          =   5655
+         Height          =   5175
          Index           =   1
          Left            =   7320
-         ScaleHeight     =   5595
+         ScaleHeight     =   5115
          ScaleWidth      =   7515
          TabIndex        =   122
          Top             =   1800
@@ -906,7 +1095,7 @@ Begin VB.Form frmMonitor
             Height          =   855
             Left            =   2640
             TabIndex        =   128
-            Top             =   4560
+            Top             =   4200
             Width           =   2175
             Begin VB.TextBox txtVNM 
                Alignment       =   2  'Center
@@ -1115,7 +1304,7 @@ Begin VB.Form frmMonitor
             Height          =   435
             Left            =   3120
             TabIndex        =   135
-            Top             =   3840
+            Top             =   3480
             Width           =   1125
          End
          Begin VB.Shape ShpNMInner 
@@ -1123,7 +1312,7 @@ Begin VB.Form frmMonitor
             Height          =   615
             Index           =   2
             Left            =   3000
-            Top             =   3720
+            Top             =   3360
             Width           =   1455
          End
          Begin VB.Label Label4 
@@ -1183,7 +1372,7 @@ Begin VB.Form frmMonitor
             Height          =   855
             Index           =   2
             Left            =   2760
-            Top             =   3600
+            Top             =   3240
             Width           =   1935
          End
          Begin VB.Label Label4 
@@ -1193,7 +1382,7 @@ Begin VB.Form frmMonitor
             Index           =   28
             Left            =   3360
             TabIndex        =   136
-            Top             =   2520
+            Top             =   2400
             Width           =   855
          End
          Begin VB.Shape ShpNMInner 
@@ -1201,7 +1390,7 @@ Begin VB.Form frmMonitor
             Height          =   615
             Index           =   0
             Left            =   3000
-            Top             =   2400
+            Top             =   2280
             Width           =   1455
          End
          Begin VB.Shape ShpNMOuter 
@@ -1209,7 +1398,7 @@ Begin VB.Form frmMonitor
             Height          =   855
             Index           =   0
             Left            =   2760
-            Top             =   2280
+            Top             =   2160
             Width           =   1935
          End
       End
@@ -1225,7 +1414,7 @@ Begin VB.Form frmMonitor
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Left            =   10800
+         Left            =   13800
          TabIndex        =   121
          Top             =   8640
          Visible         =   0   'False
@@ -1269,7 +1458,7 @@ Begin VB.Form frmMonitor
             Strikethrough   =   0   'False
          EndProperty
          Height          =   465
-         Left            =   9480
+         Left            =   12240
          Locked          =   -1  'True
          TabIndex        =   118
          Text            =   "0"
@@ -1287,7 +1476,7 @@ Begin VB.Form frmMonitor
             Strikethrough   =   0   'False
          EndProperty
          Height          =   465
-         Left            =   9480
+         Left            =   12240
          TabIndex        =   117
          Top             =   8640
          Width           =   1215
@@ -1337,7 +1526,7 @@ Begin VB.Form frmMonitor
             Strikethrough   =   0   'False
          EndProperty
          Height          =   390
-         Left            =   9480
+         Left            =   12240
          TabIndex        =   100
          Top             =   8160
          Width           =   1215
@@ -1352,7 +1541,7 @@ Begin VB.Form frmMonitor
          TabIndex        =   97
          Top             =   1440
          Width           =   7575
-         Begin VB.Label Label4 
+         Begin VB.Label lblModule 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
             Caption         =   "Navigation Module"
@@ -1366,7 +1555,7 @@ Begin VB.Form frmMonitor
                Strikethrough   =   0   'False
             EndProperty
             Height          =   285
-            Index           =   38
+            Index           =   3
             Left            =   2640
             TabIndex        =   98
             Top             =   0
@@ -1383,7 +1572,7 @@ Begin VB.Form frmMonitor
          TabIndex        =   95
          Top             =   1440
          Width           =   2415
-         Begin VB.Label Label4 
+         Begin VB.Label lblModule 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
             Caption         =   "Hazard Module"
@@ -1397,7 +1586,7 @@ Begin VB.Form frmMonitor
                Strikethrough   =   0   'False
             EndProperty
             Height          =   285
-            Index           =   36
+            Index           =   2
             Left            =   240
             TabIndex        =   96
             Top             =   0
@@ -1414,7 +1603,7 @@ Begin VB.Form frmMonitor
          TabIndex        =   93
          Top             =   1440
          Width           =   2415
-         Begin VB.Label Label4 
+         Begin VB.Label lblModule 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
             Caption         =   "Horn Module"
@@ -1428,7 +1617,7 @@ Begin VB.Form frmMonitor
                Strikethrough   =   0   'False
             EndProperty
             Height          =   285
-            Index           =   35
+            Index           =   5
             Left            =   240
             TabIndex        =   94
             Top             =   0
@@ -1445,7 +1634,7 @@ Begin VB.Form frmMonitor
          TabIndex        =   91
          Top             =   1440
          Width           =   2415
-         Begin VB.Label Label4 
+         Begin VB.Label lblModule 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
             Caption         =   "Blinker Module"
@@ -1459,7 +1648,7 @@ Begin VB.Form frmMonitor
                Strikethrough   =   0   'False
             EndProperty
             Height          =   285
-            Index           =   33
+            Index           =   4
             Left            =   240
             TabIndex        =   92
             Top             =   0
@@ -1476,7 +1665,7 @@ Begin VB.Form frmMonitor
          TabIndex        =   89
          Top             =   1440
          Width           =   2415
-         Begin VB.Label Label4 
+         Begin VB.Label lblModule 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
             Caption         =   "Pass Module"
@@ -1490,7 +1679,7 @@ Begin VB.Form frmMonitor
                Strikethrough   =   0   'False
             EndProperty
             Height          =   285
-            Index           =   32
+            Index           =   1
             Left            =   480
             TabIndex        =   90
             Top             =   0
@@ -1955,13 +2144,13 @@ Begin VB.Form frmMonitor
       End
       Begin VB.PictureBox PictureBM 
          BackColor       =   &H80000010&
-         Height          =   5895
+         Height          =   6255
          Index           =   1
          Left            =   14880
-         ScaleHeight     =   5835
+         ScaleHeight     =   6195
          ScaleWidth      =   2355
          TabIndex        =   51
-         Top             =   1800
+         Top             =   1560
          Width           =   2415
          Begin VB.Frame Frame22 
             BackColor       =   &H8000000B&
@@ -1969,7 +2158,7 @@ Begin VB.Form frmMonitor
             Height          =   855
             Left            =   120
             TabIndex        =   179
-            Top             =   4920
+            Top             =   5160
             Width           =   2175
             Begin VB.TextBox txtCurBM 
                Alignment       =   2  'Center
@@ -2060,7 +2249,7 @@ Begin VB.Form frmMonitor
             Height          =   855
             Left            =   120
             TabIndex        =   57
-            Top             =   3000
+            Top             =   3240
             Width           =   2175
             Begin VB.TextBox txtCurBM 
                Alignment       =   2  'Center
@@ -2151,7 +2340,7 @@ Begin VB.Form frmMonitor
             Height          =   855
             Left            =   120
             TabIndex        =   52
-            Top             =   1080
+            Top             =   1320
             Width           =   2175
             Begin VB.TextBox txtVBM 
                Alignment       =   2  'Center
@@ -2236,14 +2425,15 @@ Begin VB.Form frmMonitor
                Width           =   1275
             End
          End
-         Begin VB.Label Label13 
+         Begin VB.Label lblTestBlinker 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
             Caption         =   "RIGHT"
             Height          =   435
+            Index           =   2
             Left            =   600
             TabIndex        =   64
-            Top             =   4200
+            Top             =   4440
             Width           =   1125
          End
          Begin VB.Shape ShpBMInner 
@@ -2251,7 +2441,7 @@ Begin VB.Form frmMonitor
             Height          =   615
             Index           =   2
             Left            =   480
-            Top             =   4080
+            Top             =   4320
             Width           =   1455
          End
          Begin VB.Shape ShpBMOuter 
@@ -2259,27 +2449,28 @@ Begin VB.Form frmMonitor
             Height          =   855
             Index           =   2
             Left            =   240
-            Top             =   3960
+            Top             =   4200
             Width           =   1935
          End
-         Begin VB.Label Label12 
+         Begin VB.Label lblTestBlinker 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
             Caption         =   "OFF"
             Height          =   435
+            Index           =   0
             Left            =   840
             TabIndex        =   63
-            Top             =   2280
+            Top             =   2520
             Width           =   720
          End
-         Begin VB.Label Label4 
+         Begin VB.Label lblTestBlinker 
             BackStyle       =   0  'Transparent
             Caption         =   "LEFT"
             Height          =   375
-            Index           =   15
+            Index           =   1
             Left            =   720
             TabIndex        =   62
-            Top             =   360
+            Top             =   600
             Width           =   975
          End
          Begin VB.Shape ShpBMInner 
@@ -2287,7 +2478,7 @@ Begin VB.Form frmMonitor
             Height          =   615
             Index           =   0
             Left            =   480
-            Top             =   240
+            Top             =   480
             Width           =   1455
          End
          Begin VB.Shape ShpBMOuter 
@@ -2295,7 +2486,7 @@ Begin VB.Form frmMonitor
             Height          =   855
             Index           =   0
             Left            =   240
-            Top             =   120
+            Top             =   360
             Width           =   1935
          End
          Begin VB.Shape ShpBMInner 
@@ -2303,7 +2494,7 @@ Begin VB.Form frmMonitor
             Height          =   615
             Index           =   1
             Left            =   480
-            Top             =   2160
+            Top             =   2400
             Width           =   1455
          End
          Begin VB.Shape ShpBMOuter 
@@ -2311,7 +2502,7 @@ Begin VB.Form frmMonitor
             Height          =   855
             Index           =   1
             Left            =   240
-            Top             =   2040
+            Top             =   2280
             Width           =   1935
          End
       End
@@ -2570,7 +2761,7 @@ Begin VB.Form frmMonitor
          TabIndex        =   36
          Top             =   1440
          Width           =   2415
-         Begin VB.Label Label4 
+         Begin VB.Label lblModule 
             AutoSize        =   -1  'True
             BackStyle       =   0  'Transparent
             Caption         =   "Dipper Module"
@@ -2584,7 +2775,7 @@ Begin VB.Form frmMonitor
                Strikethrough   =   0   'False
             EndProperty
             Height          =   285
-            Index           =   2
+            Index           =   0
             Left            =   360
             TabIndex        =   42
             Top             =   0
@@ -2602,10 +2793,10 @@ Begin VB.Form frmMonitor
             Strikethrough   =   0   'False
          EndProperty
          Height          =   435
-         Left            =   8520
+         Left            =   8640
          Locked          =   -1  'True
          TabIndex        =   34
-         Top             =   7560
+         Top             =   7080
          Width           =   6135
       End
       Begin VB.Frame Frame6 
@@ -3324,8 +3515,8 @@ Begin VB.Form frmMonitor
          BackColor       =   &H000000FF&
          BackStyle       =   1  'Opaque
          Height          =   255
-         Left            =   12840
-         Top             =   8280
+         Left            =   13680
+         Top             =   7680
          Width           =   855
       End
       Begin VB.Label Label1 
@@ -3345,9 +3536,9 @@ Begin VB.Form frmMonitor
          ForeColor       =   &H00000000&
          Height          =   240
          Index           =   2
-         Left            =   11280
+         Left            =   12120
          TabIndex        =   137
-         Top             =   8280
+         Top             =   7680
          Width           =   1395
       End
       Begin VB.Image ImgPart 
@@ -3372,7 +3563,7 @@ Begin VB.Form frmMonitor
          EndProperty
          Height          =   240
          Index           =   43
-         Left            =   7680
+         Left            =   10440
          TabIndex        =   106
          Top             =   9360
          Width           =   1665
@@ -3392,7 +3583,7 @@ Begin VB.Form frmMonitor
          EndProperty
          Height          =   240
          Index           =   40
-         Left            =   7680
+         Left            =   10440
          TabIndex        =   105
          Top             =   8760
          Width           =   1530
@@ -3412,7 +3603,7 @@ Begin VB.Form frmMonitor
          EndProperty
          Height          =   240
          Index           =   39
-         Left            =   10800
+         Left            =   14400
          TabIndex        =   104
          Top             =   8280
          Width           =   135
@@ -3432,7 +3623,7 @@ Begin VB.Form frmMonitor
          EndProperty
          Height          =   240
          Index           =   9
-         Left            =   7680
+         Left            =   10440
          TabIndex        =   101
          Top             =   8280
          Width           =   1635
@@ -3454,7 +3645,7 @@ Begin VB.Form frmMonitor
          Index           =   8
          Left            =   7680
          TabIndex        =   99
-         Top             =   7680
+         Top             =   7200
          Width           =   720
       End
    End
@@ -3635,8 +3826,7 @@ Private Sub Command3_Click()
 'PLcdata(109) = Val(Text3.Text)
 'txtproductioncounter.Text = 1
 'SaveCounter
-PLcdata(109) = 1
-AssignPLCdata
+PrintLabel JustPrinter1
 End Sub
 
 Private Sub Command7_Click()
@@ -3750,6 +3940,9 @@ On Error GoTo Error
    ShapeColorsinglefunction PLcdata(101), &H100, ShpCUMOuter(1)
    ShapeColorsinglefunction PLcdata(101), &H200, ShpSRMOuter(0)
    ShapeColorsinglefunction PLcdata(101), &H400, ShpSRMOuter(1)
+   ShapeColorsinglefunction PLcdata(101), &H800, ShpAMOuter(0)
+   ShapeColorsinglefunction PLcdata(101), &H1000, ShpAMOuter(1)
+   ShapeColorsinglefunction PLcdata(101), &H2000, ShpAMOuter(2)
    
    ShapeColorfunction1 PLcdata(102), &H1, &H2, ShpDMInner(0)
    ShapeColorfunction1 PLcdata(102), &H4, &H8, ShpDMInner(1)
@@ -3774,6 +3967,10 @@ On Error GoTo Error
    ShapeColorfunction1 PLcdata(105), &H100, &H200, ShpSRMInner(0)
    ShapeColorfunction1 PLcdata(105), &H400, &H800, ShpSRMInner(1)
 
+   ShapeColorfunction1 PLcdata(105), &H1000, &H2000, txtVAM(0)
+   ShapeColorfunction1 PLcdata(106), &H1, &H2, txtVAM(1)
+   ShapeColorfunction1 PLcdata(106), &H4, &H8, txtVAM(2)
+
    ShapeColorfunction PLcdata(160), &H1, &H2, PictureDM(0)
    ShapeColorfunction PLcdata(160), &H4, &H8, PicturePM(0)
    ShapeColorfunction PLcdata(160), &H10, &H20, PictureHAM(0)
@@ -3783,6 +3980,7 @@ On Error GoTo Error
    ShapeColorfunction PLcdata(160), &H1000, &H2000, PictureCRM(0)
    ShapeColorfunction PLcdata(161), &H1, &H2, PictureCUM(0)
    ShapeColorfunction PLcdata(161), &H4, &H8, PictureSRM(0)
+   ShapeColorfunction PLcdata(161), &H10, &H20, PictureAM(0)
    
    txtCycleTime.Text = Format(PLcdata(107) / 10, "0.0")
 
@@ -3817,7 +4015,9 @@ On Error GoTo Error
    txtCurCUM.Text = Format(PLcdata(137) / 1000, "0.000")
    txtVSRM.Text = Format(PLcdata(138) / 1000, "0.000")
    txtCurSRM.Text = Format(PLcdata(139) / 1000, "0.000")
-
+   txtVAM(0).Text = Format(PLcdata(140) / 1000, "0.000")
+   txtVAM(1).Text = Format(PLcdata(141) / 1000, "0.000")
+   txtVAM(2).Text = Format(PLcdata(142) / 1000, "0.000")
 
    
    txtILLH.Text = Format(PLcdata(150) / 1000, "0.000")
@@ -4375,11 +4575,32 @@ Dim j As Integer
     PLcdata(310) = 0
    End If
    
-   
+    PLcdata(311) = Val(Rs("AMBypass"))
+   If Val(Rs("AMBypass")) = 0 Then
+    PLcdata(312) = Val(Rs("InitialVoltMin")) * 1000
+    PLcdata(313) = Val(Rs("InitialVoltMax")) * 1000
+    PLcdata(314) = Val(Rs("FinalVoltMin")) * 1000
+    PLcdata(315) = Val(Rs("FinalVoltMax")) * 1000
+    PLcdata(316) = Val(Rs("ReverseVoltMin")) * 1000
+    PLcdata(317) = Val(Rs("ReverseVoltMax")) * 1000
+    PLcdata(318) = Val(Rs("AMTestCycle"))
+   Else
+    PictureAM(0).Visible = False
+    PictureAM(1).Visible = False
+    PLcdata(312) = 0
+    PLcdata(313) = 0
+    PLcdata(314) = 0
+    PLcdata(315) = 0
+    PLcdata(316) = 0
+    PLcdata(317) = 0
+    PLcdata(318) = 0
+   End If
+      
     For i = 0 To 8
      PLcdata(351 + i) = Val(Rs("CurrentOffset" & i + 1)) * 1000
      PLcdata(361 + i) = Val(Rs("VoltageOffset" & i + 1)) * 1000
     Next
+     PLcdata(361 + 9) = Val(Rs("VoltageOffset10")) * 1000
     
     PLcdata(325) = Val(Rs("ICMin")) * 1000
     PLcdata(326) = Val(Rs("ICMax")) * 1000
@@ -4396,6 +4617,8 @@ Dim j As Integer
     PLcdata(320) = Val(Rs("DebounceTime")) * 1000
     PLcdata(321) = Val(Rs("HoldTime")) * 1000
     PLcdata(322) = Val(Rs("CheckTime")) * 1000
+    PLcdata(323) = Val(Rs("TestVoltage")) * 1000
+    PLcdata(324) = Val(Rs("TestCurrentOption"))
     
     PLcdata(332) = Val(Rs("DotMarkingTime")) * 10
     
@@ -4469,7 +4692,10 @@ Dim Sql As String
    Set Rs = New ADODB.Recordset
    Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
    txtModelDesc.Text = Rs("ModelDesc")
-   
+   lblTestBlinker(0).Caption = Rs("BlinkerTest1")
+   lblTestBlinker(1).Caption = Rs("BlinkerTest2")
+   lblTestBlinker(2).Caption = Rs("BlinkerTest3")
+
    If Val(Rs("DMBypass")) = 1 Then
     PictureDM(0).Visible = False
     PictureDM(1).Visible = False
@@ -4508,23 +4734,39 @@ Dim Sql As String
     PictureSRM(0).Visible = False
     PictureSRM(1).Visible = False
    End If
-    
+   If Val(Rs("AMBypass")) = 1 Then
+    PictureAM(0).Visible = False
+    PictureAM(1).Visible = False
+   End If
+    For i = 0 To 9
+        lblModule(i).Caption = Rs("ModuleName" & i + 1)
+    Next
+    barcodeType = Rs("BarcodeType")
     PartNo = Rs("PrintPartNo")
-    'BarcodeLength = Rs("BarcodeLength")
+    QRPartNo = Rs("PrintPartNo")
     HardwareNo = Rs("HardwareNo")
-    SerialStartingtxt = Rs("SerialStartingtxt")
+    VendorId = Rs("VendorId")
+    BalPartNo = Rs("SerialStartingtxt")
+    SupplierCode = Rs("SupplierCode")
     setBatchCounter = Rs("BatchCounter")
     setCouplerCounter = Rs("CouplerCounter")
-    VendorId = Rs("VendorId")
-    'PrintSwitchName = Rs("PrintSwitchName")
-    'PrintLineCode = Rs("PrintLineCode")
+    If barcodeType = 1 Then
+        PiaggioPartNo = Rs("PiagioPartNo")
+        SwitchName = Rs("VendorId")
+        RevPN = Rs("PiagioRevPN")
+        SupplierPartNo = Rs("PiagioSupplierPartNo")
+        FinalApproval = Rs("PiagioDFA")
+        PiagioBatchNo = Rs("PiagioBatchNo")
+        OtherInfo = Rs("PiagioOtherInfo")
+        PiagioCOO = Rs("PiagioCoo")
     
+    End If
     ImgPart.Picture = LoadPicture(Rs("PartImage"))
     txtproductioncounter.Text = Rs("productioncounter")
+    
     If Val(Rs("bypass3")) = 1 Then
       Label1(2).Visible = False
       ShapeWLC.Visible = False
-      
     End If
     If Val(Rs("bypass6")) = 1 Then
         txtILLH.Visible = False
@@ -4608,6 +4850,12 @@ Dim Rs As ADODB.Recordset
       Rs("SRMResult") = getresult(PictureSRM(0))
       Rs("SRM1Cur") = txtCurSRM.Text
       Rs("SRM1volt") = txtVSRM.Text
+      
+      Rs("AMResult") = getresult(PictureAM(0))
+      Rs("AM1volt") = txtVAM(0).Text
+      Rs("AM2volt") = txtVAM(1).Text
+      Rs("AM3volt") = txtVAM(2).Text
+      
       'Rs("ICLH") = txtILLH.Text
       'Rs("ICRH") = txtILRH.Text
    Rs.Update
@@ -4684,12 +4932,13 @@ Private Sub GetCounterValue()
 On Error Resume Next
 Dim ProdDay As String
 Dim Today As String
+Dim TempWeekYear As String
    txtOKCounter.Text = Val(GetSetting(App.Title, ModelName, "OkCounter", 0))
    txtNGCounter.Text = Val(GetSetting(App.Title, ModelName, "NgCounter", 0))
    txtCouplerCounter.Text = Val(GetSetting(App.Title, ModelName, "CouplerCounter", 0))
    txtBatchCounter.Text = Val(GetSetting(App.Title, ModelName, "BatchCounter", 0))
    txtTargetProduction.Text = GetSetting(App.Title, ModelName, "TargetProduction", 0)
-         
+   TempWeekYear = GetSetting(App.Title, ModelName, "SaveDateWeek", 0)
    tempshift = GetSetting(App.Title, ModelName, "saveshift", 0)
    TempDate = GetSetting(App.Title, ModelName, "savedate", 0)
    If TempDate <> runningreportdate Or runningreportshift <> tempshift Then
@@ -4699,6 +4948,19 @@ Dim Today As String
       SaveSetting App.Title, ModelName, "savedate", runningreportdate
       'txtprintcounter.Text = 0
    End If
+    If barcodeType = 0 Then
+        If TempWeekYear <> Format(Now, "YYWW") Then
+            txtproductioncounter.Text = 0
+            SaveProductioncounter
+            SaveSetting App.Title, ModelName, "SaveDateWeek", Format(Now, "YYWW")
+        End If
+    Else
+        If TempDate <> runningreportdate Then
+            txtproductioncounter.Text = 0
+            SaveProductioncounter
+          SaveSetting App.Title, ModelName, "savedate", runningreportdate
+        End If
+    End If
    SaveCounterValue
 End Sub
 

@@ -7,8 +7,8 @@ Begin VB.Form frmreportanalysis
    ClientTop       =   465
    ClientWidth     =   4560
    LinkTopic       =   "Form1"
-   ScaleHeight     =   11415
-   ScaleWidth      =   18960
+   ScaleHeight     =   3015
+   ScaleWidth      =   4560
    StartUpPosition =   3  'Windows Default
    Begin VB.PictureBox Picture1 
       Height          =   8175
@@ -828,7 +828,7 @@ Begin VB.Form frmreportanalysis
          EndProperty
          CalendarForeColor=   16711680
          CalendarTitleForeColor=   49344
-         Format          =   122224641
+         Format          =   111280129
          CurrentDate     =   39022
       End
       Begin VB.Label Label4 

@@ -44,14 +44,26 @@ Public ExtendedRequired As Boolean
 Public CommandType, WriteDelayCount, CVRead, CVExtPktNo, NoOfExtendedPackets, RejCnt As Integer
 Public SQLpath As String
 Public SQLbypass As Integer
-Public SerialStartingtxt As String
+
 Public PartNo As String
 Public HardwareNo As String
-Public PrinterName As String
-Public BarcodeLength As Integer
-Public TempReportDate As Date
 Public VendorId As String
+Public BalPartNo As String
+Public QRPartNo As String
+Public barcodeType As Integer
+Public PrinterName As String
+Public SupplierCode As String
+Public TempReportDate As Date
 Public reporttype As Integer
+Public PiaggioPartNo As String
+Public SwitchName As String
+Public RevPN As String
+Public SupplierPartNo As String
+Public FinalApproval As String
+Public PiagioBatchNo As String
+Public OtherInfo As String
+Public PiagioCOO As String
+    
 Sub Initialise()
     RetryCount = 5
     Sec_10 = 20
@@ -181,36 +193,103 @@ Dim TempHardwareNo As String
 Dim TempPartNo As String
 Dim TempVendorId As String
 Dim TempBarcode As String
-Dim TempStartingString As String
-
+Dim TempStartingString, tempBalPartNo, tempQRPartno, TempSupplierCode, SelectShift As String
+Dim Counter As String
+Dim Yearweek As String
     If CopyLabel = True Then
         CopyLabel = False
-        TempStartingString = frmPrintLabel.txtStartString.Text
-        Counter = TempStartingString & Format(frmPrintLabel.txtCopyNo.Text, "0000000000000")
-        TempDate = frmPrintLabel.txtDatePr.Text
-        TempVendorId = frmPrintLabel.txtVendorCode.Text
-        TempPartNo = frmPrintLabel.txtPartNumber.Text
-        TempHardwareNo = frmPrintLabel.txtIndexAR.Text
-        TempBarcode = TempPartNo & Counter & TempDate & TempHardwareNo & TempVendorId
+        If barcodeType = 0 Then
+         TempStartingString = frmPrintLabel.txtStartString.Text
+         Counter = TempStartingString & Format(frmPrintLabel.txtCopyNo.Text, "0000000000000")
+         TempDate = frmPrintLabel.txtDatePr.Text
+         TempVendorId = frmPrintLabel.txtVendorCode.Text
+         TempPartNo = frmPrintLabel.txtPartNumber.Text
+         TempHardwareNo = frmPrintLabel.txtIndexAR.Text
+         tempBalPartNo = frmPrintLabel.txtBalPartNo.Text
+         tempQRPartno = frmPrintLabel.txtQRPartNo.Text
+         TempBarcode = tempQRPartno & ";1;" & Counter & ";" & TempHardwareNo & ";" & TempVendorId & ";" & tempBalPartNo
+        ElseIf barcodeType = 1 Then
+         TempDate = frmPrintLabel.txtDatePr.Text
+         TempVendorId = frmPrintLabel.txtVendorCode.Text
+         TempPartNo = frmPrintLabel.txtPartNumber.Text
+         
+         TempHardwareNo = frmPrintLabel.txtIndexAR.Text
+         TempSupplierCode = frmPrintLabel.txtBalPartNo.Text
+         SelectShift = frmPrintLabel.txtQRPartNo.Text
+         Counter = Format(Val(frmPrintLabel.txtCopyNo.Text), "00000")
+         TempBarcode = TempPartNo & " " & TempHardwareNo & " " & TempSupplierCode & " " & TempDate & " " & Counter & " " & SelectShift & " IN"
+        Else
+         TempDate = frmPrintLabel.txtDatePr.Text
+         Counter = Format(Val(frmPrintLabel.txtCopyNo.Text), "000000")
+         tempBalPartNo = frmPrintLabel.txtPartNumber.Text
+         TempSupplierCode = frmPrintLabel.txtBalPartNo.Text
+         TempHardwareNo = frmPrintLabel.txtIndexAR.Text
+         barcode = tempBalPartNo & ";" & TempDate & Counter & ";" & TempHardwareNo & ";" & TempSupplierCode
+         TempBarcode = barcode
+        End If
     Else
-        Counter = SerialStartingtxt & Format(Val(frmMonitor.txtproductioncounter), "0000000000000")
+      If barcodeType = 0 Then
+        Yearweek = Format(Now, "YYWW")
+        Counter = Yearweek & Format(Val(frmMonitor.txtproductioncounter), "0000000000000")
         TempDate = GetCurrentDate
         TempVendorId = VendorId
         TempPartNo = PartNo
+        
         TempHardwareNo = HardwareNo
-        barcode = PartNo & Counter & TempDate & HardwareNo & VendorId
+        barcode = QRPartNo & ";1;" & Counter & ";" & HardwareNo & ";" & VendorId & ";" & BalPartNo
         TempBarcode = barcode
+      ElseIf barcodeType = 1 Then
+        TempDate = Format(Now, "yyyyMMdd")
+        TempVendorId = VendorId
+        TempPartNo = PiaggioPartNo
+        TempSupplierCode = SupplierCode
+        Counter = Format(Val(frmMonitor.txtproductioncounter), "000000")
+        barcode = AdjustStringLength(PiaggioPartNo, 18) & AdjustStringLength(RevPN, 2) & AdjustStringLength(SupplierCode, 10) & _
+                  AdjustStringLength(SupplierPartNo, 14) & AdjustStringLength(FinalApproval, 8) & TempDate & _
+                  AdjustStringLength(Counter, 10) & AdjustStringLength(PiagioBatchNo, 6) & _
+                  AdjustStringLength(OtherInfo & GetShiftInAsc(getShift), 12) & AdjustStringLength(PiagioCOO, 2)
+        TempBarcode = barcode
+      Else
+       TempDate = Format(Now, "ddMMyy")
+       Counter = Format(Val(frmMonitor.txtproductioncounter.Text), "000000")
+       tempBalPartNo = BalPartNo
+       TempSupplierCode = SupplierCode
+       TempHardwareNo = HardwareNo
+       barcode = tempBalPartNo & ";" & TempDate & Counter & ";" & TempHardwareNo & ";" & TempSupplierCode
+       TempBarcode = barcode
+      End If
     End If
-    
-    PrnFile = "switch.prn"
-    'barcode = PartNo & Counter & TempDate
-    TempFileTextLine = ReadLabel(App.Path & "\PrnFiles\" & PrnFile)
-    TempFileTextLine = Replace(TempFileTextLine, "#HW: 003#", TempHardwareNo)
-    TempFileTextLine = Replace(TempFileTextLine, "#963.11.070.000#", TempPartNo)
-    TempFileTextLine = Replace(TempFileTextLine, "#JJWW0000000000001#", Counter)
-    TempFileTextLine = Replace(TempFileTextLine, "#963.11.070.000JJWW0000000000000001ddMYYYY#", TempBarcode)
-    TempFileTextLine = Replace(TempFileTextLine, "#3000557#", TempVendorId)
-    
+    If barcodeType = 0 Then
+        PrnFile = "switch.prn"
+        'barcode = PartNo & Counter & TempDate
+        TempFileTextLine = ReadLabel(App.Path & "\PrnFiles\" & PrnFile)
+        TempFileTextLine = Replace(TempFileTextLine, "#003#", TempHardwareNo)
+        TempFileTextLine = Replace(TempFileTextLine, "#963.11.070.000#", TempPartNo)
+        TempFileTextLine = Replace(TempFileTextLine, "#JJWW0000000000001#", Counter)
+        TempFileTextLine = Replace(TempFileTextLine, "#96311070000;1;JJWW0000000000001;034;3000557;JP401417#", TempBarcode)
+        TempFileTextLine = Replace(TempFileTextLine, "#3000557#", TempVendorId)
+        TempFileTextLine = Replace(TempFileTextLine, "#JP401417#", BalPartNo)
+    ElseIf barcodeType = 1 Then
+        PrnFile = "switch-piaggio.prn"
+        'barcode = PartNo & Counter & TempDate
+        TempFileTextLine = ReadLabel(App.Path & "\PrnFiles\" & PrnFile)
+        TempFileTextLine = Replace(TempFileTextLine, "#27112023#", Format(Now, "yyyyMMdd"))
+        TempFileTextLine = Replace(TempFileTextLine, "#2D000781#", TempPartNo)
+        TempFileTextLine = Replace(TempFileTextLine, "#IN-000021#", PiagioCOO & "-" & Counter)
+        TempFileTextLine = Replace(TempFileTextLine, "#2D000781__________3_ IN0000M106SW1271H03_____NA______27112023000021____B___________IN#", TempBarcode)
+        TempFileTextLine = Replace(TempFileTextLine, "#SW-1271H#", TempVendorId)
+        TempFileTextLine = Replace(TempFileTextLine, "#IN0000M106#", TempSupplierCode)
+    Else
+        PrnFile = "MI23.prn"
+        'barcode = PartNo & Counter & TempDate
+        TempFileTextLine = ReadLabel(App.Path & "\PrnFiles\" & PrnFile)
+        TempFileTextLine = Replace(TempFileTextLine, "#DDMMYY#", TempDate)
+        TempFileTextLine = Replace(TempFileTextLine, "#TA401416#", tempBalPartNo)
+        TempFileTextLine = Replace(TempFileTextLine, "#000001#", Counter)
+        TempFileTextLine = Replace(TempFileTextLine, "#TA401416;DDMMYY000001;XXX;100221#", TempBarcode)
+        TempFileTextLine = Replace(TempFileTextLine, "#100221#", TempSupplierCode)
+        TempFileTextLine = Replace(TempFileTextLine, "#XXX#", TempHardwareNo)
+    End If
     lPrinter.PrinterName = PrinterName
     lPrinter.PrintText TempFileTextLine
     lPrinter.EndJob
@@ -240,13 +319,44 @@ Public Function GetCurrentDate() As String
  ElseIf month = 8 Then
     GetCurrentDate = Format(Date, "DD") & "H" & Format(Date, "YYYY")
  ElseIf month = 9 Then
-    GetCurrentDate = Format(Date, "DD") & "J" & Format(Date, "YYYY")
+    GetCurrentDate = Format(Date, "DD") & "I" & Format(Date, "YYYY")
  ElseIf month = 10 Then
-    GetCurrentDate = Format(Date, "DD") & "K" & Format(Date, "YYYY")
+    GetCurrentDate = Format(Date, "DD") & "J" & Format(Date, "YYYY")
  ElseIf month = 11 Then
-    GetCurrentDate = Format(Date, "DD") & "L" & Format(Date, "YYYY")
+    GetCurrentDate = Format(Date, "DD") & "K" & Format(Date, "YYYY")
  ElseIf month = 12 Then
-    GetCurrentDate = Format(Date, "DD") & "M" & Format(Date, "YYYY")
+    GetCurrentDate = Format(Date, "DD") & "L" & Format(Date, "YYYY")
+ End If
+ 
+ 
+End Function
+Public Function GetCurrentDate2() As String
+ Dim month
+ month = Val(Format(Date, "MM"))
+ If month = 1 Then
+    GetCurrentDate2 = Format(Date, "DD") & "A" & Format(Date, "DD")
+ ElseIf month = 2 Then
+    GetCurrentDate2 = Format(Date, "DD") & "B" & Format(Date, "YY")
+ ElseIf month = 3 Then
+    GetCurrentDate2 = Format(Date, "DD") & "C" & Format(Date, "YY")
+ ElseIf month = 4 Then
+    GetCurrentDate2 = Format(Date, "DD") & "D" & Format(Date, "YY")
+ ElseIf month = 5 Then
+    GetCurrentDate2 = Format(Date, "DD") & "E" & Format(Date, "YY")
+ ElseIf month = 6 Then
+    GetCurrentDate2 = Format(Date, "DD") & "F" & Format(Date, "YY")
+ ElseIf month = 7 Then
+    GetCurrentDate2 = Format(Date, "DD") & "G" & Format(Date, "YY")
+ ElseIf month = 8 Then
+    GetCurrentDate2 = Format(Date, "DD") & "H" & Format(Date, "YY")
+ ElseIf month = 9 Then
+    GetCurrentDate2 = Format(Date, "DD") & "I" & Format(Date, "YY")
+ ElseIf month = 10 Then
+    GetCurrentDate2 = Format(Date, "DD") & "J" & Format(Date, "YY")
+ ElseIf month = 11 Then
+    GetCurrentDate2 = Format(Date, "DD") & "K" & Format(Date, "YY")
+ ElseIf month = 12 Then
+    GetCurrentDate2 = Format(Date, "DD") & "L" & Format(Date, "YY")
  End If
  
  
@@ -352,7 +462,17 @@ Else
    Converted_Int = (ByteHigh_To_Convert * 256) + ByteLow_TO_Convert
 End If
 End Function
-
+Public Function GetShiftInAsc(ShiftInNo As String) As String
+    If ShiftInNo = 1 Then
+        GetShiftInAsc = "A"
+    ElseIf ShiftInNo = 2 Then
+        GetShiftInAsc = "B"
+    ElseIf ShiftInNo = 3 Then
+        GetShiftInAsc = "C"
+    ElseIf ShiftInNo = 4 Then
+        GetShiftInAsc = "D"
+    End If
+End Function
 Public Function getShift() As String
 On Error GoTo Error
 Dim sTime1, sTime2, sTime3, sTime4 As String
@@ -428,11 +548,18 @@ End Function
 
 Public Sub AppVersion(frm As Form)
 Dim AppVer As String
-
 AppVer = Replace$(App.Title, "_", " ") & " - " & App.Major & "." & App.Minor & ".0." & App.Revision
 frm.Caption = AppVer
-
 End Sub
 
-
-
+Public Function AdjustStringLength(inputString As String, requiredLength As Integer) As String
+    Dim currentLength As Integer
+    currentLength = Len(inputString)
+    If currentLength < requiredLength Then
+        Dim underscoresToAdd As Integer
+        underscoresToAdd = requiredLength - currentLength
+        AdjustStringLength = inputString & String(underscoresToAdd, "_")
+    Else
+        AdjustStringLength = inputString
+    End If
+End Function

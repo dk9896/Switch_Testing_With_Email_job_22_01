@@ -7,8 +7,8 @@ Begin VB.Form frmPrintLabel
    ClientTop       =   450
    ClientWidth     =   12150
    LinkTopic       =   "Form1"
-   ScaleHeight     =   10935
-   ScaleWidth      =   20250
+   ScaleHeight     =   8955
+   ScaleWidth      =   12150
    StartUpPosition =   3  'Windows Default
    Begin TextPrinter.JustPrinter JustPrinter1 
       Height          =   615
@@ -22,13 +22,301 @@ Begin VB.Form frmPrintLabel
    End
    Begin VB.PictureBox Picture1 
       BackColor       =   &H00FFFFC0&
-      Height          =   7095
+      Height          =   8415
       Left            =   4080
-      ScaleHeight     =   7035
+      ScaleHeight     =   8355
       ScaleWidth      =   8475
       TabIndex        =   0
       Top             =   840
       Width           =   8535
+      Begin VB.Frame FramePrint2 
+         Caption         =   "Printer Detail"
+         ForeColor       =   &H000040C0&
+         Height          =   4815
+         Left            =   240
+         TabIndex        =   30
+         Top             =   3120
+         Visible         =   0   'False
+         Width           =   6015
+         Begin VB.TextBox txtPiaggioPartNo 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Left            =   2160
+            TabIndex        =   39
+            Top             =   360
+            Width           =   3495
+         End
+         Begin VB.TextBox txtSupplierCode 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   0
+            Left            =   2160
+            TabIndex        =   38
+            Top             =   1920
+            Width           =   3495
+         End
+         Begin VB.TextBox txtRevisionNo 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Index           =   0
+            Left            =   2160
+            TabIndex        =   37
+            Top             =   1440
+            Width           =   615
+         End
+         Begin VB.TextBox txtSupplierPartNo 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Left            =   2160
+            TabIndex        =   36
+            Top             =   2400
+            Width           =   3495
+         End
+         Begin VB.TextBox txtFinalApproval 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Left            =   2160
+            TabIndex        =   35
+            Top             =   2880
+            Width           =   3495
+         End
+         Begin VB.TextBox txtBatchNo 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Left            =   2160
+            TabIndex        =   34
+            Top             =   3360
+            Width           =   3495
+         End
+         Begin VB.TextBox txtOtherInfo 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Left            =   2160
+            TabIndex        =   33
+            Top             =   3840
+            Width           =   3495
+         End
+         Begin VB.TextBox txtSwitchName 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Left            =   2160
+            TabIndex        =   32
+            Top             =   840
+            Width           =   3495
+         End
+         Begin VB.TextBox txtCOO 
+            Alignment       =   1  'Right Justify
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   315
+            Left            =   2160
+            TabIndex        =   31
+            Top             =   4320
+            Width           =   3495
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Piaggio Part No"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   77
+            Left            =   120
+            TabIndex        =   48
+            Top             =   360
+            Width           =   1845
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Supplier Code"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   113
+            Left            =   120
+            TabIndex        =   47
+            Top             =   1920
+            Width           =   1845
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Rev P/N"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   114
+            Left            =   120
+            TabIndex        =   46
+            Top             =   1560
+            Width           =   1845
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Supplier PartNo / Rev"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   115
+            Left            =   120
+            TabIndex        =   45
+            Top             =   2400
+            Width           =   1725
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Date Of Final Approval"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   119
+            Left            =   120
+            TabIndex        =   44
+            Top             =   2880
+            Width           =   1725
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Batch No"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   81
+            Left            =   120
+            TabIndex        =   43
+            Top             =   3360
+            Width           =   1365
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Other Info"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   120
+            Left            =   120
+            TabIndex        =   42
+            Top             =   3840
+            Width           =   1365
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Line Line1 
+            X1              =   0
+            X2              =   6000
+            Y1              =   1200
+            Y2              =   1200
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Switch Name"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   122
+            Left            =   120
+            TabIndex        =   41
+            Top             =   840
+            Width           =   1845
+            WordWrap        =   -1  'True
+         End
+         Begin VB.Label Label1 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Country Of Origin"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   121
+            Left            =   120
+            TabIndex        =   40
+            Top             =   4320
+            Width           =   1605
+            WordWrap        =   -1  'True
+         End
+      End
+      Begin VB.ComboBox Combo1 
+         Height          =   315
+         ItemData        =   "frmPrintLabel.frx":0000
+         Left            =   2400
+         List            =   "frmPrintLabel.frx":000D
+         TabIndex        =   25
+         Top             =   1320
+         Width           =   3615
+      End
       Begin VB.CheckBox Check1 
          BackColor       =   &H00FFFFC0&
          Caption         =   "Check to print multiple in serial"
@@ -76,7 +364,7 @@ Begin VB.Form frmPrintLabel
          Top             =   2520
          Width           =   1095
       End
-      Begin VB.TextBox txtSwitchName 
+      Begin VB.TextBox txtQRPartNo 
          Alignment       =   2  'Center
          Appearance      =   0  'Flat
          BeginProperty Font 
@@ -92,10 +380,9 @@ Begin VB.Form frmPrintLabel
          Left            =   2400
          TabIndex        =   14
          Top             =   6120
-         Visible         =   0   'False
          Width           =   3495
       End
-      Begin VB.TextBox txtLineCode 
+      Begin VB.TextBox txtBalPartNo 
          Alignment       =   2  'Center
          Appearance      =   0  'Flat
          BeginProperty Font 
@@ -111,7 +398,6 @@ Begin VB.Form frmPrintLabel
          Left            =   2400
          TabIndex        =   13
          Top             =   5400
-         Visible         =   0   'False
          Width           =   3495
       End
       Begin VB.TextBox txtVendorCode 
@@ -145,10 +431,10 @@ Begin VB.Form frmPrintLabel
             Strikethrough   =   0   'False
          EndProperty
          Height          =   480
-         Left            =   2400
+         Left            =   4080
          TabIndex        =   11
          Top             =   3960
-         Width           =   3495
+         Width           =   1815
       End
       Begin VB.TextBox txtPartNumber 
          Alignment       =   2  'Center
@@ -163,10 +449,10 @@ Begin VB.Form frmPrintLabel
             Strikethrough   =   0   'False
          EndProperty
          Height          =   480
-         Left            =   2400
+         Left            =   2880
          TabIndex        =   10
          Top             =   3240
-         Width           =   3495
+         Width           =   3015
       End
       Begin VB.ComboBox CboModelName 
          BeginProperty Font 
@@ -182,7 +468,7 @@ Begin VB.Form frmPrintLabel
          Left            =   2400
          Style           =   2  'Dropdown List
          TabIndex        =   8
-         Top             =   1200
+         Top             =   720
          Width           =   3615
       End
       Begin VB.TextBox txtDatePr 
@@ -218,6 +504,7 @@ Begin VB.Form frmPrintLabel
          Height          =   480
          Left            =   3600
          TabIndex        =   4
+         Text            =   "0"
          Top             =   2520
          Width           =   2295
       End
@@ -225,7 +512,7 @@ Begin VB.Form frmPrintLabel
          Caption         =   "&Print"
          Height          =   975
          Left            =   6840
-         Picture         =   "frmPrintLabel.frx":0000
+         Picture         =   "frmPrintLabel.frx":0033
          Style           =   1  'Graphical
          TabIndex        =   2
          Top             =   1080
@@ -235,11 +522,65 @@ Begin VB.Form frmPrintLabel
          Caption         =   "&Close"
          Height          =   1035
          Left            =   6840
-         Picture         =   "frmPrintLabel.frx":066A
+         Picture         =   "frmPrintLabel.frx":069D
          Style           =   1  'Graphical
          TabIndex        =   1
          Top             =   5520
          Width           =   1485
+      End
+      Begin VB.Label Label14 
+         BackStyle       =   0  'Transparent
+         Caption         =   "Shift Code"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   330
+         Left            =   360
+         TabIndex        =   29
+         Top             =   6240
+         Width           =   1605
+      End
+      Begin VB.Label Label12 
+         BackStyle       =   0  'Transparent
+         Caption         =   "Supplier Code"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   330
+         Left            =   360
+         TabIndex        =   28
+         Top             =   5520
+         Width           =   1845
+      End
+      Begin VB.Label Label13 
+         BackStyle       =   0  'Transparent
+         Caption         =   "Barcode Type"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Left            =   360
+         TabIndex        =   26
+         Top             =   1320
+         Width           =   1575
       End
       Begin VB.Label Label2 
          BackStyle       =   0  'Transparent
@@ -252,7 +593,7 @@ Begin VB.Form frmPrintLabel
       End
       Begin VB.Label Label10 
          BackStyle       =   0  'Transparent
-         Caption         =   "Switch Name"
+         Caption         =   "QR Part No"
          BeginProperty Font 
             Name            =   "Arial"
             Size            =   12
@@ -266,12 +607,11 @@ Begin VB.Form frmPrintLabel
          Left            =   360
          TabIndex        =   21
          Top             =   6240
-         Visible         =   0   'False
          Width           =   1605
       End
       Begin VB.Label Label9 
          BackStyle       =   0  'Transparent
-         Caption         =   "Line Code"
+         Caption         =   "Bal Part No"
          BeginProperty Font 
             Name            =   "Arial"
             Size            =   12
@@ -285,7 +625,6 @@ Begin VB.Form frmPrintLabel
          Left            =   360
          TabIndex        =   19
          Top             =   5520
-         Visible         =   0   'False
          Width           =   1485
       End
       Begin VB.Label Label8 
@@ -308,7 +647,7 @@ Begin VB.Form frmPrintLabel
       End
       Begin VB.Label Label7 
          BackStyle       =   0  'Transparent
-         Caption         =   "Index AR"
+         Caption         =   "Index AR/Revision No"
          BeginProperty Font 
             Name            =   "Arial"
             Size            =   12
@@ -322,7 +661,7 @@ Begin VB.Form frmPrintLabel
          Left            =   360
          TabIndex        =   17
          Top             =   4080
-         Width           =   1485
+         Width           =   3045
       End
       Begin VB.Label Label6 
          BackStyle       =   0  'Transparent
@@ -358,7 +697,7 @@ Begin VB.Form frmPrintLabel
          Left            =   360
          TabIndex        =   15
          Top             =   3360
-         Width           =   1485
+         Width           =   1845
       End
       Begin VB.Label Label3 
          BackStyle       =   0  'Transparent
@@ -375,7 +714,7 @@ Begin VB.Form frmPrintLabel
          Height          =   330
          Left            =   360
          TabIndex        =   9
-         Top             =   1200
+         Top             =   840
          Width           =   1485
       End
       Begin VB.Label Label4 
@@ -413,11 +752,20 @@ Begin VB.Form frmPrintLabel
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
+         Index           =   0
          Left            =   360
          TabIndex        =   6
          Top             =   1920
          Width           =   495
       End
+   End
+   Begin VB.Label Label11 
+      Caption         =   "Label11"
+      Height          =   495
+      Left            =   5520
+      TabIndex        =   27
+      Top             =   4200
+      Width           =   1215
    End
 End
 Attribute VB_Name = "frmPrintLabel"
@@ -458,6 +806,94 @@ Else
 End If
 End Sub
 
+Private Sub Combo1_Change()
+    barcodeType = Combo1.ListIndex
+    If barcodeType = 1 Then
+    txtDatePr.Text = GetCurrentDate2
+    txtStartString.Visible = False
+    txtQRPartNo.Visible = True
+    txtBalPartNo.Visible = True
+    txtIndexAR.Visible = True
+    Label7.Visible = True
+    Label9.Visible = False
+    Label10.Visible = False
+    Label12.Visible = True
+    Label14.Visible = True
+    Label5.Caption = "Part Number"
+    ElseIf barcodeType = 0 Then
+    txtDatePr.Text = GetCurrentDate
+    txtStartString.Visible = True
+    txtQRPartNo.Visible = True
+    txtBalPartNo.Visible = True
+    txtIndexAR.Visible = True
+    Label7.Visible = True
+    Label9.Visible = True
+    Label10.Visible = True
+    Label12.Visible = False
+    Label14.Visible = False
+    Label5.Caption = "Part Number"
+    Else
+    txtDatePr.Text = Format(Now, "ddMMyy")
+    txtBalPartNo.Visible = True
+    Label12.Visible = True
+    txtIndexAR.Visible = True
+    Label7.Visible = True
+    txtPartNumber.Visible = True
+    Label5.Visible = True
+    Label5.Caption = "Bal Part No"
+    
+    End If
+End Sub
+
+Private Sub Combo1_Click()
+    barcodeType = Combo1.ListIndex
+    If barcodeType = 1 Then
+    txtDatePr.Text = GetCurrentDate2
+    txtStartString.Visible = False
+    txtQRPartNo.Visible = True
+    txtBalPartNo.Visible = True
+    txtIndexAR.Visible = True
+    Label7.Visible = True
+    Label9.Visible = False
+    Label10.Visible = False
+    Label12.Visible = True
+    Label14.Visible = True
+    Label8.Visible = True
+    txtVendorCode.Visible = True
+    Label5.Caption = "Part Number"
+    ElseIf barcodeType = 0 Then
+    Label8.Visible = True
+    txtVendorCode.Visible = True
+    txtDatePr.Text = GetCurrentDate
+    txtStartString.Visible = True
+    txtQRPartNo.Visible = True
+    txtBalPartNo.Visible = True
+    txtIndexAR.Visible = True
+    Label7.Visible = True
+    Label9.Visible = True
+    Label10.Visible = True
+    Label12.Visible = False
+    Label14.Visible = False
+    Label5.Caption = "Part Number"
+    Else
+    txtDatePr.Text = Format(Now, "ddMMyy")
+    txtBalPartNo.Visible = True
+    Label12.Visible = True
+    txtIndexAR.Visible = True
+    Label7.Visible = True
+    txtPartNumber.Visible = True
+    Label5.Visible = True
+    Label5.Caption = "Bal Part No"
+    Label9.Visible = False
+    txtStartString.Visible = False
+    Label8.Visible = False
+    txtVendorCode.Visible = False
+    Label14.Visible = False
+    txtQRPartNo.Visible = False
+    Label10.Visible = False
+    End If
+End Sub
+
 Private Sub Form_Load()
     frmPrintLabel.WindowState = 2
     Picture1.BackColor = RGB(142, 167, 190)
@@ -473,6 +909,8 @@ Private Sub CboModelName_Click()
 
 PrintModelName = cbomodelname.Text
 SaveSetting App.Title, "PrintLastModel", "PrintLastModel", PrintModelName
+ModelName = cbomodelname.Text
+LoadSettingsData
 'ModelPicture Image1, ModelName
 End Sub
 
@@ -518,16 +956,38 @@ Dim Sql As String
     Set Rs = New ADODB.Recordset
     Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
         
-    'txtModelDesc = Rs("ModelDesc")
     txtPartNumber.Text = Rs("PrintPartNo")
-    'BarcodeLength = Rs("BarcodeLength")
     txtIndexAR.Text = Rs("HardwareNo")
-    txtStartString.Text = Rs("SerialStartingtxt")
+    txtStartString.Text = Format(Now, "YYWW")
     txtVendorCode.Text = Rs("VendorId")
-
-    'PrintSwitchName = Rs("PrintSwitchName")
-    'PrintLineCode = Rs("PrintLineCode")
+    txtBalPartNo.Text = Rs("SerialStartingtxt")
+    txtQRPartNo.Text = Rs("QRPartNo")
+    barcodeType = Val(Rs("BarcodeType"))
+    Combo1.ListIndex = barcodeType
+    If barcodeType = 1 Then
+    txtBalPartNo.Text = Rs("SupplierCode")
+    txtQRPartNo.Text = GetShiftInAsc(getShift)
+    'txtDatePr.Text = GetCurrentDate2
+    'txtStartString.Visible = False
+    'txtQRPartNo.Visible = False
+    'txtBalPartNo.Visible = False
+    'txtIndexAR.Visible = False
+    'Label7.Visible = False
+    'Label9.Visible = False
+    'Label10.Visible = False
+    ElseIf barcodeType = 2 Then
+    txtBalPartNo.Text = Rs("SupplierCode")
+    txtPartNumber.Text = Rs("SerialStartingtxt")
     
+    'txtDatePr.Text = GetCurrentDate
+    'txtStartString.Visible = True
+    'txtQRPartNo.Visible = True
+    'txtBalPartNo.Visible = True
+    'txtIndexAR.Visible = True
+    'Label7.Visible = True
+    'Label9.Visible = True
+    'Label10.Visible = True
+    End If
     Sql = "Select * from Common_Set where SetType ='CommonSet'" 'SetType = Settings Type
     Set Rs = New ADODB.Recordset
     Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
